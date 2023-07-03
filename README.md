@@ -6,9 +6,11 @@ This site will present the Artwork of Sarah Rae and facilitate the sale of this 
 ## Artwork Purchase
 Customers will be able to:
 - Purchase selected artworks using an industry standard secure on-line purchasing method.
+- By updated on the progress of their order, from placement to delivery.
 - Create a customer account to facilitate purchases
 - View different categories of available artwork
-- View artwork in detail, with detailed descriptions of the product.
+- View artwork productsin detail, with detailed descriptions of the product.
+- View digital art work in a gallery
 - Indicate ‘liked’ artworks
 - Sign up to a Newsletter
 - Access Sarah Rae’s  Social Media sites 
@@ -16,6 +18,9 @@ Customers will be able to:
 Sarah Rae will be able to:
 - Sell her artworks to customers through the e-commerce site
 - Promote her internet presence.
+- Negotiate commissioned art work.
+- Analys and manage her stock levels .
+- Track Order progress from placement to delivery.
 ## Commissioned Artwork
 Customers will be able to:
 - Initiate dialogue with Sarah Rae regarding the commissioning of bespoke Artwork
