@@ -43,3 +43,14 @@ Links to the following Sarah Rae Illustrations social media platforms will be cl
 ![User Stories 3](/Readme_files/user_stories_3.png)
 ![User Stories 4](/Readme_files/user_stories_4.png)
 
+# Models
+The following models were used:
+- Product
+- Category
+- Orders
+- OrderLineItem
+- UserProfile
+- DigitalArtWork
+- ProcessingStatus-
+## Entity Relationship Diagram
+![ERD](/Readme_files/erd.png)
