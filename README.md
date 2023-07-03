@@ -33,9 +33,8 @@ Links to the following Sarah Rae Illustrations social media platforms will be cl
 - Facebook Buisness page
 - Instagram
 # User Stories
-![Viewing & Navigation](/Readme_files/viewing_%26_navigation.png)
-![Admin & Store Management](/Readme_files/admin_%26_store_management.png)
-![Sorting & Searching](/Readme_files/sorting_%26_searching.png)
-![Purchasing & Checkout](/Readme_files/purchasing_%26_checkout.png)
-![Commissions, Registration & User Accounts](/Readme_files/commissions_registration%26useraccounts.png)
-![SEO, Marketing & Buisness Model](/Readme_files/seo_Marketing_buisness-model.png)
+![User Stories 1](/Readme_files/user_stories_1.png)
+![User Stories 2](/Readme_files/user_stories_2.png)
+![User Stories 3](/Readme_files/user_stories_3.png)
+![User Stories 4](/Readme_files/user_stories_4.png)
+
