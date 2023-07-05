@@ -2,12 +2,13 @@
 {% load static %}
 
 {% block content %}
-<div class="container h-100 bg-primary">
+<div class="container h-100">
     <div class="row h-100 my-auto">
-        <div class="col bg-warning">L</div>
-        <div class="col-9 col-md-6 bg-success">
-            Center
-            <div id="home-logo" class="row alert-danger d-md-none" style="height:200px"></div>
+        <div class="col"></div>
+        <div class="col-9 col-md-6">
+            <div class="row d-md-none mt-5">
+                <img src="/media/logo.png" class="img-fluid" alt="Sarah Rae Illustrations Logo">
+            </div>
             <div class="row">
                 <div class="alert-success mt-5">
                     <div id="homeCarousel" class="carousel slide" data-ride="carousel" style="height:200px">
@@ -39,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="col bg-warning">R</div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
