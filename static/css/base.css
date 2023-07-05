@@ -6,3 +6,9 @@ body {
     background: url('/media/homepage_background.png') no-repeat center center fixed;
     background-size: cover;
 }
+
+
+#homeCarousel {
+    max-width: 100%;
+    height: auto;
+}
