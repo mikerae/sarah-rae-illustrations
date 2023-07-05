@@ -7,8 +7,22 @@ body {
     background-size: cover;
 }
 
-
 #homeCarousel {
     max-width: 100%;
     height: auto;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Vertically Center Carousel on  larger Medium devices (tablets, more than 992px) */
+@media (min-width: 770px) {
+    #center-column-index {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #home-logo {
+        display: none;
+    }
 }
