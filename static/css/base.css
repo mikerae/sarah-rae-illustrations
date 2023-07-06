@@ -5,6 +5,7 @@ html {
 body {
     background: url('/media/homepage_background.png') no-repeat center center fixed;
     background-size: cover;
+    color: rgb(218, 145, 12);
 }
 
 #homeCarousel {
@@ -16,7 +17,7 @@ body {
 
 #logo-header-img {
     display: inline-block;
-    height: 10vh;
+    height: 150px;
 }
 
 #logo-text {
@@ -37,6 +38,8 @@ body {
 
 .footer-wrapper {
     background-color: rgb(77, 0, 82);
+    width: 100vw;
+    height: 45px;
 }
 
 .footer-items-wrapper {

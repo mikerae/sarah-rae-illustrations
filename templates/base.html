@@ -39,82 +39,76 @@
     <body>
 
         <header class="container-fluid fixed-top">
-            <div class="row">
-                <div class="col cl-lg-4 my-auto py-1 py-lg-0 text-centre text-lg-left logo-header-container">
+            <div class="row bg-blue pt-lg-2 d-none d-lg-flex">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left logo-header-container">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
                         <img id="logo-header-img" src="/media/logo.png" alt="Sara Rae Illustrations logo">
                         <h2 id="logo-text" class="logo-font logo-text-colour my-0"><strong>Sarah Rae
                                 Illustrations</strong></h2>
                     </a>
                 </div>
-                <div class="col cl-lg-4 my-auto py-1 py-lg-0">
-                    <div class="row">
-                        <form method="GET" action="">
-                            <div class="input-group">
-                                <input class="form-control border border-black rounded-0" type="text" name="q"
-                                    placeholder="Seach my site">
-                                <div class="input-group-append">
-                                    <button class="form-control btn btn-black border border-black rounded-0"
-                                        type="submit">
-                                        <span class="icon">
-                                            <i class="fas fa-search"></i>
-                                        </span>
-                                    </button>
-                                </div>
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <form method="GET" action="">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black rounded-0" type="text" name="q"
+                                placeholder="Seach my shop">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
                             </div>
-                        </form>
-                    </div>
-                    <div class="row">
-                        <h1 class="display-4">Nav Buttons Go Here</h1>
-                    </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col cl-lg-4 my-auto py-1 py-lg-0">
-                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                        <li class="list-inline-item dropdown">
-                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                                aria-haspopup="true" area-expanded="false">
-                                <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">My Account</p>
-                                </div>
-                            </a>
-                            <div class="dropdown-manu border-0" aria-labelledby="user-options">
-                                {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <a href="" class="dropdowm-item">Product Management</a>
-                                <a href="" class="dropdowm-item">Gallery Management</a>
-                                <a href="/admin/" class="dropdowm-item">Site Administration</a>
-                                {% endif %}
-                                <a href="" class="dropdowm-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdowm-item">Logout</a>
-                                {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdowm-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdowm-item">Login</a>
-                                {% endif %}
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" area-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
                             </div>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="{% if items-total %}tex-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                                href="">
-                                <div class="text-center">
-                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                    <p class="my-0">
-                                        {% if items-total %}
-                                        {% if items-total==1 %}
-                                        {{ items-total }} item
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="" class="dropdowm-item">Product Management</a>
+                            <a href="" class="dropdowm-item">Gallery Management</a>
+                            <a href="/admin/" class="dropdowm-item">Site Administration</a>
+                            {% endif %}
+                            <a href="" class="dropdowm-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdowm-item">Logout</a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdowm-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdowm-item">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="{% if items_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if items_total %}
+                                    {% if items_total == 1 %}
+                                    {{ items_total }} item
                                             {% else  %}
-                                        {{ items-total }} items
+                                    {{ items_total }} items
                                             {% endif %}
                                         {% else %}
                                         0 items
                                         {% endif %}
                                     </p>
-                                </div>
-
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             </div>
         </header>
 
@@ -128,12 +122,12 @@
         {% block content %}
         {% endblock %}
 
-        <footer class="container fixed-bottom">
-            <div class="row footer-wrapper">
+        <footer class="container fixed-bottom footer-wrapper">
+            <div class="row">
                 <div class="col"></div>
                 <div class="col-3  footer-items-wrapper">
-                    <div><i class="footer-items fas fa-brands fa-square-facebook"></i> fa-lg"></i></div>
-                    <div><i class="footer-items fas fa-brands fa-square-instagram"></i> fa-lg"></i></div>
+                    <div><i class="footer-items fas fa-brands fa-square-facebook fa-lg"></i></i></div>
+                    <div><i class="footer-items fas fa-brands fa-square-instagram fa-lg"></i></i></div>
                 </div>
                 <div class="col"></div>
             </div>
