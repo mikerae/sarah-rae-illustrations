@@ -12,6 +12,29 @@ body {
     height: auto;
 }
 
+.nav-link {}
+
+#logo-header-img {
+    display: inline-block;
+    height: 10vh;
+}
+
+#logo-text {
+    display: inline-block;
+}
+
+.logo-header-container {
+    display: inline-block;
+}
+
+.main-logo-link {}
+
+.logo-font {}
+
+.logo-text-colour {
+    color: rgb(218, 145, 12);
+}
+
 /* -------------------------------- Media Queries */
 
 /* Vertically Center Carousel on  larger Medium devices (tablets, more than 992px) */
