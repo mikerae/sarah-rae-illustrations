@@ -8,6 +8,7 @@ class DigitalArtWorkAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'image',
+        'image_alt',
         'description',
         'size',
         'file_type',
