@@ -35,6 +35,20 @@ body {
     color: rgb(218, 145, 12);
 }
 
+.footer-wrapper {
+    background-color: rgb(77, 0, 82);
+}
+
+.footer-items-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-items {
+    display: inline-block;
+    color: rgb(248, 139, 104);
+}
+
 /* -------------------------------- Media Queries */
 
 /* Vertically Center Carousel on  larger Medium devices (tablets, more than 992px) */
