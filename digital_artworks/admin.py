@@ -6,8 +6,8 @@ from .models import DigitalArtWork
 
 class DigitalArtWorkAdmin(admin.ModelAdmin):
     list_display = (
-        'image',
         'name',
+        'image',
         'description',
         'size',
         'file_type',
