@@ -6,6 +6,16 @@ body {
     background: url('/media/homepage_background.png') no-repeat center center fixed;
     background-size: cover;
     color: rgb(218, 145, 12);
+    font-family: 'El Messiri', sans-serif;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 #homeCarousel {
@@ -20,19 +30,20 @@ body {
     height: 150px;
 }
 
-#logo-text {
-    display: inline-block;
-}
-
 .logo-header-container {
     display: inline-block;
 }
 
-.main-logo-link {}
+.logo-font {
+    text-transform: uppercase;
+}
 
-.logo-font {}
+.main-logo-link {
+    width: fit-content;
+}
 
-.logo-text-colour {
+.logo-text {
+    display: inline-block;
     color: rgb(218, 145, 12);
 }
 
@@ -52,6 +63,26 @@ body {
     color: rgb(248, 139, 104);
 }
 
+.btn-sri {
+    background: black;
+    color: white;
+}
+
+.btn-sri:hover,
+.btn-sri:active,
+.btn-sri:focus {
+    background: #222;
+    color: white;
+}
+
+.text-sri {
+    color: #000 !important;
+}
+
+.border-sri {
+    border: 1px solid black !important;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Vertically Center Carousel on  larger Medium devices (tablets, more than 992px) */
@@ -66,3 +97,33 @@ body {
         display: none;
     }
 }
+
+
+/* copied from CI Boutique Ado Walkthrough for modification later */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+
+    /* consider adjusting this for ipads */
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 1640px;
+        /* adjust for your header */
+    }
+}
+
+/* End copy */

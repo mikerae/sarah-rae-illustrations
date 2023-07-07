@@ -16,6 +16,9 @@
         {% block corecss %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
             integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% endblock %}
 
@@ -43,17 +46,17 @@
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left logo-header-container">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
                         <img id="logo-header-img" src="/media/logo.png" alt="Sara Rae Illustrations logo">
-                        <h2 id="logo-text" class="logo-font logo-text-colour my-0"><strong>Sarah Rae
+                        <h2 class="logo-font logo-text my-0"><strong>Sarah Rae
                                 Illustrations</strong></h2>
                     </a>
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="">
                         <div class="input-group w-100">
-                            <input class="form-control border border-black rounded-0" type="text" name="q"
-                                placeholder="Seach my shop">
+                            <input class="form-control border border-sri rounded-0" type="text" name="q"
+                                placeholder="Seach my Shop">
                             <div class="input-group-append">
-                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <button class="form-control btn btn-sri border border-sri rounded-0" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
                                     </span>
@@ -66,7 +69,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        <a class="text-sri nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" area-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -89,7 +92,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if items_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                        <a class="{% if items_total %}text-info font-weight-bold{% else %}text-sri{% endif %} nav-link"
                             href="">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
