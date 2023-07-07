@@ -98,15 +98,19 @@ body {
     }
 }
 
+.container {
+    max-width: 100%;
+}
+
 
 /* copied from CI Boutique Ado Walkthrough for modification later */
 
 /* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     .container {
-        max-width: 80%;
+        max-width: 100%;
     }
-}
+} */
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -121,7 +125,7 @@ body {
     }
 
     .header-container {
-        padding-top: 1640px;
+        padding-top: 164px;
         /* adjust for your header */
     }
 }
