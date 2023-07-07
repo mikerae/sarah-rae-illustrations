@@ -5,9 +5,21 @@ html {
 body {
     background: url('/media/homepage_background.png') no-repeat center center fixed;
     background-size: cover;
-    color: rgb(218, 145, 12);
     font-family: 'El Messiri', sans-serif;
+    height: calc(100vh - 100px);
 }
+
+#top-nav {
+    display: -webkit-inline-flex;
+    width: 100%;
+}
+
+#top-nav,
+#footer {
+    background-color: rgb(77, 0, 82);
+}
+
+
 
 /* from Bulma */
 .icon {
@@ -18,20 +30,10 @@ body {
     width: 1.5rem;
 }
 
-#homeCarousel {
-    max-width: 100%;
-    height: auto;
-}
-
-.nav-link {}
-
 #logo-header-img {
-    display: inline-block;
-    height: 150px;
-}
+    width: 30%;
+    max-width: 100px;
 
-.logo-header-container {
-    display: inline-block;
 }
 
 .logo-font {
@@ -39,12 +41,19 @@ body {
 }
 
 .main-logo-link {
-    width: fit-content;
+    width: 100%;
 }
 
 .logo-text {
-    display: inline-block;
     color: rgb(218, 145, 12);
+}
+
+#homeCarousel {
+    width: 100%;
+}
+
+.carousel-image {
+    width: 100%;
 }
 
 .footer-wrapper {
@@ -53,34 +62,40 @@ body {
     height: 45px;
 }
 
-.footer-items-wrapper {
-    display: flex;
-    justify-content: space-between;
+.btn-sri {
+    background: rgb(214, 198, 171);
+    color: rgb(128, 109, 8);
 }
 
-.footer-items {
-    display: inline-block;
+.nav-menu {
+    background: rgb(77, 0, 82);
     color: rgb(248, 139, 104);
 }
 
-.btn-sri {
-    background: black;
-    color: white;
+.nav-link {
+    background: rgb(77, 0, 82);
+    color: rgb(248, 139, 104);
 }
 
 .btn-sri:hover,
 .btn-sri:active,
-.btn-sri:focus {
-    background: #222;
-    color: white;
+.btn-sri:focus,
+.nav-menu:hover,
+.nav-menu:active,
+.nav-menu:focus,
+.nav-link:focus,
+.nav-link:hover,
+.nav-link:active {
+    background: rgb(248, 139, 104);
+    color: rgb(77, 0, 82);
 }
 
 .text-sri {
-    color: #000 !important;
+    color: rgb(218, 145, 12) !important;
 }
 
 .border-sri {
-    border: 1px solid black !important;
+    border: 1px solid rgb(77, 0, 82) !important;
 }
 
 /* -------------------------------- Media Queries */
@@ -105,13 +120,6 @@ body {
 
 /* copied from CI Boutique Ado Walkthrough for modification later */
 
-/* Slightly larger container on xl screens */
-/* @media (min-width: 1200px) {
-    .container {
-        max-width: 100%;
-    }
-} */
-
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
 
@@ -121,12 +129,10 @@ body {
         top: 0;
         right: 0;
         left: 0;
-        z-index: 1030;
     }
 
     .header-container {
-        padding-top: 164px;
-        /* adjust for your header */
+        padding-top: 100px;
     }
 }
 

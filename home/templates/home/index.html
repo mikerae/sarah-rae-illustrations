@@ -13,7 +13,7 @@
 <div class="container h-100">
     <div class="row h-100">
         <div class="col"></div>
-        <div id="center-column-index" class="col-9 col-md-6">
+        <div class="col-9 col-md-6">
             <div id="home-logo" class="mt-5">
                 <img id="home-logo-img" src="/media/logo.png" class="img-fluid" alt="Sarah Rae Illustrations Logo">
             </div>
@@ -27,7 +27,7 @@
                 <div class="carousel-inner">
                     {% for ca in carousel_artworks %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img class="d-block w-100" src="{{ ca.image.url }}" alt="{{ ca.image_alt}}">
+                        <img class="d-block carousel-image" src="{{ ca.image.url }}" alt="{{ ca.image_alt}}">
                     </div>
                     {% endfor %}
                 </div>
