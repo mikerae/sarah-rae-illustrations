@@ -43,7 +43,7 @@
     <body>
 
         <header class="container-fluid fixed-top">
-            <div id="top-nav" class="row pt-lg-2 d-none d-lg-flex">
+            <div id="top-nav" class="row bg-sri pt-lg-2 d-none d-lg-flex">
                 <div class="col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="navbar-brand main-logo-link">
                         <div class="d-flex flex-row">
@@ -61,7 +61,7 @@
                             <input class="form-control border border-sri rounded-pill" type="text" name="q"
                                 placeholder="Seach my Shop">
                             <div class="input-group-append">
-                                <button class="form-control btn btn-sri border border border-sri nav-menu rounded-0"
+                                <button class="form-control btn btn-sri border border-sri nav-menu rounded-0"
                                     type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
@@ -71,7 +71,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 navbar-nav nav-pills">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
                             <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
@@ -117,12 +117,14 @@
                     </ul>
                 </div>
             </div>
-            <div id="bottom-nav" class="row">
-                <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <div id="bottom-nav" class="row bg-sri">
+                <nav class="navbar nav-pills navbar-expand-lg w-100">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="main-nav"
                         aria-controls="main-nav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/main-nav.html' %}
                 </nav>
             </div>
         </header>
@@ -137,7 +139,7 @@
         {% block content %}
         {% endblock %}
 
-        <footer id="footer" class="container fixed-bottom footer-wrapper">
+        <footer id="footer" class="container bg-sri fixed-bottom footer-wrapper navbar-nav nav-pills">
             <div class="row h-100">
                 <div class="col"></div>
                 <div class="col-3 d-flex align-items-center justify-content-between">

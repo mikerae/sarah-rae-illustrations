@@ -6,12 +6,10 @@ body {
     background: url('/media/homepage_background.png') no-repeat center center fixed;
     background-size: cover;
     font-family: 'El Messiri', sans-serif;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 150px);
 }
 
-#top-nav,
-#bottom-nav,
-#footer {
+.bg-sri {
     background-color: rgb(77, 0, 82);
 }
 
@@ -45,7 +43,7 @@ body {
 }
 
 #homeCarousel {
-    width: 100%;
+    width: 75%;
 }
 
 .carousel-image {
@@ -58,20 +56,17 @@ body {
     height: 45px;
 }
 
-.btn-sri {
-    background: rgb(214, 198, 171);
-    color: rgb(128, 109, 8);
-}
-
-.nav-menu {
-    background: rgb(77, 0, 82);
+.text-sri {
     color: rgb(248, 139, 104);
 }
 
+.nav-menu,
+.btn-sri,
 .nav-link {
     background: rgb(77, 0, 82);
     color: rgb(248, 139, 104);
 }
+
 
 .btn-sri:hover,
 .btn-sri:active,
@@ -84,10 +79,6 @@ body {
 .nav-link:active {
     background: rgb(248, 139, 104);
     color: rgb(77, 0, 82);
-}
-
-.text-sri {
-    color: rgb(218, 145, 12) !important;
 }
 
 .border-sri {
@@ -128,7 +119,7 @@ body {
     }
 
     .header-container {
-        padding-top: 100px;
+        padding-top: 150px;
     }
 }
 

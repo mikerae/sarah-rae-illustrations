@@ -17,7 +17,7 @@
             <div id="home-logo" class="mt-5">
                 <img id="home-logo-img" src="/media/logo.png" class="img-fluid" alt="Sarah Rae Illustrations Logo">
             </div>
-            <div id="homeCarousel" class="carousel slide mt-5" data-ride="carousel">
+            <div id="homeCarousel" class="carousel slide mt-5 mx-auto" data-ride="carousel">
                 <ol class="carousel-indicators">
                     {% for ca in carousel_artworks %}
                     <li data-target="#homeCarousel" data-slide-to="ca.counter0" {% if forloop.first %}class="active"
@@ -27,7 +27,7 @@
                 <div class="carousel-inner">
                     {% for ca in carousel_artworks %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img class="d-block carousel-image my-4" src="{{ ca.image.url }}" alt="{{ ca.image_alt}}">
+                        <img class="d-block w-100 carousel-image my-4" src="{{ ca.image.url }}" alt="{{ ca.image_alt}}">
                     </div>
                     {% endfor %}
                 </div>

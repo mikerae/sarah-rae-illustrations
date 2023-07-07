@@ -1,0 +1,66 @@
+<li class="list-inline-item">
+    <a class="text-sri nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <div class="text-center">
+            <div><i class="fas fa-search fa-lg"></i></div>
+            <p class="my-0">Search</p>
+        </div>
+    </a>
+    <div class="dropdown-menu bg-sri border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+        <form class="form" method="GET" action="">
+            <div class="input-group w-100">
+                <input class="form-control border border-sri rounded-pill" type="text" name="q"
+                    placeholder="Search my Shop">
+                <div class="input-group-append">
+                    <button class="form-control form-control btn btn-sri border border-sri rounded-0" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>
+<li class="list-inline-item dropdown">
+    <a class="text-sri nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <div class="text-center">
+            <div><i class="fas fa-user fa-lg"></i></div>
+            <p class="my-0">My Account</p>
+        </div>
+    </a>
+    <div class="dropdown-menu border-0 py-0" aria-labelledby="user-options">
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        <a href="#" class="nav-link dropdowm-item">Product Management</a>
+        <a href="#" class="nav-link dropdowm-item">Gallery Management</a>
+        <a href="/admin/" class="nav-link dropdowm-item">Site Administration</a>
+        {% endif %}
+        <a href="#" class="nav-link dropdowm-item">My Profile</a>
+        <a href="{% url 'account_logout' %}" class="nav-link dropdowm-item">Logout</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="nav-link dropdowm-item">Register</a>
+        <a href="{% url 'account_login' %}" class="nav-link dropdowm-item">Login</a>
+        {% endif %}
+    </div>
+</li>
+<li class="list-inline-item">
+    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-sri{% endif %} nav-link d-block d-lg-none"
+        href="">
+        <div class="text-center">
+            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+            <p class="my-0">
+                {% if items_total %}
+                {% if items_total == 1 %}
+                {{ items_total }} item
+                    {% else  %}
+                {{ items_total }} items
+                    {% endif %}
+                {% else %}
+                0 items
+                {% endif %}
+            </p>
+        </div>
+    </a>
+</li>
