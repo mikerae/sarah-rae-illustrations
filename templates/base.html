@@ -42,9 +42,9 @@
 
     <body>
 
-        <header class="container-fluid fixed-top px-0">
-            <div id="top-nav" class="d-flex justify-content-between">
-                <div class="col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left logo-header-container">
+        <header class="container-fluid fixed-top">
+            <div id="top-nav" class="row pt-lg-2 d-none d-lg-flex">
+                <div class="col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="navbar-brand main-logo-link">
                         <div class="d-flex flex-row">
                             <img id="logo-header-img" src="/media/logo.png" alt="Sara Rae Illustrations logo">
@@ -55,7 +55,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="list-inline-item col-lg-4 my-auto py-1 py-lg-0">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="">
                         <div class="input-group w-100">
                             <input class="form-control border border-sri rounded-pill" type="text" name="q"
@@ -71,7 +71,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="list-inline-item col-lg-4 my-auto py-1 py-lg-0">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
                             <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"

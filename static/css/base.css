@@ -9,11 +9,6 @@ body {
     height: calc(100vh - 100px);
 }
 
-#top-nav {
-    display: -webkit-inline-flex;
-    width: 100%;
-}
-
 #top-nav,
 #footer {
     background-color: rgb(77, 0, 82);
