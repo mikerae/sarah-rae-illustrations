@@ -6,7 +6,7 @@ body {
     background: url('/media/homepage_background.png') no-repeat center center fixed;
     background-size: cover;
     font-family: 'El Messiri', sans-serif;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 175px);
 }
 
 .bg-sri {
@@ -119,7 +119,7 @@ body {
     }
 
     .header-container {
-        padding-top: 150px;
+        padding-top: 175px;
     }
 }
 
