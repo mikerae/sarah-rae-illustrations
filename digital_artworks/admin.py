@@ -10,7 +10,6 @@ class DigitalArtWorkAdmin(admin.ModelAdmin):
         'description',
         'size',
         'file_type',
-        'daw_url',
     )
 
 

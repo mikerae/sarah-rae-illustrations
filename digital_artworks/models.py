@@ -6,7 +6,6 @@ from django.conf import settings
 
 class DigitalArtWork(models.Model):
     name = models.CharField(max_length=254)
-    daw_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField()
     image_alt = models.CharField(max_length=254)
     description = models.TextField()
