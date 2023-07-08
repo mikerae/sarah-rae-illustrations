@@ -1,5 +1,7 @@
 from django.db import models
 
+from digital_artworks.models import DigitalArtWork
+
 
 class Category(models.Model):
     name = models.CharField(max_length=245)
@@ -18,7 +20,7 @@ class SubCategory(models.Model):
     category = models.ForeignKey('Category',
                                  null=True,
                                  blank=True,
-                                 on_delete=models.SET_NULL)
+                                 on_delete=models.SET_NULL,)
 
     def __str__(self):
         return self.name
@@ -45,6 +47,11 @@ class Product(models.Model):
                                     null=True,
                                     blank=True,
                                     on_delete=models.SET_NULL)
+    digital_artwork = models.ForeignKey('digital_artworks.DigitalArtWork',
+                                        null=True,
+                                        blank=True,
+                                        on_delete=models.SET_NULL,
+                                        related_name='products')
 
     def __str__(self):
         return self.name
