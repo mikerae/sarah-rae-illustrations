@@ -1,6 +1,7 @@
-from django.db import models
+import os
 
-# Create your models here.
+from django.db import models
+from django.conf import settings
 
 
 class DigitalArtWork(models.Model):
@@ -15,3 +16,8 @@ class DigitalArtWork(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def image_url(self):
+        image_url = os.path.join(settings.MEDIA_ROOT, self.image.url)
+        return image_url
