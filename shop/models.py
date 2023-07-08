@@ -41,3 +41,10 @@ class Product(models.Model):
                                  null=True,
                                  blank=True,
                                  on_delete=models.SET_NULL)
+    subcategory = models.ForeignKey('Subcategory',
+                                    null=True,
+                                    blank=True,
+                                    on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.name
