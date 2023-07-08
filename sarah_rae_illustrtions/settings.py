@@ -46,6 +46,9 @@ INSTALLED_APPS = [
 
     'home',
     'digital_artworks',
+    'about_sarah',
+    'commissions',
+    'shop',
 ]
 
 MIDDLEWARE = [
