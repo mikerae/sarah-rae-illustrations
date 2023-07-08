@@ -123,8 +123,18 @@
                         aria-controls="main-nav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
+                    {% if site_area == '/shop/' %}
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/shop-nav.html' %}
+                    {% elif  site_area == '/digital_artworks/' %}
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/gallery-nav.html' %}
+                    {% else %}
                     {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
+                    {% endif %}
+
                 </nav>
             </div>
         </header>
@@ -144,7 +154,8 @@
                 <div class="col"></div>
                 <div class="col-3 d-flex align-items-center justify-content-between">
                     <a href=""><i class="nav-link fa-brands fa-square-facebook fa-2xl"></i></a>
-                    <a href=""><i class="nav-link fa-brands fa-square-instagram fa-2xl"></i></a>
+                    <a href="https://www.instagram.com/sarahrae.illustrations/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"
+                        target="blank" rel="external"><i class="nav-link fa-brands fa-square-instagram fa-2xl"></i></a>
                 </div>
                 <div class="col"></div>
             </div>
