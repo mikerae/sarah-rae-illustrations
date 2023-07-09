@@ -26,12 +26,12 @@
                     <div class="col-sm- col-md-6 col-lg-4 col-xl-3">
                         <div class="card h-100 border-0 bg-sri logo-text">
                             {% if product.image %}
-                            <a href="">
+                            <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img- my-auto" src="{{ product.image.url }}"
                                     alt="{{ product.name }}">
                             </a>
                             {% else %}
-                            <a href="">
+                            <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
                                     alt="{{ product.name }}">
                             </a>
@@ -47,7 +47,7 @@
                                             <small class="logo-text"><i
                                                     class="fa-sharp fa-solid fa-thumbs-up mr-1"></i>{{ product.likes }}</small>
                                                 {% else %}
-                                                <small class="text-muted">No Likes</small>
+                                                <small class="logo-text">No Likes</small>
                                                 {% endif %}
                                     </div>
                                 </div>
