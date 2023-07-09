@@ -4,6 +4,9 @@ from digital_artworks.models import DigitalArtWork
 
 
 class Category(models.Model):
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=245)
     friendly_name = models.CharField(max_length=245, null=True, blank=True)
 
@@ -15,6 +18,8 @@ class Category(models.Model):
 
 
 class SubCategory(models.Model):
+    class Meta:
+        verbose_name_plural = 'Subcategories'
     name = models.CharField(max_length=245)
     friendly_name = models.CharField(max_length=245, null=True, blank=True)
     category = models.ForeignKey('Category',
