@@ -13,7 +13,9 @@ body {
     background-color: rgb(77, 0, 82);
 }
 
-
+.hr {
+    color: antiquewhite;
+}
 
 /* from Bulma */
 .icon {
@@ -83,6 +85,16 @@ body {
 
 .border-sri {
     border: 1px solid rgb(77, 0, 82) !important;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgb(38, 2, 41);
+    z-index: -1;
 }
 
 /* -------------------------------- Media Queries */

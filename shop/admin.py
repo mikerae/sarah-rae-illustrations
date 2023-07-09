@@ -8,7 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         'price',
         'description',
-        'image_url',
+        'image',
         'likes',
         'category',
         'subcategory',
