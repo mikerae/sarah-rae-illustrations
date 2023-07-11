@@ -1,10 +1,32 @@
-<div class="collapse navbar-collapse" id="main-nav">
+<div class="collapse navbar-collapse " id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'shop' %}" id="all-shop-items-link">
+        <li class="nav-item dropdown">
+            <a class="logo-font dropdown-toggle font-weight-bold nav-link mr-5" href="{% url 'shop' %}"
+                id="all-shop-items-link" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 Shop
             </a>
-        </li>
+            <ul class="dropdown-menu" area-labelledby="all-shop-items-link">
+                <li>
+                    <a class="dropdown-item" href="{% url 'shop' %}">All Products</a>
+                    <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="">Jewellery</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="">Sculpture</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="">Stationary</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="">Art Prints</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="">Books and Tarot Decks</a>
+                </li>
+            </ul>
 
         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'digital_artworks' %}" id="Gallery-link">

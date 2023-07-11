@@ -8,6 +8,7 @@ def index(request):
     """ Return index page view and Digital Art Work context
         data for Carousel.
     """
+    site_area = request.path
     artworks = DigitalArtWork.objects.all()
     carousel_artworks = artworks.filter(carousel=True)
     context = {

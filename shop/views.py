@@ -18,7 +18,7 @@ def shop(request):
             if not query:
                 messages.error(
                     request,
-                    "Please enter your search - it's empty at the moment!"
+                    "Please enter something to search for"
                     )
                 return redirect(reverse('shop'))
 
