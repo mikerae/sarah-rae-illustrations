@@ -1,9 +1,21 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-sri mr-5" href="#" id="">
-                Products
+        <li class="nav-item dropdown">
+            <a class="logo-font dropdown-toggle font-weight-bold nav-link text-sri mr-5" role="button" href="#"
+                id="sort-product-items-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort Products
             </a>
+            <ul class="dropdown-menu" area-labelledby="sort-product-items-link">
+                <li>
+                    <a class="dropdown-item" href="{% url 'shop' %}?sort=price&direction=asc">By Price</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'shop' %}?sort=likes&direction=desc">By Likes</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'shop' %}?sort=category&direction=asc">By Category</a>
+                </li>
+            </ul>
         </li>
 
         <li class="nav-item dropdown">
