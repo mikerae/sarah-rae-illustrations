@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
+from django.db.models import Q
 from .models import Product
 
 
@@ -8,10 +10,27 @@ def shop(request):
     """
     site_area = request.path
     products = Product.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(
+                    request,
+                    "Please enter your search - it's empty at the moment!"
+                    )
+                return redirect(reverse('shop'))
+
+            queries = Q(
+                name__icontains=query
+                ) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     context = {
         'site_area': site_area,
         'products': products,
+        'search_term': query,
     }
 
     return render(request, 'shop/shop.html', context)
