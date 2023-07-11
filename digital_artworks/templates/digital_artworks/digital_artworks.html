@@ -26,12 +26,12 @@
                     <div class="col-sm- col-md-6 col-lg-4 col-xl-3">
                         <div class="card h-100 border-0 bg-sri logo-text">
                             {% if digital_artwork.image %}
-                            <a href="">
-                                <img class="card-img-top img- my-auto" src="{{ digital_artwork.image.url }}"
+                            <a href="{% url 'digital_artwork_detail' digital_artwork.id %}">
+                                <img class=" card-img-top img- my-auto" src="{{ digital_artwork.image.url }}"
                                     alt="{{ digital_artwork.name }}">
                             </a>
                             {% else %}
-                            <a href="">
+                            <a href="{% url 'digital_artwork_detail' digital_artwork.id %}">
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
                                     alt="{{ digital_artwork.name }}">
                             </a>
@@ -45,7 +45,7 @@
                                         {% if request.user.is_superuser %}
                                         {% if digital_artwork.carousel %}
                                         <small><i class="fa-solid fa-display mr-3"></i>This
-                                            art work is included in the Carusel</small>
+                                            art work is included in the Carousel</small>
                                         {% endif %}
                                         {% endif %}
                                     </div>
