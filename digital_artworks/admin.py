@@ -8,8 +8,6 @@ class DigitalArtWorkAdmin(admin.ModelAdmin):
         'image',
         'image_alt',
         'description',
-        'size',
-        'file_type',
     )
 
 
