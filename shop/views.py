@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
 
 
 def shop(request):
@@ -11,8 +11,15 @@ def shop(request):
     site_area = request.path
     products = Product.objects.all()
     query = None
+    category = None
 
     if request.GET:
+
+        if 'category' in request.GET:
+            category = request.GET['category']
+            products = products.filter(category__name=category)
+            print(products)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -31,6 +38,7 @@ def shop(request):
         'site_area': site_area,
         'products': products,
         'search_term': query,
+        'current_category': category,
     }
 
     return render(request, 'shop/shop.html', context)

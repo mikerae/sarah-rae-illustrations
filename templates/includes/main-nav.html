@@ -12,21 +12,23 @@
                     <div class="dropdown-divider"></div>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="">Jewellery</a>
+                    <a class="dropdown-item" href="{% url 'shop' %}?category=jewellery">Jewellery</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="">Sculpture</a>
+                    <a class="dropdown-item" href="{% url 'shop' %}?category=sculpture">Sculpture</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="">Stationary</a>
+                    <a class="dropdown-item" href="{% url 'shop' %}?category=stationary">Stationary</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="">Art Prints</a>
+                    <a class="dropdown-item" href="{% url 'shop' %}?category=art-prints">Art Prints</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="">Books and Tarot Decks</a>
+                    <a class="dropdown-item" href="{% url 'shop' %}?category=books-and-tarot-decks">Books and Tarot
+                        Decks</a>
                 </li>
             </ul>
+        </li>
 
         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'digital_artworks' %}" id="Gallery-link">
