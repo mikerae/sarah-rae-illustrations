@@ -10,5 +10,53 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="text-sri">Gallery Temporary Landing Page</h1>
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col  text-center mt-3">
+            <h2 class="logo-font logo-text">Gallery</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="digital_artwork-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for digital_artwork in digital_artworks %}
+                    <div class="col-sm- col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0 bg-sri logo-text">
+                            {% if digital_artwork.image %}
+                            <a href="">
+                                <img class="card-img-top img- my-auto" src="{{ digital_artwork.image.url }}"
+                                    alt="{{ digital_artwork.name }}">
+                            </a>
+                            {% else %}
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ digital_artwork.name }}">
+                            </a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ digital_artwork.name }}</p>
+                            </div>
+                            <div class="card-footer pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        {% if request.user.is_superuser %}
+                                        {% if digital_artwork.carousel %}
+                                        <small class="logo-text"><i class="fa-solid fa-gallery-thumbnails mr-1"></i>This
+                                            art work is included in the Carusel</small>
+                                        {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
