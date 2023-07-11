@@ -37,7 +37,7 @@ body {
 }
 
 .main-logo-link {
-    width: 100%;
+    width: fit-content;
 }
 
 .logo-text {
@@ -78,7 +78,9 @@ body {
 .nav-menu:focus,
 .nav-link:focus,
 .nav-link:hover,
-.nav-link:active {
+.main-logo-link:hover,
+.main-logo-link:active,
+.main-logo-link:focus {
     background: rgb(248, 139, 104);
     color: rgb(77, 0, 82);
 }
