@@ -12,6 +12,7 @@ def shop(request):
     products = Product.objects.all()
     query = None
     category = None
+    subcategory = None
     sort = None
     direction = None
 
@@ -36,6 +37,11 @@ def shop(request):
             products = products.filter(category__name=category)
             print(products)
 
+        if 'subcategory' in request.GET:
+            subcategory = request.GET['subcategory']
+            products = products.filter(subcategory__name=subcategory)
+            print(products)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -57,6 +63,7 @@ def shop(request):
         'products': products,
         'search_term': query,
         'current_category': category,
+        'current_subcategory': subcategory,
         'current_sorting': current_sorting
     }
 

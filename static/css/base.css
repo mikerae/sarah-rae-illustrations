@@ -62,6 +62,11 @@ body {
     color: rgb(248, 139, 104);
 }
 
+a.logo-text:hover {
+    color: rgb(248, 139, 104);
+    text-decoration: none;
+}
+
 .nav-menu,
 .btn-sri,
 .nav-link {
