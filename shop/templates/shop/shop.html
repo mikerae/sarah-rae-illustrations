@@ -13,31 +13,78 @@
 <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col  text-center mt-3">
-            <h2 class="logo-font logo-text">Products</h2>
-            <h3 class="logo-font logo-text">Current Sorting: {{ current_sorting }}</h3>
-                {% if current_category %}
-                <a class="cat-badge text-decoration-none" href="{% url 'shop' %}?category={{ current_category.name }}">
-                    <span class="p-2 mt-2 mx-2 badge badge-pill badge-sri rounded-1 border border-sri">
-                        {{ current_category.friendly_name }}</span>
-                        {% endif %}
-                </a>
-                {% if current_subcategory %}
-                <a class=" text-decoration-none" href="{% url 'shop' %}?category={{ current_subcategory.name }}">
-                    <a class="cat-badge text-decoration-none"
-                        href="{% url 'shop' %}?category={{ current_subcategory.name }}">
-                        <span class="p-2 mt-2 mx-2 badge badge-pill badge-sri rounded-1 border border-sri">
-                            {{ current_subcategory.friendly_name }}</span>
-                    </a>
+        <div class="col text-center mt-3">
+            <h2 class="logo-font logo-text">Shop</h2>
+            {% if current_category %}
+            <a class="cat-badge text-decoration-none" href="{% url 'shop' %}?category={{ current_category.name }}">
+                <span class="p-2 mt-2 mx-2 badge badge-pill badge-sri rounded-1 border border-sri">
+                    {{ current_category.friendly_name }}</span>
                     {% endif %}
-
-                    <hr class="w-50 mb-1">
+            </a>
+            {% if current_subcategory %}
+            <a class=" text-decoration-none" href="{% url 'shop' %}?category={{ current_subcategory.name }}">
+                <a class="cat-badge text-decoration-none"
+                    href="{% url 'shop' %}?category={{ current_subcategory.name }}">
+                    <span class="p-2 mt-2 mx-2 badge badge-pill badge-sri rounded-1 border border-sri">
+                        {{ current_subcategory.friendly_name }}</span>
+                </a>
+                {% endif %}
         </div>
     </div>
     <div class="row">
         <div class="col">
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
+
+                <!-- Significantly copied from Code Institue Boutique Ado Walkthrough with slight modifications -->
+                <div class="row mt-1 mb-2">
+                    <div
+                        class="col-12 col-md my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-50">
+                            <select id="sort-selector"
+                                class="custom-select custom-select-sm border rounded-0 border-sri {% if current_sorting != 'None_None' %}bg-sri-light text-sri-dark{% else %}logo-text bg-sri{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by
+                                    ---
+                                </option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>
+                                    Price
+                                    (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>
+                                    Price
+                                    (high to low)</option>
+                                <option value="likes_asc" {% if current_sorting == 'likes_asc' %}selected{% endif %}>
+                                    Likes
+                                    (low to high)</option>
+                                <option value="likes_desc" {% if current_sorting == 'likes_desc' %}selected{% endif %}>
+                                    Likes (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name
+                                    (A-Z)
+                                </option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>
+                                    Name
+                                    (Z-A)</option>
+                                <option value="category_asc"
+                                    {% if current_sorting == 'category_asc' %}selected{% endif %}>
+                                    Category
+                                    (A-Z)</option>
+                                <option value="category_desc"
+                                    {% if current_sorting == 'category_desc' %}selected{% endif %}>
+                                    Category
+                                    (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="logo-text mt-3 text-center text-md-left">
+                            {% if search_term or current_category or current_sorting or current_subcategory != 'None_None' %}
+                            <span class="small"><a class="logo-text" href="{% url 'shop' %}">Shop Home</a> | </span>
+                            {% endif %}
+                            {{ products|length }} Products{% if search_term %} found for
+                            <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
+                <!-- End copy -->
+
                 <div class="row">
                     {% for product in products %}
                     <div class="col-sm- col-md-6 col-lg-4 col-xl-3">

@@ -13,6 +13,10 @@ body {
     background-color: rgb(77, 0, 82);
 }
 
+.bg-sri-light {
+    background-color: rgb(248, 139, 104);
+}
+
 .hr {
     color: antiquewhite;
 }
@@ -62,6 +66,10 @@ body {
     color: rgb(248, 139, 104);
 }
 
+.text-sri-dark {
+    color: rgb(77, 0, 82);
+}
+
 a.logo-text:hover {
     color: rgb(248, 139, 104);
     text-decoration: none;
@@ -92,6 +100,10 @@ a.logo-text:hover {
 
 .border-sri {
     border: 1px solid rgb(77, 0, 82) !important;
+}
+
+.border-sri-light {
+    border: 1px solid rgb(248, 139, 104) !important;
 }
 
 .badge-sri {
