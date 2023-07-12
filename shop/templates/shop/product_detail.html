@@ -29,15 +29,35 @@
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
                 <p class="mb-0">{{ product.name }}</p>
-                    <p class="mb-0">{{ product.category }}: {{ product.subcategory }}</p>
-                        <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                            {% if product.likes %}
-                            <small class="logo-text"><i
-                                    class="fa-sharp fa-solid fa-thumbs-up mr-1"></i>{{ product.likes }}</small>
-                                {% else %}
-                                <small class="logo-text">No Likes</small>
-                                {% endif %}
-                                <p class="mt-3">{{ product.description }}</p>
+                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                        {% if product.category %}
+                        {% if product.subcategory %}
+
+                        <p class="small m-1 mb-0">
+                            <i class="fas fa-tag mr-1"></i>
+                            <a class="logo-text" href="{% url 'shop' %}?category={{ product.category.name }}">
+                                {{ product.category.friendly_name}}
+                                                </a>: <a class="logo-text"
+                                    href="{% url 'shop' %}?subcategory={{ product.subcategory.name }}">
+                                    {{ product.subcategory.friendly_name}}
+                                            </a>
+                        </p>
+                        {% else %}
+                        <p class="small m-1 mb-0">
+                            <i class="fas fa-tag mr-1"></i>
+                            <a class="logo-text" href="{% url 'shop' %}?category={{ product.category.name }}">
+                                {{ product.category.friendly_name}}
+                                                </a>
+                        </p>
+                        {% endif %}
+                        {% endif %}
+                        {% if product.likes %}
+                        <small class="logo-text"><i
+                                class="fa-sharp fa-solid fa-thumbs-up mr-1"></i>{{ product.likes }}</small>
+                            {% else %}
+                            <small class="logo-text">No Likes</small>
+                            {% endif %}
+                            <p class="mt-3">{{ product.description }}</p>
             </div>
         </div>
     </div>
