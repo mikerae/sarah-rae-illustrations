@@ -71,33 +71,33 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 navbar-nav nav-pills">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
-                            <a class="nav-link" href="" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-                                area-expanded="false">
+                            <a class="nav-link px-lg-2" href="" id="user-options" data-toggle="dropdown"
+                                aria-haspopup="true" area-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     <p class="my-0">My Account</p>
                                 </div>
                             </a>
-                            <div class="dropdown-menu border-0 py-0" aria-labelledby="user-options">
+                            <div class="dropdown-menu nav-menu py-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <a href="" class="nav-link dropdowm-item">Product Management</a>
-                                <a href="" class="nav-link dropdowm-item">Gallery Management</a>
-                                <a href="/admin/" class="nav-link dropdowm-item">Site Administration</a>
+                                <a href="" class="dropdown-item nav-link">Product Management</a>
+                                <a href="" class="dropdown-item nav-link">Gallery Management</a>
+                                <a href="/admin/" class="dropdown-item nav-link">Site Administration</a>
                                 {% endif %}
-                                <a href="" class="nav-link dropdowm-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="nav-link dropdowm-item">Logout</a>
+                                <a href="" class="dropdown-item nav-link">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item nav-link">Logout</a>
                                 {% else %}
-                                <a href="{% url 'account_signup' %}" class="nav-link dropdowm-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="nav-link dropdowm-item">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item nav-link">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item nav-link">Login</a>
                                 {% endif %}
                             </div>
                         </li>
                         <li class="nav-menu list-inline-item">
-                            <a class="nav-link {% if items_total %}text-info font-weight-bold{% endif %}"
+                            <a class="nav-link px-lg-2 {% if items_total %}text-info font-weight-bold{% endif %}"
                                 href="{% url 'cart' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -118,18 +118,9 @@
                     </ul>
                 </div>
             </div>
-            <!-- <div class="row bg-sri">
-                <nav class="navbar navbar-expand-lg  w-100">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                        aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    {% include 'includes/mobile-top-header.html' %}
-                    {% include 'includes/main-nav.html' %}
-                </nav>
-            </div> -->
+
             <div class="row bg-sri">
-                <nav class="navbar navbar-dark navbar-expand-lg w-100">
+                <nav class="navbar my-0 navbar-dark navbar-expand-lg w-100">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                         aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span id="hamburger" class="navbar-toggler-icon"></span>

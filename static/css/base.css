@@ -63,7 +63,7 @@ body {
 }
 
 .text-sri {
-    color: rgb(248, 139, 104) !important;
+    color: rgb(248, 139, 104);
 }
 
 .text-sri-dark {
@@ -89,8 +89,9 @@ a.logo-text:hover {
 .nav-menu:hover,
 .nav-menu:active,
 .nav-menu:focus,
-.nav-link:focus,
 .nav-link:hover,
+.nav-link:active,
+.nav-link:focus,
 .main-logo-link:hover,
 .main-logo-link:active,
 .main-logo-link:focus {
