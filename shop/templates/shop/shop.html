@@ -16,6 +16,20 @@
         <div class="col  text-center mt-3">
             <h2 class="logo-font logo-text">Products</h2>
             <h3 class="logo-font logo-text">Current Sorting: {{ current_sorting }}</h3>
+                {% if current_category %}
+                <a class="text-decoration-none" href="{% url 'shop' %}?category={{ current_category.name }}">
+                    <span class="p-2 mt-2  badge badge-success rounded-0 border border-light">
+                        {{ current_category.friendly_name }}</span>
+                        {% endif %}
+                </a>
+                {% if current_subcategory %}
+                <a class="text-decoration-none" href="{% url 'shop' %}?category={{ current_subcategory.name }}">
+                    <span class="p-2 mt-2  badge badge-success rounded-0 border border-light">
+                        {{ current_subcategory.friendly_name }}</span>
+                </a>
+                {% endif %}
+
+                <hr class="w-50 mb-1">
         </div>
     </div>
     <div class="row">

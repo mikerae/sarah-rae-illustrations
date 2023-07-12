@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, SubCategory
 
 
 def shop(request):
@@ -35,12 +35,14 @@ def shop(request):
         if 'category' in request.GET:
             category = request.GET['category']
             products = products.filter(category__name=category)
-            print(products)
+            category = get_object_or_404(Category, name=category)
+            print(f'Catergory: {category}')
 
         if 'subcategory' in request.GET:
             subcategory = request.GET['subcategory']
             products = products.filter(subcategory__name=subcategory)
-            print(products)
+            subcategory = get_object_or_404(SubCategory, name=subcategory)
+            category = subcategory.category
 
         if 'q' in request.GET:
             query = request.GET['q']
