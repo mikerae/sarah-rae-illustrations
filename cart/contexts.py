@@ -1,3 +1,4 @@
+from django.conf import settings
 
 
 def cart_contents(requests):
@@ -6,10 +7,10 @@ def cart_contents(requests):
     total = 0
     product_count = 0
 
-    centext = {
-        'cart_items' = cart_items,
-        'total' = total,
-        'product_count' = product_count,
+    context = {
+        'cart_items': cart_items,
+        'total': total,
+        'product_count': product_count,
     }
 
     return context

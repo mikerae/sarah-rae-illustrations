@@ -82,6 +82,11 @@ a.logo-text:hover {
     color: rgb(248, 139, 104);
 }
 
+.btn-sri {
+    border: 3px solid rgb(248, 139, 104);
+}
+
+
 
 .btn-sri:hover,
 .btn-sri:active,
