@@ -13,10 +13,24 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container-fluid">
+<div class="container mb-2">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font logo-text">Shopping Cart</h2>
+            <h2 class="logo-font mb-4 logo-text">Shopping Cart</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col logo-text">
+            {% if cart_items %}
+            <div class="tableresponsive rounded"></div>
+            {% else %}
+            <p class="lead mb-5">Your Shopping Cart in empty.</p>
+            <a href="{% url 'shop' %}" class="btn btn-sri rounded-0 btn-lg">
+                <span class="icon"><i class="fas fa-chevron-left"></i>
+                </span>
+            </a>
+            {% endif %}
+
         </div>
     </div>
 </div>
