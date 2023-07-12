@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="logo-text mt-3 text-center text-md-left">
-                            {% if search_term or current_category or current_sorting or current_subcategory != 'None_None' %}
+                            {% if search_term or current_category or current_sorting != 'None_None' %}
                             <span class="small"><a class="logo-text" href="{% url 'shop' %}">Shop Home</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for
