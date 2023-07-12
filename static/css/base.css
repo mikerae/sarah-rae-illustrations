@@ -94,6 +94,17 @@ a.logo-text:hover {
     border: 1px solid rgb(77, 0, 82) !important;
 }
 
+.badge-sri {
+    color: rgb(218, 145, 12) !important;
+    border: 1px solid rgb(248, 139, 104) !important;
+    border-radius: 20;
+}
+
+a.cat-badge>span.badge:hover {
+    background: rgb(248, 139, 104) !important;
+    color: rgb(77, 0, 82) !important;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
