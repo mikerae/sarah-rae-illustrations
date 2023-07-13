@@ -9,6 +9,10 @@ body {
     height: calc(100vh - 175px);
 }
 
+.body-footer-adjust {
+    padding-bottom: 45px;
+}
+
 .bg-sri {
     background-color: rgb(77, 0, 82);
 }
@@ -202,7 +206,7 @@ a.cat-badge>span.badge:hover {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 80px;
     }
 
     body {
