@@ -24,8 +24,8 @@
         <div class="col">
             {% if cart_items %}
             <div class="table-responsive rounded">
-                <table class="table table-sm table-borderless">
-                    <thead class="text-sri-logo">
+                <table class="table table-sm table-borderless text-sri-logo">
+                    <thead>
                         <tr>
                             <th scope="col">Product Info</th>
                             <th scope="col"></th>
@@ -36,29 +36,30 @@
                     </thead>
                     {% for item in cart_items %}
                     <tr>
-                        <td class="p-3 w-25 " src="{{ item.product.img.url }}">
-                            <img class="img-fluid-rounded">
+                        <td class="p-3 w-25 ">
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                         </td>
-                    </tr>
-                    <tr>
+
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                            <p class="my-0 small">SKU: {{ item.product.sku|upper }}</p>
                         </td>
-                        <td class="py-3">
-                            <p class="my-0">£{{ item.product.price }}</p>
-                        </td>
-                        <td class="py- w-25">
-                            <p class="my-0">{{ item.product.quantity }}</p>
 
-                        </td>
                         <td class="py-3">
                             <p class="my-0">£{{ item.product.price }}</p>
+                        </td>
+
+                        <td class="py-3 w-25">
+                            <p class="my-0">{{ item.quantity }}</p>
+                        </td>
+
+                        <td class="py-3">
+                            <p class="my-0">£{{ item.product.price}}</p>
                         </td>
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td colspan="5" class="pt-5 text-right">
+                        <td colspan="5" class="pt-5 text-sri-logo text-right">
                             <h4 class="mt-4"><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h4>
 
                         </td>
