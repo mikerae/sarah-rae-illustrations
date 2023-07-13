@@ -63,7 +63,7 @@ body {
 }
 
 .text-sri {
-    color: rgb(248, 139, 104);
+    color: rgb(248, 139, 104) !important;
 }
 
 .text-sri-dark {
@@ -85,8 +85,6 @@ a.logo-text:hover {
 .btn-sri {
     border: 3px solid rgb(248, 139, 104);
 }
-
-
 
 .btn-sri:hover,
 .btn-sri:active,
@@ -152,6 +150,17 @@ a.cat-badge>span.badge:hover {
     max-width: 100%;
 }
 
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 60px;
+    right: 35px;
+}
+
+.btt-link {
+    cursor: pointer;
+}
 
 /* copied from CI Boutique Ado Walkthrough for modification later */
 

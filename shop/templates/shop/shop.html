@@ -147,4 +147,52 @@
         </div>
     </div>
 </div>
+<div class="btt-button rounded-0 border border-sri-light">
+    <a class="btt-link d-flex nav-link h-100">
+        <i class="fa-solid fa-arrow-up mx-auto my-auto"></i>
+    </a>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- Script copied and very slightly modified from Code Institute Boutique Ado Walk-through.
+        Ensures the code below is appended to any other code in the block,
+        rather than replacing it -->
+
+<!-- Allows user to scroll to top of shop window e-->
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+
+<!-- Provides sort functionality to sort-selector box -->
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        let selector = $(this);
+        let currentUrl = new URL(window.location);
+
+        console.log(selector);
+        console.log(currentUrl);
+
+        let selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split('_')[0];
+            var direction = selectedVal.split('_')[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort", sort);
+            currentUrl.searchParams.delete("direction", direction);
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+<!-- End copy -->
+
 {% endblock %}
