@@ -177,6 +177,10 @@ a.cat-badge>span.badge:hover {
     .container {
         max-width: 80%;
     }
+
+    #footer {
+        max-width: 100%;
+    }
 }
 
 /* fixed top navbar only on medium and up */
