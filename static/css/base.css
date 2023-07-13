@@ -13,6 +13,10 @@ body {
     background-color: rgb(77, 0, 82);
 }
 
+.dropdown-divider {
+    border-color: rgb(248, 139, 104);
+}
+
 .bg-sri-light {
     background-color: rgb(248, 139, 104);
 }

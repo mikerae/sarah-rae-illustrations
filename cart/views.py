@@ -13,7 +13,10 @@ def cart(request):
 
 
 def add_to_cart(request, item_id):
-    """ Add a quantity of the desired product to the shopping cart """
+    """
+    Add a quantity of the desired product to the shopping cart.
+    Sessions are used to store cart data during a site user's visit.
+    """
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
