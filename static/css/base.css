@@ -103,7 +103,7 @@ a.logo-text:hover {
 .main-logo-link:active,
 .main-logo-link:focus {
     background: rgb(248, 139, 104);
-    color: rgb(77, 0, 82);
+    color: rgb(77, 0, 82) !important;
 }
 
 .border-sri {
