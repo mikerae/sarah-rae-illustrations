@@ -102,11 +102,11 @@
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
-                                        {% if items_total %}
-                                        {% if items_total == 1 %}
-                                        {{ items_total }} item
+                                        {% if product_count %}
+                                        {% if product_count == 1 %}
+                                        {{ product_count }} item
                                             {% else  %}
-                                        {{ items_total }} items
+                                        {{ product_count }} items
                                             {% endif %}
                                         {% else %}
                                         0 items

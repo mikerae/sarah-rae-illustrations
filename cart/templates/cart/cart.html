@@ -24,14 +24,15 @@
         <div class="col">
             {% if cart_items %}
             <div class="table-responsive rounded"></div>
-            {% else %}
-            <p class="lead mb-5 logo-text">Your Shopping Cart is empty.</p>
-            <a href="{% url 'shop' %}" class="btn btn-sri mt-5">
-                <span class="icon"><i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="logo-font">Keep Shopping</span>
-            </a>
-            {% endif %}
+            <h5 class="logo-font logo-text mb-4">{{ cart_items }}</h5>
+                {% else %}
+                <p class="lead mb-5 logo-text">Your Shopping Cart is empty.</p>
+                <a href="{% url 'shop' %}" class="btn btn-sri mt-5">
+                    <span class="icon"><i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="logo-font">Keep Shopping</span>
+                </a>
+                {% endif %}
 
         </div>
     </div>
