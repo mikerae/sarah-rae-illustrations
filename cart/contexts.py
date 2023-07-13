@@ -1,4 +1,9 @@
-from django.conf import settings
+"""
+    This is the source file for a custom context processor, 
+    which provides site-level access to various data.
+    It is made visible to Django by including 'cart.contexts.cart_contents'
+    in the 'context_processors' list in the project settings.
+"""
 
 
 def cart_contents(requests):
