@@ -45,7 +45,7 @@ body {
 }
 
 .logo-text {
-    color: rgb(218, 145, 12);
+    color: rgb(218, 145, 12) !important;
 }
 
 #homeCarousel {

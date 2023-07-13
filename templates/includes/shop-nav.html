@@ -26,11 +26,11 @@
             </a>
             <ul class="dropdown-menu bg-sri" area-labelledby="all-product-items-link">
                 <li>
-                    <a class="dropdown-item nav-menu" href="{% url 'shop' %}">All Products</a>
+                    <a class="dropdown-item nav-link" href="{% url 'shop' %}">All Products</a>
                     <div class="dropdown-divider nav-menu "></div>
                 </li>
                 <li>
-                    <a class="dropdown-item nav-menu" href="{% url 'shop' %}?category=jewellery">Jewellery</a>
+                    <a class="dropdown-item nav-link" href="{% url 'shop' %}?category=jewellery">Jewellery</a>
                 </li>
                 <li>
                     <a class="dropdown-item nav-menu" href="{% url 'shop' %}?category=sculpture">Sculpture</a>
@@ -50,22 +50,19 @@
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-sri mr-5" href="{% url 'digital_artworks' %}"
-                id="Gallery-link">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'digital_artworks' %}" id="Gallery-link">
                 Gallery
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-sri mr-5" href="{% url 'commissions' %}"
-                id="commissions-link">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'commissions' %}" id="commissions-link">
                 Commisions
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-sri" href="{% url 'about_sarah' %}"
-                id="about-sarah=link">
+            <a class="logo-font font-weight-bold nav-link" href="{% url 'about_sarah' %}" id="about-sarah=link">
                 About Sarah
             </a>
         </li>
