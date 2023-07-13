@@ -43,8 +43,10 @@
                         </td>
 
                         <td class="py-3">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0 lead"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small">SKU: {{ item.product.sku|upper }}</p>
+                                <p class="my-0 ">{{ item.product.category.friendly_name }}</p>
+                                    <p class="my-0 ">{{ item.product.subcategory.friendly_name}}</p>
                         </td>
 
                         <td class="py-3">
