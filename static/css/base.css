@@ -151,6 +151,20 @@ a.cat-badge>span.badge:hover {
     border-bottom: 3px solid rgb(248, 139, 104);
 }
 
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 60px;
+    right: 35px;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Vertically Center Carousel on  larger Medium devices (tablets, more than 992px) */
@@ -168,18 +182,6 @@ a.cat-badge>span.badge:hover {
 
 .container {
     max-width: 100%;
-}
-
-.btt-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 60px;
-    right: 35px;
-}
-
-.btt-link {
-    cursor: pointer;
 }
 
 /* copied from CI Boutique Ado Walkthrough for modification later */
