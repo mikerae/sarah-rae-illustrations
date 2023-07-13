@@ -48,7 +48,8 @@ hr {
     width: fit-content;
 }
 
-.logo-text {
+.logo-text,
+.text-sri-logo {
     color: rgb(218, 145, 12) !important;
 }
 
@@ -74,8 +75,8 @@ hr {
     color: rgb(77, 0, 82);
 }
 
-a.logo-text:hover {
-    color: rgb(248, 139, 104);
+a.text-sri-logo:hover {
+    color: rgb(248, 139, 104) !important;
     text-decoration: none;
 }
 
@@ -101,7 +102,10 @@ a.logo-text:hover {
 .nav-link:focus,
 .main-logo-link:hover,
 .main-logo-link:active,
-.main-logo-link:focus {
+.main-logo-link:focus,
+.logo-text:hover,
+.logo-text:active,
+.logo-text:focus {
     background: rgb(248, 139, 104);
     color: rgb(77, 0, 82) !important;
 }

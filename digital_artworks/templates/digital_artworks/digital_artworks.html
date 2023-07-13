@@ -14,7 +14,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col  text-center mt-3">
-            <h2 class="logo-font logo-text">Gallery</h2>
+            <h2 class="logo-font text-sri-logo">Gallery</h2>
         </div>
     </div>
     <div class="row">
@@ -24,7 +24,7 @@
                 <div class="row">
                     {% for digital_artwork in digital_artworks %}
                     <div class="col-sm- col-md-6 col-lg-4 col-xl-3">
-                        <div class="card h-100 border-0 bg-sri logo-text">
+                        <div class="card h-100 border-0 bg-sri text-sri-logo">
                             {% if digital_artwork.image %}
                             <a href="{% url 'digital_artwork_detail' digital_artwork.id %}">
                                 <img class=" card-img-top img- my-auto" src="{{ digital_artwork.image.url }}"
