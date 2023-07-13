@@ -143,6 +143,14 @@ a.cat-badge>span.badge:hover {
     z-index: -1;
 }
 
+.qty_input {
+    height: 45px;
+    color: rgb(248, 139, 104);
+    background: rgb(77, 0, 82);
+    border-top: 3px solid rgb(248, 139, 104);
+    border-bottom: 3px solid rgb(248, 139, 104);
+}
+
 /* -------------------------------- Media Queries */
 
 /* Vertically Center Carousel on  larger Medium devices (tablets, more than 992px) */
