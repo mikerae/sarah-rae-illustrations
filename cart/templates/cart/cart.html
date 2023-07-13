@@ -14,7 +14,7 @@
 <div class="container mb-2">
     <div class="row">
         <div class="col">
-            <hr class="text-sri-dark">
+            <hr>
             <h2 class="logo-font logo-text mb-4">Shopping Cart</h2>
             <hr>
         </div>
@@ -22,18 +22,18 @@
 
     <div class="row">
         <div class="col">
-            <!-- {% if cart_items %}
+            {% if cart_items %}
             <div class="table-responsive rounded"></div>
-            {% else %} -->
+            {% else %}
             <p class="lead mb-5 logo-text">Your Shopping Cart is empty.</p>
             <a href="{% url 'shop' %}" class="btn btn-sri mt-5">
                 <span class="icon"><i class="fas fa-chevron-left"></i>
                 </span>
                 <span class="logo-font">Keep Shopping</span>
             </a>
-            <!-- {% endif %} -->
+            {% endif %}
+
         </div>
     </div>
 </div>
-
 {% endblock %}
