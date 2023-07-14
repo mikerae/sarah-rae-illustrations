@@ -113,7 +113,7 @@
                 </table>
             </div>
             {% else %}
-            <p class="lead mb-5 logo-text">Your Shopping Cart is empty.</p>
+            <p class="lead mb-5 text-sri-logo">Your Shopping Cart is empty.</p>
             <a href="{% url 'shop' %}" class="btn btn-sri mt-5">
                 <span class="icon"><i class="fas fa-chevron-left"></i>
                 </span>
@@ -145,11 +145,10 @@
     $('.remove-item').click(function (e) {
         let csrfToken = "{{ csrf_token }}";
         let itemId = $(this).attr('id').split('remove_')[1];
-        let url = `/cart/remove/${itemId}`;
+        let url = `/cart/remove/${itemId}/`;
         let data = {
             'csrfmiddlewaretoken': csrfToken,
         };
-
         $.post(url, data)
             .done(function () {
                 location.reload();
