@@ -14,7 +14,9 @@
 <div class="container-fluid body-footer-adjust">
     <div class="row">
         <div class="col text-center mt-3">
+            <hr class="w-25">
             <h2 class="logo-font text-sri-logo">Shop</h2>
+            <hr class="w-25">
             {% if current_category %}
             <a class="cat-badge text-decoration-none" href="{% url 'shop' %}?category={{ current_category.name }}">
                 <span class="p-2 mt-2 mx-2 badge badge-pill badge-sri rounded-1 border border-sri">
