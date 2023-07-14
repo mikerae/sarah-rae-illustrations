@@ -61,4 +61,25 @@
         </div>
     </div>
 </div>
+<div class="btt-button rounded-0 border border-sri-light">
+    <a class="btt-link d-flex nav-link h-100">
+        <i class="fa-solid fa-arrow-up mx-auto my-auto"></i>
+    </a>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- Script copied and very slightly modified from Code Institute Boutique Ado Walk-through.
+        Ensures the code below is appended to any other code in the block,
+        rather than replacing it -->
+
+<!-- Allows user to scroll to top of shop window e-->
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    });
+</script>
+
 {% endblock %}
