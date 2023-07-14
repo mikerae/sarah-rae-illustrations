@@ -10,6 +10,46 @@
         </button>
     </div>
     <div class="toast-body bg-sri-light text-sri-dark">
-        {{ message }}
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr class="mt-1 mb-2">
+            </div>
+        </div>
+        {% if product_count > 0 %}
+        <p class="text-sri-dark logo-font py-1">Your Shoping Cart ({{ product_count }})</p>
+            <div class="cart-notofication-wrapper">
+                {% for item in cart_items %}
+                <div class="row">
+                    <div class="col-3 my-1">
+                        <img class="w-100" src="{{ item.product.image.url }}">
+                    </div>
+                    <div class="col-9">
+                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        <p class="my-0 small">Categories: {{ item.product.category }} |
+                            {{ item.product.subcategory }}</p>
+                            <p c;ass="my-0 small txt-muted">Qty: {{ item.quantity }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col">
+                    <strong>
+                        <p class="mt-3 mb-1 text-sri-dark">
+                            Total
+                            <span class="float-right">£{{ total|floatformat:2 }}</span>
+                        </p>
+                    </strong>
+                    <a href="" class="btn btn-sri mt-5">
+                        <span class="icon"><i class="fas fa-lock"></i>
+                        </span>
+                        <span class="logo-font">Go To Secure Checkout</span>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
     </div>
-    </div>
+
+</div>
+</div>
