@@ -16,12 +16,13 @@ class OrderForm(forms.ModelForm):
         labels and set autofocus on first field
         """
 
-        super.().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         placeholders = {
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
             'country': 'Country',
+            'postcode': 'Post Code',
             'town_or_city': 'Town or City',
             'street_address_1': 'Street Address 1',
             'street_address_2': 'Street Address 2',
@@ -31,7 +32,7 @@ class OrderForm(forms.ModelForm):
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
-                placeholder = f'{'placeholders'[field]} *'
+                placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder

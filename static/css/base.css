@@ -26,7 +26,7 @@ body {
 }
 
 hr {
-    background-color: rgb(218, 145, 12);
+    background-color: rgb(218, 145, 12) !important;
 }
 
 .toast-body hr {
@@ -86,6 +86,10 @@ hr {
 a.text-sri-logo:hover {
     color: rgb(248, 139, 104) !important;
     text-decoration: none;
+}
+
+.text-muted {
+    color: rgb(218, 145, 12) !important;
 }
 
 .nav-menu,

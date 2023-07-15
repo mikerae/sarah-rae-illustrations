@@ -132,9 +132,14 @@
                     {% elif  site_area == '/digital_artworks/' %}
                     {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/gallery-nav.html' %}
-                    {% else %}
+                    {% elif site_area == '/about_sarah/' %}
                     {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
+                    {% elif site_area == '/commissions/' %}
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/main-nav.html' %}
+                    {% else %}
+                    <!-- Shopping Cart and Checkout pages dont need lower nav options -->
                     {% endif %}
 
                 </nav>
