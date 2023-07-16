@@ -35,7 +35,7 @@ var style = {
         fontSize: '19px',
     },
 }
-var card = elements.create('card', {
+var payment = elements.create('card', {
     style: style
 });
 
