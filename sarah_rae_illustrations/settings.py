@@ -78,7 +78,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'sarah_rae_illustrtions.urls'
+ROOT_URLCONF = 'sarah_rae_illustrations.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
