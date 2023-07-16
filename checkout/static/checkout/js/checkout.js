@@ -9,12 +9,15 @@
     https://stripe.com/docs/js/element/the_element_container?type=card
 */
 
-var stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
-var id_client_secret = $('#id_client_secret').text().slice(1, -1);
-var stripe = Stripe(stripe_public_key);
-var elements = stripe.elements();
+const stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
+const id_client_secret = $('#id_client_secret').text().slice(1, -1);
+const stripe = Stripe(stripe_public_key);
 
-var style = {
+
+
+let elements = stripe.elements();
+
+let style = {
     base: {
         iconColor: '#4d005299',
         color: '#4d0052d9',
@@ -35,8 +38,30 @@ var style = {
         fontSize: '19px',
     },
 }
-var payment = elements.create('card', {
+let card = elements.create('card', {
     style: style
 });
 
 card.mount('#card-element');
+
+// const appearance = {
+//     theme: 'stripe',
+// };
+// elements = stripe.elements({
+//     appearance,
+//     clientSecret
+// });
+
+// const linkAuthenticationElement = elements.create("linkAuthentication");
+// linkAuthenticationElement.mount("#link-authentication-element");
+
+// linkAuthenticationElement.on('change', (event) => {
+//     emailAddress = event.value.email;
+// });
+
+// const paymentElementOptions = {
+//     layout: "tabs",
+// };
+
+// const paymentElement = elements.create("payment", paymentElementOptions);
+// paymentElement.mount("#payment-element");

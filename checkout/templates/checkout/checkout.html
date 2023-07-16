@@ -3,7 +3,7 @@
 {% load cart_tools %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/stripe_elements.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -102,17 +102,19 @@
                 <fieldset class="px-3">
                     <legend class="fieldset-label small text-sri-logo px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->
-                    <div class="mb-3 stripe-style-input" id="card-element"></div>
+                    <div class="mb-3" id="card-element"></div>
 
-                    <!-- Used to displayy form errors -->
+                    <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                 </fieldset>
+
                 <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'cart' %}" class="btn btn-sri rounded-0">
                         <span class="icon"><i class="fas fa-chevron-left"></i></span>
                         <span class="logo-font">Adjust Cart</span>
                     </a>
                     <button id="submit-button" class="btn btn-sri rounded-0">
+                        <div class="spinner hidden" id="spinner"></div>
                         <span class="icon"><i class="fas fa-lock"></i></span>
                         <span class="font-weight-bold logo-font">Complete Order</span>
                     </button>
@@ -132,10 +134,7 @@
 {% block postloadjs %}
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-{{ id_client_secret|json_script:"id_client_secret" }}
-<script src="{% static 'checkout/js/stripe_elements.js' %}">
-
-</script>
-
-
+<!-- {{ stripe_secret_key|json_script:"id_client_secret" }} -->
+<!-- <script src="{% static 'checkout/js/stripe_elements.js' %}"></script> -->
+<script src="{% static 'checkout/js/checkout.js' %}" defer></script>
 {% endblock %}
