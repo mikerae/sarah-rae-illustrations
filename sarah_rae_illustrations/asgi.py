@@ -1,5 +1,5 @@
 """
-ASGI config for sarah_rae_illustrtions project.
+ASGI config for sarah_rae_illustrations project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sarah_rae_illustrtions.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sarah_rae_illustrations.settings')  # noqa E501
 
 application = get_asgi_application()
