@@ -14,4 +14,5 @@ def index(request):
     context = {
         'carousel_artworks': carousel_artworks,
     }
+
     return render(request, 'home/index.html', context)

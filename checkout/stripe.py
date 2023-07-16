@@ -2,8 +2,8 @@
 Stripe Endpoint copied from Strip docs,
 and  modified for this project
 """
-import json
-import os
+# import json
+# import os
 import stripe
 from django.conf import settings
 
@@ -11,8 +11,8 @@ from django.conf import settings
 
 
 # This is your test secret API key.
-# stripe_public_key = settings.STRIPE_PUBLIC_KEY
-# print(stripe_public_key)
+stripe_public_key = settings.STRIPE_PUBLIC_KEY
+
 
 # app = Flask(__name__, static_folder='public',
 #             static_url_path='', template_folder='public')
