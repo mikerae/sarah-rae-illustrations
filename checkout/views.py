@@ -41,12 +41,14 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(request, 'Stripe Public Key is missing. \
             Did you forget to set it in your environment?')
+    checkout_success_url = request.build_absolute_uri('/commissions/')
 
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'checkout_success_url': checkout_success_url,
     }
 
     return render(request, template, context)

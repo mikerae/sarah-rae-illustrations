@@ -1,21 +1,19 @@
-/*
-    Core logic/paymentElement and  styling using the API - Stripe's docs (072023):
+/*  Core logic/paymentElement and  styling using the API - Stripe's docs (072023):
     https://stripe.com/docs/payments/quickstart
 
     Modified for this project.
 */
-
 let elements;
 
-const stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
+const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 const clientSecret = $('#id_client_secret').text().slice(1, -1);
-const stripe = Stripe(stripe_public_key);
+const stripe = Stripe(stripePublicKey);
+const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
 
 let emailAddress = '';
 
 // Initializes the setup variables and puts elements in the DOM
 initialize();
-// 
 checkStatus();
 
 // Set eventListner on payment form submit button "Complete Order"
@@ -48,19 +46,24 @@ function initialize() {
     paymentElement.mount("#payment-element");
 }
 
+function successRedirect(url) {
+    setTimeout(function () {
+        window.location.assign(url);
+    }, 3000);
+}
+
 async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-
-    console.log('handleSubmit called')
-
     const {
         error
     } = await stripe.confirmPayment({
         elements,
         confirmParams: {
+
             // Make sure to change this to your payment completion page
-            return_url: "http://localhost:5432/checkout.html",
+
+            return_url: window.location.href,
             receipt_email: emailAddress,
         },
     });
@@ -96,6 +99,7 @@ async function checkStatus() {
     switch (paymentIntent.status) {
         case "succeeded":
             showMessage("Payment succeeded!");
+            successRedirect(successUrl);
             break;
         case "processing":
             showMessage("Your payment is processing.");

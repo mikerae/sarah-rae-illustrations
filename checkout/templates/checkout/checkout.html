@@ -71,12 +71,12 @@
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
-                <fieldset class="rounded px-3 mb-5">
+                <fieldset class="rounded px-3 mb-3">
                     <legend class="fieldset-label text-sri-logo small px-2 w-auto">Details</legend>
                     {{order_form.full_name | as_crispy_field  }}
                     {{order_form.email | as_crispy_field  }}
                 </fieldset>
-                <fieldset class="rounded px-3 mb-5">
+                <fieldset class="rounded px-3 mb-3">
                     <legend class="fieldset-label text-sri-logo small px-2 w-auto">Delivery</legend>
                     {{order_form.phone_number | as_crispy_field  }}
                     {{order_form.country | as_crispy_field  }}
@@ -102,7 +102,7 @@
 
                 <!-- Display Stripe payment elements -->
                 <div id="stripe-container">
-                    <fieldset class="px-3">
+                    <fieldset class="rounded px-3 mb-3">
                         <legend class=" small  text-sri-logo w-auto">Payment</legend>
 
                         <div id="link-authentication-element">
@@ -115,7 +115,7 @@
                     </fieldset>
                 </div>
 
-                <div class="submit-button text-right mt-5 mb-2">
+                <div class="submit-button text-right mt-3 mb-2">
                     <a href="{% url 'cart' %}" class="btn btn-sri rounded-0">
                         <span class="icon"><i class="fas fa-chevron-left"></i></span>
                         <span class="logo-font">Adjust Cart</span>
@@ -123,7 +123,7 @@
                     <button id="submit" class="btn btn-sri rounded-0">
                         <div class="spinner hidden" id="spinner"></div>
                         <span class="icon"><i class="fas fa-lock"></i></span>
-                        <span class="font-weight-bold logo-font">Complete Order</span>
+                        <span id="button-text" class="font-weight-bold logo-font">Complete Order</span>
                     </button>
                     <p class="small text-danger my-0">
                         <span class="icon">
@@ -142,5 +142,6 @@
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}
+{{ checkout_success_url|json_script:"id_checkout_success_url"}}
 <script src="{% static 'checkout/js/checkout.js' %}" defer></script>
 {% endblock %}
