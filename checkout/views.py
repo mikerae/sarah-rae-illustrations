@@ -8,8 +8,10 @@ from django.contrib import messages
 from django.http import JsonResponse
 
 from .forms import OrderForm
+from cart.contexts import cart_contents
 
 stripe_public_key = settings.STRIPE_PUBLIC_KEY
+stripe_secret_key = settings.STRIPE_SECRET_KEY
 
 
 def checkout(request):
@@ -18,37 +20,33 @@ def checkout(request):
         message.error(request, "Your Shopping Cart is empty")
         return redirect(reverse('shop'))
 
+    current_cart = cart_contents(request)
+    total = current_cart['total']
+    stripe_total = round(total * 100)
+    stripe.api_key = stripe_secret_key
+    try:
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+            automatic_payment_methods={
+                'enabled': True,
+            },
+        )
+    except Exception as e:
+        messages.warning(request, f'Oh dear! There was an error: ${e}')
+        return redirect(reverse('cart'))
+
     order_form = OrderForm()
+
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe Public Key is missing. \
+            Did you forget to set it in your environment?')
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        'stripe_secret_key': 'test client secret',
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
-
-
-# def calculate_order_amount(items):
-#     # Replace this constant with a calculation of the order's amount
-#     # Calculate the order total on the server to prevent
-#     # people from directly manipulating the amount on the client
-#     return 1400
-
-
-# def create_payment_intent(request, method="POST", *args, **kwargs):
-#     try:
-#         data = json.loads(request.data)
-#         # Create a PaymentIntent with the order amount and currency
-#         intent = stripe.PaymentIntent.create(
-#             amount=calculate_order_amount(data['items']),
-#             currency='gbp',
-#             automatic_payment_methods={
-#                 'enabled': True,
-#             },
-#         )
-#         return jsonify({
-#             'clientSecret': intent['client_secret']
-#         })
-#     except Exception as e:
-#         return jsonify(error=str(e)), 403

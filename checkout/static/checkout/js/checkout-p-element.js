@@ -1,34 +1,23 @@
-// Copied from Stripe docs then modified
-// This is your test publishable API key.
-
-// The items the customer wants to buy
-const items = [{
-    id: "xl-tshirt"
-}];
+/*
+    Core logic/paymentElement and  styling using the API - Stripe's docs (072023):
+    https://stripe.com/docs/payments/quickstart
+*/
 
 let elements;
+
 const stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
+const clientSecret = $('#id_client_secret').text().slice(1, -1);
 const stripe = Stripe(stripe_public_key);
 
-initialize();
-checkStatus();
-
-document
-    .querySelector("#payment-form")
-    .addEventListener("submit", handleSubmit);
-
 let emailAddress = '';
-// Fetches a payment intent and captures the client secret
+
+// Set eventListner on payment form submit button "Complete Order"
+document
+    .$("#payment-form")
+    .addEventListener("submit_button", handleSubmit);
+
+// initializes the variables before a submit event
 async function initialize() {
-    const response = await fetch("/create-payment-intent", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            items
-        }),
-    });
     const {
         clientSecret
     } = await response.json();
@@ -66,7 +55,7 @@ async function handleSubmit(e) {
         elements,
         confirmParams: {
             // Make sure to change this to your payment completion page
-            return_url: "http://localhost:4242/checkout.html",
+            return_url: "http://localhost:5432/checkout.html",
             receipt_email: emailAddress,
         },
     });

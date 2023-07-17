@@ -15,7 +15,6 @@
 .stripe-style-input:focus,
 .stripe-style-input:active {
     box-shadow: 0 1px 3px 0 #aa25bb;
-    /* background-color: rgb(235, 213, 206); */
     background-color: rgb(246, 225, 219);
 }
 
@@ -45,7 +44,7 @@
 
 /* from Stripe docs */
 
-.hidden {
+/* .hidden {
     display: none;
 }
 
@@ -64,10 +63,10 @@
 button:disabled {
     opacity: 0.5;
     cursor: default;
-}
+} */
 
 /* spinner/processing state, errors */
-.spinner,
+/* .spinner,
 .spinner:before,
 .spinner:after {
     border-radius: 50%;
@@ -104,9 +103,9 @@ button:disabled {
     transform-origin: 10.4px 10.2px;
     -webkit-animation: loading 2s infinite ease 1.5s;
     animation: loading 2s infinite ease 1.5s;
-}
+} */
 
-.spinner:after {
+/*.spinner:after {
     width: 10.4px;
     height: 10.2px;
     background: #5469d4;
@@ -148,4 +147,4 @@ button:disabled {
         width: 80vw;
         min-width: initial;
     }
-}
+}/* 
