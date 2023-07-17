@@ -1,29 +1,22 @@
-.StripeElement,
 .stripe-style-input {
     box-sizing: border-box;
     height: 40px;
     padding: 10px 12px;
-    border: 2px solid transparent;
-    border-radius: 50px;
-    background-color: rgb(243, 221, 214);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: white;
     box-shadow: 0 1px 3px 0 #e6ebf1;
     -webkit-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
 }
 
-.StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-    box-shadow: 0 1px 3px 0 #aa25bb;
-    background-color: rgb(246, 225, 219);
-}
-
-.StripeElement--webkit-autofill {
-    background-color: rgb(248, 139, 104) !important;
+    box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
 .stripe-style-input::placeholder {
-    color: rgba(77, 0, 82, 0.6);
+    color: #aab7c4;
 }
 
 .fieldset-label {
@@ -31,20 +24,13 @@
     right: .5rem;
 }
 
-.fieldset-label {
-    position: relative;
-    right: .5rem;
-}
-
-
-#paymnt-form .form-control,
-#payment-element {
-    border: 1px solid rgb(248, 139, 104);
+#stripe-container {
+    position: sticky;
 }
 
 /* from Stripe docs */
 
-/* .hidden {
+.hidden {
     display: none;
 }
 
@@ -63,10 +49,12 @@
 button:disabled {
     opacity: 0.5;
     cursor: default;
-} */
+}
+
+*/
 
 /* spinner/processing state, errors */
-/* .spinner,
+.spinner,
 .spinner:before,
 .spinner:after {
     border-radius: 50%;
@@ -103,9 +91,9 @@ button:disabled {
     transform-origin: 10.4px 10.2px;
     -webkit-animation: loading 2s infinite ease 1.5s;
     animation: loading 2s infinite ease 1.5s;
-} */
+}
 
-/*.spinner:after {
+.spinner:after {
     width: 10.4px;
     height: 10.2px;
     background: #5469d4;
@@ -147,4 +135,4 @@ button:disabled {
         width: 80vw;
         min-width: initial;
     }
-}/* 
+}
