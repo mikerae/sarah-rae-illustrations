@@ -25,11 +25,25 @@ document
 function initialize() {
     const appearance = {
         theme: 'stripe',
+        variables: {
+            colorText: '#da920c',
+            fontSizeBase: 3,
+            colorPrimary: '#da920c',
+            colorPrimaryText: '#4d0052',
+            colorBackground: '#4d0052',
+            colorDanger: '#df1b41',
+        },
     };
     elements = stripe.elements({
         appearance,
         clientSecret
     });
+
+    // Create the Address Element in shipping mode
+    const shippingAddressElement = elements.create('address', {
+        mode: 'shipping',
+    });
+    shippingAddressElement.mount("#shipping-address-element");
 
     const linkAuthenticationElement = elements.create("linkAuthentication");
     linkAuthenticationElement.mount("#link-authentication-element");
@@ -55,6 +69,7 @@ function initialize() {
 async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
+
     const {
         error
     } = await stripe.confirmPayment({

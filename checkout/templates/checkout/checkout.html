@@ -71,7 +71,7 @@
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
-                <fieldset class="rounded px-3 mb-3">
+                <!-- <fieldset class="rounded px-3 mb-3">
                     <legend class="fieldset-label text-sri-logo small px-2 w-auto">Details</legend>
                     {{order_form.full_name | as_crispy_field  }}
                     {{order_form.email | as_crispy_field  }}
@@ -85,26 +85,12 @@
                     {{order_form.street_address_1 | as_crispy_field  }}
                     {{order_form.street_address_2 | as_crispy_field  }}
                     {{order_form.county | as_crispy_field  }}
-                    <div class="form-check form-check-inline float-right mr-0">
-                        {% if user.is_authenticated %}
-                        <label class="form-check-label text-sri-logo" for="id-save-info">Save this delivery information
-                            to my
-                            profile</label>
-                        <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" checked>
-                        {% else  %}
-                        <label class="from-check-label text-sri-logo" for="id-save-info">
-                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
-                            <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information.
-                        </label>
-                        {% endif %}
-                    </div>
-                </fieldset>
+                </fieldset> -->
 
                 <!-- Display Stripe payment elements -->
                 <div id="stripe-container">
-                    <fieldset class="rounded px-3 mb-3">
-                        <legend class=" small  text-sri-logo w-auto">Payment</legend>
-
+                    <fieldset class="rounded px-3 mb-3 text-sri-logo">
+                        <legend class=" small  text-sri-logo w-auto mt-3">Payment</legend>
                         <div id="link-authentication-element">
                             <!--Stripe.js injects the Link Authentication Element-->
                         </div>
@@ -112,6 +98,26 @@
                             <!-- Stripe.js injects the Payment Element-->
                         </div>
                         <div id="payment-message" class="hidden"></div>
+                    </fieldset>
+                    <fieldset class="rounded px-3 mb-3">
+                        <legend class=" small  text-sri-logo w-auto">Shipping Address</legend>
+                        <div id="shipping-address-element">
+                            <!--Stripe.js injects the Shipping Address Element-->
+                        </div>
+                        <div class="form-check form-check-inline  mr-0">
+                            {% if user.is_authenticated %}
+                            <input class="form-check-input" type="checkbox" id="id-save-info" name="id-save-info"
+                                checked>
+                            <label class="form-check-label text-sri-logo mt-3" for="id-save-info">Save this
+                                information to my profile</label>
+                            {% else  %}
+                            <label class="from-check-label text-sri-logo" for="id-save-info">
+                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
+                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this
+                                information.
+                            </label>
+                            {% endif %}
+                        </div>
                     </fieldset>
                 </div>
 
