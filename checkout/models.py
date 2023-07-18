@@ -40,7 +40,7 @@ class Order(models.Model):
         Update grand total eacht ime a line item is added.
         NB: In this version, delivery is not implemented.
         """
-        self.order_total = self.lineitem_total.aggregate(Sum('lineitem_total'))['linitem_total__sum']  # noqa E501
+        self.order_total = self.lineitem_total.aggregate(Sum('lineitem_total'))['linitem_total__sum'] or 0  # noqa E501
         self.grand_total = self.order_total
         self.save()
 

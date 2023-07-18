@@ -46,11 +46,11 @@ function initialize() {
     paymentElement.mount("#payment-element");
 }
 
-function successRedirect(url) {
-    setTimeout(function () {
-        window.location.assign(url);
-    }, 3000);
-}
+// function successRedirect(url) {
+//     setTimeout(function () {
+//         window.location.assign(url);
+//     }, 3000);
+// }
 
 async function handleSubmit(e) {
     e.preventDefault();
@@ -99,7 +99,7 @@ async function checkStatus() {
     switch (paymentIntent.status) {
         case "succeeded":
             showMessage("Payment succeeded!");
-            successRedirect(successUrl);
+            // successRedirect(successUrl);
             break;
         case "processing":
             showMessage("Your payment is processing.");
