@@ -6,9 +6,8 @@
 let elements;
 
 const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
-const clientSecret = $('#id_client_secret').text().slice(1, -1);
 const stripe = Stripe(stripePublicKey);
-const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
+// const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
 
 let emailAddress = '';
 
@@ -21,17 +20,26 @@ checkStatus();
 document
     .querySelector("#payment-form").addEventListener("submit", handleSubmit);
 
-// Defines the initialize function to set the variables before a submit event
-function initialize() {
+// Fetches a payment intent and captures the client secret
+async function initialize() {
+    const response = await fetch("create_payment_intent/", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    });
+
+    const {
+        clientSecret
+    } = await response.json();
+
     const appearance = {
         theme: 'stripe',
         variables: {
             colorText: '#da920c',
-            fontSizeBase: 3,
             colorPrimary: '#da920c',
             colorPrimaryText: '#4d0052',
             colorBackground: '#4d0052',
-            colorDanger: '#df1b41',
         },
     };
     elements = stripe.elements({
@@ -60,11 +68,6 @@ function initialize() {
     paymentElement.mount("#payment-element");
 }
 
-// function successRedirect(url) {
-//     setTimeout(function () {
-//         window.location.assign(url);
-//     }, 3000);
-// }
 
 async function handleSubmit(e) {
     e.preventDefault();
@@ -77,7 +80,6 @@ async function handleSubmit(e) {
         confirmParams: {
 
             // Make sure to change this to your payment completion page
-
             return_url: window.location.href,
             receipt_email: emailAddress,
         },
@@ -114,7 +116,6 @@ async function checkStatus() {
     switch (paymentIntent.status) {
         case "succeeded":
             showMessage("Payment succeeded!");
-            // successRedirect(successUrl);
             break;
         case "processing":
             showMessage("Your payment is processing.");

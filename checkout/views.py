@@ -1,8 +1,10 @@
 import stripe
+import json
 
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from django.contrib import messages
+from django.http import JsonResponse
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -60,61 +62,91 @@ def checkout(request):
         #     messages.error(request, 'There was an error with your form. \
         #         Please double check your information.')
     else:
-        cart = request.session.get('cart', {})
-        if not cart:
-            message.error(request, "Your Shopping Cart is empty")
-            return redirect(reverse('shop'))
+        # cart = request.session.get('cart', {})
+        # if not cart:
+        #     message.error(request, "Your Shopping Cart is empty")
+        #     return redirect(reverse('shop'))
 
-        current_cart = cart_contents(request)
-        total = current_cart['total']
-        stripe_total = round(total * 100)
-        stripe.api_key = stripe_secret_key
-        try:
-            intent = stripe.PaymentIntent.create(
-                amount=stripe_total,
-                currency=settings.STRIPE_CURRENCY,
-                automatic_payment_methods={
-                    'enabled': True,
-                },
-            )
-        except Exception as e:
-            messages.warning(request, f'Oh dear! There was an error: ${e}')
-            return redirect(reverse('cart'))
+        # current_cart = cart_contents(request)
+        # total = current_cart['total']
+        # stripe_total = round(total * 100)
+        # stripe.api_key = stripe_secret_key
+        # try:
+        #     intent = stripe.PaymentIntent.create(
+        #         amount=stripe_total,
+        #         currency=settings.STRIPE_CURRENCY,
+        #         automatic_payment_methods={
+        #             'enabled': True,
+        #         },
+        #     )
+        # except Exception as e:
+        #     messages.warning(request, f'Oh dear! There was an error: ${e}')
+        #     return redirect(reverse('cart'))
 
         order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe Public Key is missing. \
             Did you forget to set it in your environment?')
-    checkout_success_url = request.build_absolute_uri('/checkout_success/')
+    # payment_success_url = request.build_absolute_uri('/checkout/')  # noqa E501
 
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
-        'checkout_success_url': checkout_success_url,
+        # 'checkout_success_url': checkout_success_url,
     }
 
     return render(request, template, context)
 
 
-def checkout_success(request, ordder_number):
+def checkout_success(request):
     """
     Handle sucessful checkouts.
     """
-    save_info = request.session.get('save_info')
-    order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation email \
-            will be sent to {order.email}.')
 
-    if 'cart' in request.session:
-        del request.session['cart']
+    # save_info = request.session.get('save_info')
+    # # order = get_object_or_404(Order, order_number=order_number)
+    # messages.success(request, f'Order successfully processed! \
+    #     Your order number is {order_number}. A confirmation email \
+    #         will be sent to {order.email}.')
+
+    # if 'cart' in request.session:
+    #     del request.session['cart']
 
     template = 'checkout/checkout_success.html'
     context = {
-        'order': order,
+        # 'order': order,
     }
 
-    return render(request, template, contect)
+    return render(request, template)
+
+
+def create_payment_intent(request):
+
+    cart = request.session.get('cart', {})
+    if not cart:
+        message.error(request, "Your Shopping Cart is empty")
+        return redirect(reverse('shop'))
+
+    current_cart = cart_contents(request)
+    total = current_cart['total']
+    stripe_total = round(total * 100)
+    stripe.api_key = stripe_secret_key
+
+    try:
+        # Create a Payment Intent with the order amount and currency
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+            automatic_payment_methods={
+                'enabled': True,
+            },
+        )
+        return JsonResponse({
+            'clientSecret': intent['client_secret']
+        })
+    except Exception as e:
+        messages.warning(request, f'Oh dear! There was an error: ${e}')
+        return JsonResponse(error=str(e)), 403
+    return
