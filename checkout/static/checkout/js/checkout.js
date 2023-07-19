@@ -8,6 +8,7 @@ let elements;
 const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 const stripe = Stripe(stripePublicKey);
 // const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
+let form = $("#payment-form")
 
 let emailAddress = '';
 
@@ -16,9 +17,7 @@ initialize();
 checkStatus();
 
 // Set eventListner on payment form submit button "Complete Order"
-
-document
-    .querySelector("#payment-form").addEventListener("submit", handleSubmit);
+form.addEventListener("submit", handleSubmit);
 
 // Fetches a payment intent and captures the client secret
 async function initialize() {
@@ -115,7 +114,9 @@ async function checkStatus() {
 
     switch (paymentIntent.status) {
         case "succeeded":
+            form.submit();
             showMessage("Payment succeeded!");
+
             break;
         case "processing":
             showMessage("Your payment is processing.");
