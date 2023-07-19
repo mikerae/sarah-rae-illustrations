@@ -7,8 +7,10 @@ let elements;
 
 const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 const stripe = Stripe(stripePublicKey);
-// const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
-let form = $("#payment-form")
+const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
+let form = document.getElementById("payment-form");
+// let clientSecret;
+console.log(successUrl);
 
 let emailAddress = '';
 
@@ -17,9 +19,10 @@ initialize();
 checkStatus();
 
 // Set eventListner on payment form submit button "Complete Order"
-form.addEventListener("submit", handleSubmit);
+document.getElementById("payment-form").addEventListener("submit", handleSubmit);
 
 // Fetches a payment intent and captures the client secret
+// then loads DOM payment elements
 async function initialize() {
     const response = await fetch("create_payment_intent/", {
         method: "GET",
@@ -79,7 +82,7 @@ async function handleSubmit(e) {
         confirmParams: {
 
             // Make sure to change this to your payment completion page
-            return_url: window.location.href,
+            return_url: successUrl,
             receipt_email: emailAddress,
         },
     });
@@ -96,27 +99,48 @@ async function handleSubmit(e) {
     }
 
     setLoading(false);
+
 }
 
 // Fetches the payment intent status after payment submission
 async function checkStatus() {
+    console.log('checkStatus called');
     const clientSecret = new URLSearchParams(window.location.search).get(
         "payment_intent_client_secret"
     );
 
+    console.log(`clientSecret: ${clientSecret}`);
+
+
     if (!clientSecret) {
+        console.log(`clientSecret: ${clientSecret}: so return`);
         return;
     }
+
 
     const {
         paymentIntent
     } = await stripe.retrievePaymentIntent(clientSecret);
+    console.log(`Check Status called: clientSecret: ${clientSecret}`);
+
 
     switch (paymentIntent.status) {
         case "succeeded":
-            form.submit();
-            showMessage("Payment succeeded!");
+            // let saveInfo = Boolean($('#id-save-info').attr('checked'));
+            // let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+            // let postData = {
+            //     'csrfmiddlewaretoken': csrfToken,
+            //     // 'client_secret': clientSecret,
+            //     'save-info': saveInfo,
+            // }
+            // let url = '/checkout/cache_checkout_data/';
 
+            // console.log(`saveInfo: ${saveInfo}`);
+            // console.log(`csrfToken: ${csrfToken}`);
+            // console.log(`postData: ${postData}`);
+            // console.log(`url: ${url}`);
+            // $.post(url, postData);
+            showMessage("Payment succeeded!");
             break;
         case "processing":
             showMessage("Your payment is processing.");
@@ -128,6 +152,12 @@ async function checkStatus() {
             showMessage("Something went wrong.");
             break;
     }
+}
+
+function successRedirect(url) {
+    setTimeout(function () {
+        window.location.assign(url);
+    }, 3000);
 }
 
 // ------- UI helpers -------

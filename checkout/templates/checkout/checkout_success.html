@@ -24,7 +24,150 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-lg-7"></div>
+        <div class="col-12 col-lg-7">
+            <div class="order-confirmation-wrapper p-2 border">
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted">Order Info:</small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-sri-logo font-weight-bold">Order Number</p>
+                    </div>
+                    <div class="col-12 col-md- text-md-right">
+                        <p class="mb-0 text-sri-logo">{{ order.order_number }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-sri-logo font-weight-bold">Order Date:</p>
+                    </div>
+                    <div class="col-12 col-md- text-md-right">
+                        <p class="mb-0 text-sri-logo">{{ order.date }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted">Order Details:</small>
+                    </div>
+                    {% for item in order.lineitems.all %}
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">
+                                {{ item.product.name }} {{ item.product.category }}:{{ item.product.subcategory }}
+                            </p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">
+                                {{ item.product.quantity }} @ £{{ item.product.price }} each
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted">Delivering To:</small>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">Full Name</p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">{{ order.full_name }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">Street Address 1</p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">{{ order.street_address1 }}</p>
+                        </div>
+                    </div>
+                    {% if order.street_address2 %}
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">Street Address 2</p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">{{ order.street_address2 }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if order.county %}
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">County</p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">{{ order.county }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">Town or City</p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">{{ order.town_or_city }}</p>
+                        </div>
+                    </div>
+
+                    {% if order.postcode %}
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">Post Code</p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">{{ order.postcode }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">Country</p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">{{ order.country }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-sri-logo font-weight-bold">Phone Number</p>
+                        </div>
+                        <div class="small col-12 col-md-8 text-md-right">
+                            <p class="mb-0 text-sri-logo">{{ order.phone_number }}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted">Billing Info:</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="small mb-0 text-sri-logo font-weight-bold">Order Total</p>
+                </div>
+                <div class="small col-12 col-md-8 text-md-right">
+                    <p class="mb-0 text-sri-logo">{{ order.order_total }}</p>
+                </div>
+            </div>
+
+        </div>
     </div>
     <div class="col-12 col-lg-t text-right">
         <a href="{% url 'shop' %}" class="btn btn-sri rounded-0 my-2">
