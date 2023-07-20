@@ -1,7 +1,8 @@
+""" Handles webhooks from stripe  """
 from django.http import HttpResponse
 
 
-class StripeWH_Handler():
+class StripeWhHandler():
     """ Handle Stripe webhooks """
 
     def __init__(self, request):
@@ -20,9 +21,9 @@ class StripeWH_Handler():
         Handle the payment_intent.succeeded webhook from Stripe
         """
 
-        print('Webhook received: Payment Succeeded')
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook', status=200)  # noqa E501
+            content=f'Webhook received: {event["type"]} | SUCCESS: \
+                Created order in webhook', status=200)
 
     def handle_payment_intent_payment_failed(self, event):
         """

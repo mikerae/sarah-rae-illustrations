@@ -1,9 +1,11 @@
+""" Module Customises Admin views """
 # Copied from Code Institute Boutique Ado walkthrough
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+    """ Admin Formating for OrderLineItemsinLine """
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
@@ -11,6 +13,7 @@ class OrderLineItemAdminInline(admin.TabularInline):
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """ Admin Formating for Order """
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = (
