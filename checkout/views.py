@@ -1,6 +1,8 @@
+""" Module to handle Checkout calls """
+import os
 import stripe
 import json
-import os
+
 
 from django.shortcuts import (render,
                               redirect,
@@ -23,6 +25,7 @@ stripe_secret_key = settings.STRIPE_SECRET_KEY
 
 @require_POST
 def cache_checkout_data(request):
+    """ Caches checkout data for processing """
     try:
         pid = request.POST.get('client_secret').split('_secret'[0])
         print(pid)  # test pid
@@ -33,17 +36,47 @@ def cache_checkout_data(request):
             })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Woops! Your payment has not been processed. \
-            Please try again later.')
+        messages.error(request, f'Woops! {e} Your payment has not been \
+             processed. Please try again later.')
     return HttpResponse(contents=3, status=400)
 
 
 def checkout(request):
+    """ Handles Checkout calls """
 
-    if request.method == 'POST':
-        cart = request.session.get('cart', {})
+    cart = request.session.get('cart', {})
 
-        form_data = {
+    cart = request.session.get('cart', {})
+    if not cart:
+        messages.error(
+            request, "There's nothing in your bag at the moment")
+        return redirect(reverse('products'))
+
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe Public Key is missing. \
+            Did you forget to set it in your environment?')
+
+    checkout_success_url = request.build_absolute_uri('checkout_success/')
+
+    template = 'checkout/checkout.html'
+    context = {
+        # order_form = OrderForm()
+        'stripe_public_key': stripe_public_key,
+        'checkout_success_url': checkout_success_url,
+    }
+
+    return render(request, template, context)
+
+
+def checkout_success(request):
+    # remove *args, **kwargs?
+
+    """
+    Handle sucessful checkouts.
+    """
+    print('checkout_success has been called')
+
+    form_data = {
             # 'full_name': request.POST['full_name'],
             # 'email': request.POST['email'],
             # 'phone_nubmer': request.POST['phone_nubmer'],
@@ -54,53 +87,41 @@ def checkout(request):
             # 'county': request.POST['county']
 
         }
-        print(form_data)  # test form data exists
+    print(form_data)  # test form data exists
 
-        # currently only save-info field data exists and form is not vaild
-        order_form = OrderForm(form_data)
-        print(f'Unsaved Order Form data is: {order_form}')
-        if order_form.is_valid():
-            order = order_form.save()
-            for item_id, item_data in cart.items():
-                try:
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
-                except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your \
-                            bag wasn't found in our database."
-                        "Please call us for assistance")
-                    )
-                    order.delete()
-                    return redirect(reverse('view_cart'))
-            request.session['save_info'] = 'save-info' in request.POST
-            return redirect(
-                            reverse('checkout_success',
-                                    args=[order.order_number])
-            )
-        else:
-            # Delete currrent stripe paymentIntent
-            # currently no stripe intent data in request
-            # pid = request.POST.get('client_secret').split('_secret')[0]
-            # stripe.PaymentIntent.cancel(pid,)
-            messages.error(request, 'There was an error with your form. \
-            Please double check your information.')
+    # currently only save-info field data exists and form is not vaild
+    # order_form = OrderForm(form_data)
+    # print(f'Unsaved Order Form data is: {order_form}')
+    # if order_form.is_valid():
+    #     order = order_form.save()
+    #     for item_id, item_data in cart.items():
+    #         try:
+    #             product = Product.objects.get(id=item_id)
+    #             if isinstance(item_data, int):
+    #                 order_line_item = OrderLineItem(
+    #                     order=order,
+    #                     product=product,
+    #                     quantity=item_data,
+    #                 )
+    #                 order_line_item.save()
+    #         except Product.DoesNotExist:
+    #             messages.error(request, (
+    #                 "One of the products in your \
+    #                     bag wasn't found in our database."
+    #                 "Please call us for assistance")
+    #             )
+    #             order.delete()
+    #             return redirect(reverse('view_cart'))
+    #     request.session['save_info'] = 'save-info' in request.POST
+    #     return redirect(
+    #                     reverse('checkout_success',
+    #                             args=[order.order_number])
+    # )
 
-            return redirect(reverse('checkout'))
-    else:
-        cart = request.session.get('cart', {})
-        if not cart:
-            messages.error(
-                request, "There's nothing in your bag at the moment")
-            return redirect(reverse('products'))
 
-        if request.user.is_authenticated:
+
+
+        # if request.user.is_authenticated:
             # try:
             #     profile = UserProfile.objects.get(user=request.user)
             #     order_form = OrderForm(initial={
@@ -116,33 +137,9 @@ def checkout(request):
             #     })
             # except UserProfile.DoesNotExist:
             #     order_form = OrderForm()
-            order_form = OrderForm()
-        else:
-            order_form = OrderForm()
-
-        if not stripe_public_key:
-            messages.warning(request, 'Stripe Public Key is missing. \
-                Did you forget to set it in your environment?')
-
-        checkout_success_url = request.build_absolute_uri('checkout_success/')
-
-        template = 'checkout/checkout.html'
-        context = {
-            'order_form': order_form,
-            'stripe_public_key': stripe_public_key,
-            'checkout_success_url': checkout_success_url,
-        }
-
-        return render(request, template, context)
-
-
-def checkout_success(request):
-    # remove *args, **kwargs?
-
-    """
-    Handle sucessful checkouts.
-    """
-    print('checkout_success has been called')
+        #     order_form = OrderForm()
+        # else:
+        #     order_form = OrderForm()
     # save_info = request.session.get('save_info')
     # order = get_object_or_404(Order, order_number=order_number)
     # messages.success(request, f'Order successfully processed! \
