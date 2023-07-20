@@ -9,8 +9,6 @@ const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 const stripe = Stripe(stripePublicKey);
 const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
 let form = document.getElementById("payment-form");
-// let clientSecret;
-console.log(successUrl);
 
 let emailAddress = '';
 
@@ -20,6 +18,8 @@ checkStatus();
 
 // Set eventListner on payment form submit button "Complete Order"
 document.getElementById("payment-form").addEventListener("submit", handleSubmit);
+// Set eventListner on payment form submit button to save User preference to session
+document.getElementById("payment-form").addEventListener("submit", saveInfo);
 
 // Fetches a payment intent and captures the client secret
 // then loads DOM payment elements
@@ -70,10 +70,25 @@ async function initialize() {
     paymentElement.mount("#payment-element");
 }
 
+// When submit button is clicked, if the user has checked 
+// save-info, 'save-info' wll be stored in the current session.
+// This will then be used on the server to store user details.
+function saveInfo(e) {
+    e.preventDefault(e);
+    let saveInfo = Boolean($('#id-save-info').attr('checked'));
+    let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    let postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'save-info': saveInfo,
+    };
+    let url = '/checkout/save_userdata_checked/';
+    $.post(url, postData);
+}
 
 async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
+
 
     const {
         error
@@ -81,7 +96,7 @@ async function handleSubmit(e) {
         elements,
         confirmParams: {
 
-            // Make sure to change this to your payment completion page
+            // Redirects to payment completion page
             return_url: successUrl,
             receipt_email: emailAddress,
         },
@@ -104,16 +119,11 @@ async function handleSubmit(e) {
 
 // Fetches the payment intent status after payment submission
 async function checkStatus() {
-    console.log('checkStatus called');
     const clientSecret = new URLSearchParams(window.location.search).get(
         "payment_intent_client_secret"
     );
 
-    console.log(`clientSecret: ${clientSecret}`);
-
-
     if (!clientSecret) {
-        console.log(`clientSecret: ${clientSecret}: so return`);
         return;
     }
 
@@ -126,20 +136,6 @@ async function checkStatus() {
 
     switch (paymentIntent.status) {
         case "succeeded":
-            // let saveInfo = Boolean($('#id-save-info').attr('checked'));
-            // let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
-            // let postData = {
-            //     'csrfmiddlewaretoken': csrfToken,
-            //     // 'client_secret': clientSecret,
-            //     'save-info': saveInfo,
-            // }
-            // let url = '/checkout/cache_checkout_data/';
-
-            // console.log(`saveInfo: ${saveInfo}`);
-            // console.log(`csrfToken: ${csrfToken}`);
-            // console.log(`postData: ${postData}`);
-            // console.log(`url: ${url}`);
-            // $.post(url, postData);
             showMessage("Payment succeeded!");
             break;
         case "processing":
@@ -152,12 +148,6 @@ async function checkStatus() {
             showMessage("Something went wrong.");
             break;
     }
-}
-
-function successRedirect(url) {
-    setTimeout(function () {
-        window.location.assign(url);
-    }, 3000);
 }
 
 // ------- UI helpers -------

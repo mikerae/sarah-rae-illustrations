@@ -6,10 +6,12 @@ import stripe
 from django.shortcuts import (render,
                               redirect,
                               reverse,
-                              get_object_or_404)
+                              get_object_or_404,
+                              HttpResponse)
 from django.conf import settings
 from django.contrib import messages
 from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 
 from shop.models import Product
 from cart.contexts import cart_contents
@@ -19,6 +21,27 @@ from .models import OrderLineItem
 
 stripe_public_key = settings.STRIPE_PUBLIC_KEY
 stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+
+@require_POST
+def save_userdata_checked(request):
+    """
+    Recieves boolean indicating if the user
+    wants to save their user details for future user
+    in this site. (Stripe has already asked this for
+    stripe data). If so , 'True' is returned for storage and
+    futher processing.
+    """
+    print('save_userdata_checked is called')
+    try:
+        save_info = request.POST.get('save-info')
+        request.session['save-info'] = save_info
+        django_save_info = request.session['save-info']
+        print(f'save-info stored in current session is: {django_save_info}')
+        return HttpResponse(status=200)
+    except Exception as e:
+        print(f'save-info was not in the current session. {e}')
+        return HttpResponse(content=e, status=400) 
 
 
 def checkout(request):
@@ -56,6 +79,10 @@ def checkout_success(request):
     payment_intent = stripe.PaymentIntent.retrieve(stripe_pid)
 
     cart = request.session.get('cart', {})
+    save_info = request.session['save-info']
+    print(f'checkout-success retrieved \
+        save-info from the curent \
+            session as: {save_info}')
 
     form_data = {
         'full_name': payment_intent['shipping']['name'],
@@ -70,7 +97,7 @@ def checkout_success(request):
     }
 
     order_form = OrderForm(form_data)
-    print(f'Unsaved Order Form data is: {order_form}')
+
     if order_form.is_valid():
         print('Order is valid')
         order = order_form.save(commit=False)

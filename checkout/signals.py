@@ -1,3 +1,4 @@
+""" Provides Project level signals when a save or delete action occurs """
 # Copied from Code Institute Boutique Ado walkthrough
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
