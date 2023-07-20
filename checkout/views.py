@@ -95,8 +95,13 @@ def checkout_success(request):
 
     order_form = OrderForm(form_data)
     print(f'Unsaved Order Form data is: {order_form}')
-    # if order_form.is_valid():
-    #     order = order_form.save()
+    if order_form.is_valid():
+        print('Order is valid')
+        # order = order_form.save(commit=False)
+        # order.stripe_pid = stripe_pid
+        # order.original_bag = json.dumps(cart)
+            # order.save()
+
     #     for item_id, item_data in cart.items():
     #         try:
     #             product = Product.objects.get(id=item_id)
@@ -148,6 +153,11 @@ def checkout_success(request):
 
     # if 'cart' in request.session:
     #     del request.session['cart']
+    else:
+        print('The order form is not valid')
+        order_form_not_valid
+        template = 'checkout/order_form_not_valid.html'
+        return render(request, template)
 
     template = 'checkout/checkout_success.html'
     context = {
@@ -155,6 +165,17 @@ def checkout_success(request):
     }
 
     return render(request, template, context)
+
+
+def order_form_not_valid(request):
+    """ Handles Invalid Addresss Payment Data for Orders """
+    messages.error(request, 'There was an error with your form. \
+        Please double check your information.')
+
+    # if order_form.is_valid():
+    template = 'order_form_not_valid.html'
+
+    return render(request, template)
 
 
 def create_payment_intent(request):

@@ -5,6 +5,9 @@ from .webhooks import webhook
 
 urlpatterns = [
     path('', views.checkout, name='checkout'),
+    path('order_form_not_valid/',
+         views.order_form_not_valid,
+         name='order_form_not_valid'),
     path('checkout_success/',
          views.checkout_success, name='checkout_success'),
     path('webhook/', webhook, name='webhook'),
