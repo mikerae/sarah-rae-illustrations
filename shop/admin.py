@@ -1,8 +1,10 @@
+""" Shop Admin Area Settings """
 from django.contrib import admin
 from .models import Product, Category, SubCategory
 
 
 class ProductAdmin(admin.ModelAdmin):
+    """ Display fields for Products in Admin """
     list_display = (
         'name',
         'sku',
@@ -12,12 +14,14 @@ class ProductAdmin(admin.ModelAdmin):
         'likes',
         'category',
         'subcategory',
+        'digital_artwork',
     )
 
     ordering = ('name',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """ Display fields for Categories in Admin """
     list_display = (
         'friendly_name',
         'name',
@@ -25,6 +29,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class SubCategoryAdmin(admin.ModelAdmin):
+    """ Display fields for Subcategories in Admin """
     list_display = (
         'friendly_name',
         'name',

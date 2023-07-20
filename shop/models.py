@@ -1,21 +1,24 @@
+""" Shop Models: Product Category and Subcategory"""
 from django.db import models
-
-from digital_artworks.models import DigitalArtWork
 
 
 class Category(models.Model):
+    """ Main Product Category """
     class Meta:
+        """ Customisation """
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=245)
     friendly_name = models.CharField(max_length=245, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class SubCategory(models.Model):
+    """ Product Subcategory """
     class Meta:
+        """ Customisation """
         verbose_name_plural = 'Subcategories'
     name = models.CharField(max_length=245)
     friendly_name = models.CharField(max_length=245, null=True, blank=True)
@@ -25,10 +28,11 @@ class SubCategory(models.Model):
                                  on_delete=models.SET_NULL,)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Product(models.Model):
+    """ Product """
     name = models.CharField(max_length=254)
     sku = models.CharField(max_length=254, null=True, blank=True)
     price = models.DecimalField(max_digits=6,
@@ -53,4 +57,4 @@ class Product(models.Model):
                                         related_name='products')
 
     def __str__(self):
-        return self.name
+        return str(self.name)

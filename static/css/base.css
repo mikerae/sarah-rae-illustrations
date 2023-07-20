@@ -262,6 +262,10 @@ a.cat-badge>span.badge:hover {
     max-width: 100%;
 }
 
+.order-confirmation-wrapper {
+    border: 2px solid rgb(218, 145, 12);
+}
+
 /* copied from CI Boutique Ado Walkthrough for modification later */
 
 /* Slightly larger container on xl screens */
