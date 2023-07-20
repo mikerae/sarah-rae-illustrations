@@ -5,7 +5,8 @@ import stripe
 
 from django.shortcuts import (render,
                               redirect,
-                              reverse)
+                              reverse,
+                              get_object_or_404)
 from django.conf import settings
 from django.contrib import messages
 from django.http import JsonResponse
@@ -79,7 +80,7 @@ def checkout_success(request):
 
         for item_id, item_data in cart.items():
 
-            product = Product.objects.get(id=item_id)
+            product = get_object_or_404(Product, pk=item_id)
             if isinstance(item_data, int):
                 order_line_item = OrderLineItem(
                     order=order,
