@@ -19,20 +19,23 @@ checkStatus();
 
 // Set eventListner on payment form submit button "Complete Order"
 document.getElementById("payment-form").addEventListener("submit", handleSubmit);
-// Set eventListner on payment form submit button to save User preference to session
+// Set eventListner on payment form submit button to post User preference to save_userdata_checked()
 saveInfoElement.addEventListener("submit", saveInfo);
 // Set eventListner on save-info checkbox when state is
 saveInfoElement.addEventListener("change", toggleSaveInfoState);
 
 //set initial state of saveInfoState
 let saveInfoState = true;
-console.log(`saveInfoState: ${saveInfoState}`);
+console.log(`saveInfoState initial value on load: ${saveInfoState}`);
 
-// toggle value of saveInfoState
-saveInfoElement.onchange = function () {
-    toggleSaveInfoState
-};
-
+function toggleSaveInfoState() {
+    if (saveInfoState == true) {
+        saveInfoState = false;
+    } else {
+        saveInfoState = true;
+    }
+    console.log(`saveInfoState toggled value: ${saveInfoState}`);
+}
 // Fetches a payment intent and captures the client secret
 // then loads DOM payment elements
 async function initialize() {
@@ -80,17 +83,6 @@ async function initialize() {
 
     const paymentElement = elements.create("payment", paymentElementOptions);
     paymentElement.mount("#payment-element");
-}
-
-// Toggles saveInfoStae varriable when checkbox changes
-function toggleSaveInfoState() {
-    if (saveInfoState == true) {
-        saveInfoState = false;
-    } else {
-        saveInfoState = true
-    }
-    console.log(`saveInfoState: ${saveInfoState}`);
-    return saveInfoState
 }
 
 // When submit button is clicked, if the user has checked 
