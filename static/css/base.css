@@ -9,6 +9,10 @@ body {
     height: calc(100vh - 175px);
 }
 
+a {
+    color: rgb(248, 139, 104);
+}
+
 .body-footer-adjust {
     padding-bottom: 45px;
 }
@@ -117,9 +121,14 @@ a.text-sri-logo:hover {
 .main-logo-link:focus,
 .logo-text:hover,
 .logo-text:active,
-.logo-text:focus {
+.logo-text:focus,
+a:hover {
     background: rgb(248, 139, 104);
     color: rgb(77, 0, 82) !important;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 .border-sri {
@@ -293,6 +302,10 @@ a.cat-badge>span.badge:hover {
     .header-container {
         padding-top: 175px;
     }
+}
+
+.allauth-form-inner-content {
+    color: rgb(218, 145, 12);
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */

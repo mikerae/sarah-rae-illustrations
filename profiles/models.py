@@ -28,8 +28,8 @@ class UserProfile(models.Model):
                                             null=True, blank=True)
 
 
-def __str__(self):
-    return str(self.user.username)
+    def __str__(self):
+        return str(self.user.username)
 
 
 @receiver(post_save, sender=User)
