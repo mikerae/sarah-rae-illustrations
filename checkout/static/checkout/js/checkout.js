@@ -20,22 +20,14 @@ checkStatus();
 // Set eventListner on payment form submit button "Complete Order"
 document.getElementById("payment-form").addEventListener("submit", handleSubmit);
 // Set eventListner on payment form submit button to post User preference to save_userdata_checked()
-saveInfoElement.addEventListener("submit", saveInfo);
+document.getElementById("payment-form").addEventListener("submit", saveInfo);
 // Set eventListner on save-info checkbox when state is
 saveInfoElement.addEventListener("change", toggleSaveInfoState);
 
-//set initial state of saveInfoState
+//set initial state of saveInfoState to true matching the DOM state
 let saveInfoState = true;
 console.log(`saveInfoState initial value on load: ${saveInfoState}`);
 
-function toggleSaveInfoState() {
-    if (saveInfoState == true) {
-        saveInfoState = false;
-    } else {
-        saveInfoState = true;
-    }
-    console.log(`saveInfoState toggled value: ${saveInfoState}`);
-}
 // Fetches a payment intent and captures the client secret
 // then loads DOM payment elements
 async function initialize() {
@@ -93,7 +85,7 @@ function saveInfo(e) {
     let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     let postData = {
         'csrfmiddlewaretoken': csrfToken,
-        'save-info': 'Hello World',
+        'save-info': saveInfoState,
     };
     let url = '/checkout/save_userdata_checked/';
     $.post(url, postData);
@@ -129,6 +121,16 @@ async function handleSubmit(e) {
 
     setLoading(false);
 
+}
+
+// Toggles value of saveInfoState when checkbox is changed
+function toggleSaveInfoState() {
+    if (saveInfoState == true) {
+        saveInfoState = false;
+    } else {
+        saveInfoState = true;
+    }
+    console.log(`saveInfoState toggled value: ${saveInfoState}`);
 }
 
 // Fetches the payment intent status after payment submission
