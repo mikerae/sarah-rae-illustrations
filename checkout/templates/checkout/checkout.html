@@ -91,10 +91,11 @@
                         </div>
                         <div class="form-check form-check-inline  mr-0">
                             {% if user.is_authenticated %}
-                            <input class="form-check-input" type="checkbox" id="id-save-info" name="id-save-info"
-                                checked>
-                            <label class="form-check-label text-sri-logo mt-3" for="id-save-info">Save this
-                                information to my profile</label>
+                            <label class="form-check-label mt-3" for="id-save-info">Save
+                                this information to my profile<input class="form-check-input" type="checkbox"
+                                    id="id-save-info" name="id-save-info" checked>
+                                <span class="checkmark"></span>
+                            </label>
                             {% else  %}
                             <label class="formm-check-label text-sri-logo" for="id-save-info">
                                 <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or

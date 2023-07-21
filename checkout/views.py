@@ -35,6 +35,7 @@ def save_userdata_checked(request):
     print('save_userdata_checked is called')
     try:
         save_info = request.POST.get('save-info')
+        print(print(f'save-info recieved from front end  is: {save_info}') )
         request.session['save-info'] = save_info
         django_save_info = request.session['save-info']
         print(f'save-info stored in current session is: {django_save_info}')
