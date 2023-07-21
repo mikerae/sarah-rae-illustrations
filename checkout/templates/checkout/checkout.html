@@ -93,7 +93,7 @@
                             {% if user.is_authenticated %}
                             <label class="form-check-label mt-3" for="id-save-info">Save
                                 this information to my profile<input class="form-check-input" type="checkbox"
-                                    id="id-save-info" name="id-save-info" checked>
+                                    id="id-save-info" onchange="toggleSaveInfoState" name="id-save-info" checked>
                                 <span class="checkmark"></span>
                             </label>
                             {% else  %}
