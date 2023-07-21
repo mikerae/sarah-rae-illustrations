@@ -9,6 +9,7 @@ const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 const stripe = Stripe(stripePublicKey);
 const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
 let form = document.getElementById("payment-form");
+const saveInfoElement = document.getElementById('id-save-info');
 
 let emailAddress = '';
 
@@ -19,7 +20,18 @@ checkStatus();
 // Set eventListner on payment form submit button "Complete Order"
 document.getElementById("payment-form").addEventListener("submit", handleSubmit);
 // Set eventListner on payment form submit button to save User preference to session
-document.getElementById("payment-form").addEventListener("submit", saveInfo);
+saveInfoElement.addEventListener("submit", saveInfo);
+// Set eventListner on save-info checkbox when state is
+saveInfoElement.addEventListener("change", toggleSaveInfoState);
+
+//set initial state of saveInfoState
+let saveInfoState = true;
+console.log(`saveInfoState: ${saveInfoState}`);
+
+// toggle value of saveInfoState
+saveInfoElement.onchange = function () {
+    toggleSaveInfoState
+};
 
 // Fetches a payment intent and captures the client secret
 // then loads DOM payment elements
@@ -70,16 +82,26 @@ async function initialize() {
     paymentElement.mount("#payment-element");
 }
 
+// Toggles saveInfoStae varriable when checkbox changes
+function toggleSaveInfoState() {
+    if (saveInfoState == true) {
+        saveInfoState = false;
+    } else {
+        saveInfoState = true
+    }
+    console.log(`saveInfoState: ${saveInfoState}`);
+    return saveInfoState
+}
+
 // When submit button is clicked, if the user has checked 
 // save-info, 'save-info' wll be stored in the current session.
 // This will then be used on the server to store user details.
 function saveInfo(e) {
     e.preventDefault(e);
-    let saveInfo = Boolean($('#id-save-info').attr('checked'));
     let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     let postData = {
         'csrfmiddlewaretoken': csrfToken,
-        'save-info': saveInfo,
+        'save-info': 'Hello World',
     };
     let url = '/checkout/save_userdata_checked/';
     $.post(url, postData);
