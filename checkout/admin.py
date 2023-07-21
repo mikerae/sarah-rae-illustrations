@@ -9,7 +9,7 @@ class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
-    list_display = ('product', 'product__category', 'product__subcategory')
+    list_display = ('product',)
 
 
 class OrderAdmin(admin.ModelAdmin):
@@ -18,13 +18,13 @@ class OrderAdmin(admin.ModelAdmin):
 
     readonly_fields = (
         'order_number', 'date',
-        'order_total',)
+        'order_total', 'original_bag', 'stripe_pid',)
 
     fields = (
         'order_number', 'date', 'full_name', 'email', 'phone_number',
         'country', 'postcode', 'town_or_city', 'street_address_1',
         'street_address_2', 'county',
-        'order_total',)
+        'order_total', 'original_bag', 'stripe_pid',)
 
     list_display = (
         'order_number', 'date', 'full_name',

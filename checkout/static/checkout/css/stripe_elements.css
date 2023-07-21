@@ -51,7 +51,15 @@ button:disabled {
     cursor: default;
 }
 
-*/
+select,
+select option {
+    color: rgb(218, 145, 12);
+}
+
+select:invalid,
+select option[value=""] {
+    color: darkgrey !important;
+}
 
 /* spinner/processing state, errors */
 .spinner,

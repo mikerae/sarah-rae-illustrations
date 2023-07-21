@@ -1,4 +1,12 @@
-""" Handles webhooks from stripe  """
+""" Handles webhooks from stripe
+
+    NB: Because the new stripe Payment Element was used rather than the Card
+    Element. The Payment Element captured all the necessary user data, but then
+    imediately passed a payment_succeded call to stripe. t was not properly
+    understood how to input data to the payment intent before passing it to the
+    Payment Element, the webhook paymentIntent received from stipe does not
+    have all the required metadata to make order processing effective here.
+"""
 from django.http import HttpResponse
 
 
@@ -20,8 +28,6 @@ class StripeWhHandler():
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
-        intent = event.data.object
-        print(intent)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: \
                 Created order in webhook', status=200)
