@@ -201,4 +201,3 @@ def create_payment_intent(request):
     except Exception as e:
         messages.warning(request, f'Oh dear! There was an error: ${e}')
         return JsonResponse(error=str(e), data=403)
-    return
