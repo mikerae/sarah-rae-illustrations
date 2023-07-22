@@ -60,7 +60,8 @@
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="{% url 'shop' %}">
                         <div class="input-group w-100">
-                            <input class="form-control border border-sri rounded-pill" type="text" name="q"
+                            <input id="main-search-bar"
+                                class="form-control border border-sri custom-search rounded-pill" type="text" name="q"
                                 placeholder="Seach my Shop">
                             <div class="input-group-append">
                                 <button class="form-control btn btn-sri border border-sri nav-menu rounded-0"
@@ -86,10 +87,12 @@
                             <div class="dropdown-menu nav-menu py-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
+                                <div class="text-sri">{{user}}</div>
                                 <a href="" class="dropdown-item nav-link">Product Management</a>
-                                <a href="" class="dropdown-item nav-link">Gallery Management</a>
+                                <a href="" class="dropdown-item nav-link d-none">Gallery Management</a>
                                 <a href="/admin/" class="dropdown-item nav-link">Site Administration</a>
                                 {% endif %}
+                                <div class="text-sri">{{user}}</div>
                                 <a href="{% url 'profile' %}" class="dropdown-item nav-link">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item nav-link">Logout</a>
                                 {% else %}

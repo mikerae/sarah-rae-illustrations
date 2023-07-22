@@ -16,7 +16,7 @@
                 <hr class="mt-1 mb-2">
             </div>
         </div>
-        {% if product_count > 0 %}
+        {% if total and not on_profile_page %}
         <p class="text-sri-dark logo-font py-1">Your Shoping Cart ({{ product_count }})</p>
             <div class="cart-notofication-wrapper">
                 {% for item in cart_items %}

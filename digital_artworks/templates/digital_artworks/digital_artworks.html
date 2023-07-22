@@ -25,7 +25,7 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for digital_artwork in digital_artworks %}
-                    <div class="col-sm- col-md-6 col-lg-4 col-xl-3">
+                    <div class="col-sm- col-md-6 col-lg-4 col-xl-3 mb-5">
                         <div class="card h-100 border-0 bg-sri text-sri-logo">
                             {% if digital_artwork.image %}
                             <a href="{% url 'digital_artwork_detail' digital_artwork.id %}">

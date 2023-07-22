@@ -18,10 +18,10 @@
 <div class="overlay"></div>
 <div class="container body-footer-adjust">
     <div class="row">
-        <div class="col">
-            <hr>
+        <div class="col text-center mt-3">
+            <hr class="w-25">
             <h2 class="logo-font text-sri-logo mb-4">Checkout</h2>
-            <hr>
+            <hr class="w-25">
         </div>
     </div>
 
@@ -135,5 +135,5 @@
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ checkout_success_url|json_script:"id_checkout_success_url"}}
-<script src="{% static 'checkout/js/checkout.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'checkout/js/checkout.js' %}" defer></script>
 {% endblock %}
