@@ -1,26 +1,28 @@
+""" Form for Product admin """
 from django import forms
 from .models import Product, Category, SubCategory
 
 
-classs ProductForm(forms.ModelForm):
+class ProductForm(forms.ModelForm):
+    """ A form to manage the shop products """
 
     class Meta:
-        model = Productfirelds = '__all__'
+        """ Custom fields """
+        model = Product
+        fields = '__all__'
 
-    def __init__(self, *args, **kwargs)
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
-        category_friendly_names = [(
-            c.id, c.get_friendly_name()
-            ) for c in categories]
+        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
+        self.fields['category'].choices = friendly_names
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border-sri rounded-0'
+
         subcategories = SubCategory.objects.all()
         subcategory_friendly_names = [(
             sc.id, sc.get_friendly_name()
             ) for sc in subcategories]
-
-        self.fields['category'].choices = category_friendly_names
         self.fields['subcategory'].choices = subcategory_friendly_names
         for field_name, field in self.fields.items():
-            field.widget.attrs[['class']] = 'border-sri rounded-0'
-
-
+            field.widget.attrs['class'] = 'border-sri rounded-0'

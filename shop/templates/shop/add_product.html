@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container body-footer-adjust">
+    <div class="row">
+        <div class="col-12 col-md-6 text-center mt-3">
+            <hr class="w-25">
+            <h2 class="logo-font text-sri-logo mb-4">Product Management</h2>
+            <h5 class="text-sri-logo mb-4">Add a Product</h5>
+            <hr class="w-25">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <a href="{% url 'shop' %}" class="btn btn-sri rounded-0">
+                    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                    <span class="logo-font">Cancel</span>
+                </a>
+                <button id="submit" class="btn btn-sri rounded-0">
+                    <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                    <span id="button-text" class="font-weight-bold logo-font">Add Product</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

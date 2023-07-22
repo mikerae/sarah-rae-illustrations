@@ -14,6 +14,9 @@ class Category(models.Model):
     def __str__(self):
         return str(self.name)
 
+    def get_friendly_name(self):
+        return self.friendly_name
+
 
 class SubCategory(models.Model):
     """ Product Subcategory """
@@ -29,6 +32,9 @@ class SubCategory(models.Model):
 
     def __str__(self):
         return str(self.name)
+    
+    def get_friendly_name(self):
+        return self.friendly_name
 
 
 class Product(models.Model):

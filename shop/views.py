@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Product, Category, SubCategory
+from .forms import ProductForm
 
 
 def shop(request):
@@ -88,3 +89,14 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'shop/product_detail.html', context)
+
+
+def add_product(request):
+    """ Add a product to the shop """
+    form = ProductForm()
+    template = 'shop/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
