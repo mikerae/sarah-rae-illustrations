@@ -15,6 +15,8 @@ from django.views.decorators.http import require_POST
 
 from shop.models import Product
 from cart.contexts import cart_contents
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from .forms import OrderForm
 from .models import OrderLineItem
 
@@ -88,7 +90,7 @@ def checkout_success(request):
     form_data = {
         'full_name': payment_intent['shipping']['name'],
         'email': payment_intent['receipt_email'],
-        'phone_nubmer': payment_intent['shipping']['phone'],
+        'phone_number': payment_intent['shipping']['phone'],
         'country': payment_intent['shipping']['address']['country'],
         'town_or_city': payment_intent['shipping']['address']['city'],
         'street_address_1': payment_intent['shipping']['address']['line1'],
@@ -116,6 +118,27 @@ def checkout_success(request):
                     quantity=item_data,
                 )
                 order_line_item.save()
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach th eusers's profile to the order
+        order.user_profile = profile
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_treet_address_1': order.street_address_1,
+                'default_street_address_2': order.street_address_2,
+                'default_county': order.county,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order.order_number}. A confirmation email \
@@ -165,8 +188,9 @@ def create_payment_intent(request):
             currency=settings.STRIPE_CURRENCY,
             automatic_payment_methods={
                 'enabled': True,
-            },
+            }
         )
+
         return JsonResponse({
             'clientSecret': intent['client_secret']
         })

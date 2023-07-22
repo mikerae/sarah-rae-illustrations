@@ -173,10 +173,17 @@
                 </div>
             </div>
             <div class="col-12 col-lg-7 text-right">
+                {% if  from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-sri rounded-0 my-2">
+                    <span class="icon mr-2"><i class="fas fa-chevron-right"></i></span>
+                    <span class="logo-font">Back to Profile</span>
+                </a>
+                {% else %}
                 <a href="{% url 'shop' %}" class="btn btn-sri rounded-0 my-2">
                     <span class="icon mr-2"><i class="fas fa-chevron-left"></i></span>
                     <span class="logo-font">Return to the Shop</span>
                 </a>
+                {% endif %}
             </div>
         </div>
         {% endblock %}
