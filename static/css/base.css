@@ -25,6 +25,13 @@ a {
     border-color: rgb(248, 139, 104);
 }
 
+.dropdown_item {
+    background-color: rgb(77, 0, 82);
+    color: rgb(248, 139, 104);
+}
+
+
+
 .bg-sri-light {
     background-color: rgb(248, 139, 104);
 }
@@ -318,13 +325,16 @@ input[name='q']:focus {
     }
 }
 
-.form input {
+.form input,
+.form textarea,
+.form {
     background-color: rgb(77, 0, 82);
+    color: rgb(248, 139, 104);
 }
 
 .form input:hover,
 .form input::selection,
-.form input::selfocus {
+.form textarea::selection {
     color: rgb(49, 10, 52);
     background-color: rgb(248, 139, 104);
 }

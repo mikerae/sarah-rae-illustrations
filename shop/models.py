@@ -15,6 +15,7 @@ class Category(models.Model):
         return str(self.name)
 
     def get_friendly_name(self):
+        """ Returns a user readable version of the name """
         return self.friendly_name
 
 
@@ -32,8 +33,9 @@ class SubCategory(models.Model):
 
     def __str__(self):
         return str(self.name)
-    
+
     def get_friendly_name(self):
+        """ Returns a user readable version of the name """
         return self.friendly_name
 
 

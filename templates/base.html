@@ -76,6 +76,9 @@
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                        <li class="list-inline-item">
+                            <div class="text-sri text-right">Logged in as {{user}}</div>
+                        </li>
                         <li class="list-inline-item dropdown">
                             <a class="nav-link px-lg-2" href="" id="user-options" data-toggle="dropdown"
                                 aria-haspopup="true" area-expanded="false">
@@ -84,15 +87,14 @@
                                     <p class="my-0">My Account</p>
                                 </div>
                             </a>
-                            <div class="dropdown-menu nav-menu py-0" aria-labelledby="user-options">
+                            <div class="dropdown-menu py-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <div class="text-sri">{{user}}</div>
-                                <a href="" class="dropdown-item nav-link">Product Management</a>
+                                <a href="" class="dropdown-item nav-link d-none">Product Management</a>
+                                <a href="{% url 'add_product' %}" class="dropdown-item nav-link">Add Product</a>
                                 <a href="" class="dropdown-item nav-link d-none">Gallery Management</a>
                                 <a href="/admin/" class="dropdown-item nav-link">Site Administration</a>
                                 {% endif %}
-                                <div class="text-sri">{{user}}</div>
                                 <a href="{% url 'profile' %}" class="dropdown-item nav-link">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item nav-link">Logout</a>
                                 {% else %}

@@ -32,9 +32,11 @@
     </a>
     <div class="dropdown-menu border-0 py-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
+        <span class="dropdowm-item text-sri"></span>Logged in as {{ user }}</span>
         {% if request.user.is_superuser %}
-        <a href="#" class="nav-link dropdowm-item">Product Management</a>
-        <a href="#" class="nav-link dropdowm-item">Gallery Management</a>
+        <a href="{% url 'add_product' %}" class="nav-link dropdowm-item">Add a product</a>
+        <a href="#" class="nav-link dropdowm-item d-none">Product Management</a>
+        <a href="#" class="nav-link dropdowm-item d-none">Gallery Management</a>
         <a href="/admin/" class="nav-link dropdowm-item">Site Administration</a>
         {% endif %}
         <a href="#" class="nav-link dropdowm-item">My Profile</a>
