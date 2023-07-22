@@ -1,3 +1,4 @@
+""" Views for the Shop """
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
@@ -38,7 +39,6 @@ def shop(request):
             category = request.GET['category']
             products = products.filter(category__name=category)
             category = get_object_or_404(Category, name=category)
-            print(f'Catergory: {category}')
 
         if 'subcategory' in request.GET:
             subcategory = request.GET['subcategory']

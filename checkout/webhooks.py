@@ -1,11 +1,3 @@
-"""
-    copied from Stripe https://stripe.com/docs/webhooks/quickstart
-    and modified for this project.
-"""
-
-import stripe
-
-
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
@@ -13,15 +5,16 @@ from django.views.decorators.csrf import csrf_exempt
 
 from checkout.webhook_handler import StripeWhHandler
 
+import stripe
+
 
 @require_POST
 @csrf_exempt
 def webhook(request):
     """ Listen for webhooks from Stripe """
-
-    # Set Up
+    # Setup
+    wh_secret = settings.STRIPE_APP_WEBHOOK_SIGNING_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
-    webhook_secret = settings.STRIPE_APP_WEBHOOK_SIGNING_SECRET
 
     # Get the webhook data and verify its signature
     payload = request.body
@@ -30,7 +23,7 @@ def webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-            payload, sig_header, webhook_secret
+            payload, sig_header, wh_secret
         )
     except ValueError as e:
         # Invalid payload

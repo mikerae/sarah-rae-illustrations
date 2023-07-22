@@ -19,6 +19,7 @@ from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from .forms import OrderForm
 from .models import OrderLineItem
+from .confirmation_emails import send_confirmation_email
 
 
 stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -37,7 +38,7 @@ def save_userdata_checked(request):
     print('save_userdata_checked is called')
     try:
         save_info = request.POST.get('save-info')
-        print(print(f'save-info recieved from front end  is: {save_info}'))
+        print(f'save-info recieved from front end  is: {save_info}')
         request.session['save-info'] = save_info
         django_save_info = request.session['save-info']
         print(f'save-info stored in current session is: {django_save_info}')
@@ -139,6 +140,9 @@ def checkout_success(request):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
+
+    # Send confirmation email to customer
+    send_confirmation_email(payment_intent, order)
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order.order_number}. A confirmation email \
