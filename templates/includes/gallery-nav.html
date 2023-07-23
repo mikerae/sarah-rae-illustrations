@@ -30,24 +30,28 @@
                 </li>
             </ul>
         </li>
-
         <li class="nav-item d-none">
-            <a class="logo-font font-weight-bold nav-link text-sri mr-5 d-none" href="#" id="Gallery-link">
+            <a class="logo-font font-weight-bold nav-link text-sri mr-5" href="#" id="Gallery-link">
                 Sort Digital Art Works
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-sri mr-5 d-none" href="{% url 'commissions' %}"
+        <li class="nav-item d-none">
+            <a class="logo-font font-weight-bold nav-link text-sri mr-5" href="{% url 'commissions' %}"
                 id="commissions-link">
                 Commisions
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-sri d-none" href="{% url 'about_sarah' %}"
+        <li class="nav-item d-none">
+            <a class="logo-font font-weight-bold nav-link text-sri" href="{% url 'about_sarah' %}"
                 id="about-sarah=link">
                 About Sarah
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link" href="{% url 'home' %}" id="about-sarah=link">
+                Home
             </a>
         </li>
     </ul>
