@@ -92,6 +92,8 @@
                                 {% if request.user.is_superuser %}
                                 <a href="" class="dropdown-item nav-link d-none">Product Management</a>
                                 <a href="{% url 'add_product' %}" class="dropdown-item nav-link">Add Product</a>
+                                <a href="{% url 'add_digital_artwork' %}" class="dropdown-item nav-link">Add Digital Art
+                                    Work</a>
                                 <a href="" class="dropdown-item nav-link d-none">Gallery Management</a>
                                 <a href="/admin/" class="dropdown-item nav-link">Site Administration</a>
                                 {% endif %}

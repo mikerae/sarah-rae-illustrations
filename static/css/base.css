@@ -163,7 +163,6 @@ a.cat-badge>span.badge:hover {
     top: 0;
     left: 0;
     position: fixed;
-    /* background: rgb(233, 229, 233); */
     background: rgb(38, 2, 41);
     z-index: -1;
 }

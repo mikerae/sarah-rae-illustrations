@@ -1,8 +1,9 @@
+""" Models for Digital Art Works """
 from django.db import models
-from django.conf import settings
 
 
 class DigitalArtWork(models.Model):
+    """ Digital Art Works Model """
     name = models.CharField(max_length=254)
     image = models.ImageField()
     image_alt = models.CharField(max_length=254)
@@ -10,4 +11,4 @@ class DigitalArtWork(models.Model):
     carousel = models.BooleanField()
 
     def __str__(self):
-        return self.name
+        return str(self.name)

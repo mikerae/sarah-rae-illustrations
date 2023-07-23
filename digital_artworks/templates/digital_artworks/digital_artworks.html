@@ -45,6 +45,12 @@
                                 <div class="row">
                                     <div class="col">
                                         {% if request.user.is_superuser %}
+                                        <small class="ml-3">
+                                            <a href="{% url 'edit_digital_artwork' digital_artwork.id %}"
+                                                class="text-info">Edit</a>
+                                            <a href="{% url 'delete_digital_artwork' digital_artwork.id %}"
+                                                class="text-danger">Delete</a>
+                                        </small>
                                         {% if digital_artwork.carousel %}
                                         <small><i class="fa-solid fa-display mr-3"></i>This
                                             art work is included in the Carousel</small>

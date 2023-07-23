@@ -107,7 +107,7 @@ def add_product(request):
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             print('there was an error adding your product')
-            messages.error(request, 'Failed to add producct.Please ensure \
+            messages.error(request, 'Failed to add product.Please ensure \
                  the form is valid.')
     else:
         form = ProductForm()

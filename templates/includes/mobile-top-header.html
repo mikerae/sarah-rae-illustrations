@@ -34,7 +34,8 @@
         {% if request.user.is_authenticated %}
         <span class="dropdowm-item text-sri"></span>Logged in as {{ user }}</span>
         {% if request.user.is_superuser %}
-        <a href="{% url 'add_product' %}" class="nav-link dropdowm-item">Add a product</a>
+        <a href="{% url 'add_product' %}" class="nav-link dropdowm-item">Add a Product</a>
+        <a href="{% url 'add_digital_artwork' %}" class="nav-link dropdowm-item">Add a Digital Art Work</a>
         <a href="#" class="nav-link dropdowm-item d-none">Product Management</a>
         <a href="#" class="nav-link dropdowm-item d-none">Gallery Management</a>
         <a href="/admin/" class="nav-link dropdowm-item">Site Administration</a>
