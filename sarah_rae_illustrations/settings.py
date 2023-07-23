@@ -206,8 +206,7 @@ if 'USE_AWS' in os.environ:
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorages'
     MEDIAFILES_LOCATION = 'media'
-    
-    
+
     # Override stata and media URLS in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAINid}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAINid}/{MEDIAFILES_LOCATION}/'
