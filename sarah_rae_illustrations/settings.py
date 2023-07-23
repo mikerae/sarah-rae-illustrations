@@ -34,6 +34,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = [
     'sarah-rae-illustrations-d721ea03fb61.herokuapp.com',
     'localhost',
+    '8000-mikerae-sarahraeillustr-pno90mcmpvs.ws-eu102.gitpod.io',
 ]
 
 # Stripe
