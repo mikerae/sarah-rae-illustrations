@@ -9,11 +9,11 @@ def send_confirmation_email(intent, order):
     # intent = event.data.object
     cust_email = intent["receipt_email"]
     subject = render_to_string(
-        'checkout/confirmation_emails/confirmation_email_subject.txt',
+        'checkout/email_templates/confirmation_email_subject.txt',
         {'order': order}
     )
     body = render_to_string(
-        'checkout/confirmation_emails/confirmation_email_body.txt',
+        'checkout/email_templates/confirmation_email_body.txt',
         {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
     )
 
@@ -23,3 +23,4 @@ def send_confirmation_email(intent, order):
         settings.DEFAULT_FROM_EMAIL,
         [cust_email]
         )
+    return

@@ -352,6 +352,46 @@ input[name='q']:focus {
     color: rgb(218, 145, 12);
 }
 
+
+/* Product Form: */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(77, 0, 82);
+    color: rgb(218, 145, 12);
+}
+
+.btn-file:hover {
+    background-color: rgb(77, 0, 82);
+    color: rgb(248, 139, 104);
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100;
+    min-height: 100;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+    /* color: rgb(218, 145, 12); */
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+
+}
+
+/* end copy */
+
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {

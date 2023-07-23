@@ -29,4 +29,4 @@ class ProductForm(forms.ModelForm):
             ) for sc in subcategories]
         self.fields['subcategory'].choices = subcategory_friendly_names
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-sri rounded-0'
+            field.widget.attrs['class'] = 'border-sri text-sri-logo rounded-0'

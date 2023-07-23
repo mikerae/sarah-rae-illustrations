@@ -1,3 +1,4 @@
+""" Views for the Index Page """
 from django.shortcuts import render
 from digital_artworks.models import DigitalArtWork
 
@@ -13,6 +14,7 @@ def index(request):
     carousel_artworks = artworks.filter(carousel=True)
     context = {
         'carousel_artworks': carousel_artworks,
+        'site_area': site_area,
     }
 
     return render(request, 'home/index.html', context)
