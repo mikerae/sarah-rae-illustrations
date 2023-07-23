@@ -52,7 +52,8 @@ def add_digital_artwork(request):
         if form.is_valid():
             artwork = form.save()
             messages.success(request, 'Successfully added artwork!')
-            return redirect(reverse('digital_artwork_detail', args=[artwork.id]))
+            return redirect(reverse('digital_artwork_detail',
+                            args=[artwork.id]))
         else:
             print('there was an error adding your artwork')
             messages.error(request, 'Failed to add artwork. Please ensure \
@@ -81,7 +82,8 @@ def edit_digital_artwork(request, digital_artwork_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'You artwork has been updated.')
-            return redirect(reverse('digital_artwork_detail', args=[artwork.id]))
+            return redirect(reverse('digital_artwork_detail',
+                            args=[artwork.id]))
         else:
             messages.error(request, 'Failed to update artwork. \
                 Please ensure your form is valid')

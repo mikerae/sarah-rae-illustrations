@@ -17,6 +17,7 @@ from shop.models import Product
 from cart.contexts import cart_contents
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
+
 from .emails import send_confirmation_email
 from .forms import OrderForm
 from .models import OrderLineItem
@@ -142,6 +143,7 @@ def checkout_success(request):
                 user_profile_form.save()
 
     # Send confirmation email to customer placeholder
+    send_confirmation_email(payment_intent, order)
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order.order_number}. A confirmation email \
