@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Sitemap: https://sarah-rae-illustrations-d721ea03fb61.herokuapp.com/sitemap.xml
