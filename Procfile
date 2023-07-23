@@ -1,0 +1,1 @@
+web: gunicorn sarah_rae_illustrations.wsgi:application
