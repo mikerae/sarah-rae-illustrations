@@ -379,7 +379,6 @@ input[name='q']:focus {
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
     border-color: #dc3545;
-    /* color: rgb(218, 145, 12); */
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
