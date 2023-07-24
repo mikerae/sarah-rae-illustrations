@@ -32,6 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 
+
 ALLOWED_HOSTS = [
     'sarah-rae-illustrations-d721ea03fb61.herokuapp.com',
     'localhost',
