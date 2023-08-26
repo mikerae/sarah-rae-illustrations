@@ -135,5 +135,5 @@
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ checkout_success_url|json_script:"id_checkout_success_url"}}
-<script type="text/javascript" src="{% static 'checkout/js/checkout.js' %}" defer></script>
+<script src="{% static 'checkout/js/checkout.js' %}" defer></script>
 {% endblock %}

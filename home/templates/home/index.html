@@ -17,7 +17,7 @@
         <div class="col"></div>
         <div class="col-9 col-md-6">
             <div id="home-logo" class="mt-4">
-                <img id="home-logo-img" src="{% static 'images/logo.png' %}"" class=" img-fluid"
+                <img id="home-logo-img" src="{% static 'images/logo.png' %}" class="img-fluid"
                     alt="Sarah Rae Illustrations Logo">
             </div>
             <div id="homeCarousel" class="carousel slide mt-5 mx-auto" data-ride="carousel">
@@ -28,7 +28,6 @@
                     {% endfor %}
                 </ol>
                 <div class="carousel-inner">
-                    <meta name="description" contents="Digital Artwok by Sarah Rae">
                     {% for ca in carousel_artworks %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
                         <img class="d-block w-100 carousel-image my-4" src="{{ ca.image.url }}" alt="{{ ca.image_alt}}">
