@@ -1,4 +1,4 @@
-![Am I Responsive](#)
+![Am I Responsive](/readme_files/am-i-responsive.png)
 # Sarah Rae Illustrations
 An E-Commerce Site
 
