@@ -1,4 +1,4 @@
-![Am I Responsive](#)
+![Am I Responsive](/readme_files/am-i-responsive.png)
 # Sarah Rae Illustrations
 An E-Commerce Site
 
@@ -7,6 +7,7 @@ An E-Commerce Site
 ### Code Institue Accreditation
 This is fifth project contribution to the Code Institute Full Stack Diploma. It is inspired by and is closely modeled on the Code Institute E-Commerce Walkthrough project 'Boutique Ado'.
 Appropriate accreditation is hereby given for any similarities between this project and the Code Institute E-Commerce Walkthrough project 'Boutique Ado'.
+
 # Project Summary
 ## Buisness Model: Buisness to Customer
 This site will present the Artwork of Sarah Rae and facilitate the sale of this artwork though an e-commerce website.
