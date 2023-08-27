@@ -6,7 +6,7 @@ The site promotes the digital art work of Sarah Rae.
 [View the site here](https://sarah-rae-illustrations-d721ea03fb61.herokuapp.com/)
 
 ### Code Institue Accreditation
-This is fifth project contribution to the Code Institute Full Stack Diploma. It is inspired by and is closely modeled on the Code Institute E-Commerce Walkthrough project 'Boutique Ado'.
+This is fifth project contribution to the Code Institute Full Stack Diploma. It is inspired by and is closely modelled on the Code Institute E-Commerce Walkthrough project 'Boutique Ado'.
 Appropriate accreditation is hereby given for any similarities between this project and the Code Institute E-Commerce Walkthrough project 'Boutique Ado'.
 ## Buisness Model: Buisness to Customer
 This site will present the Artwork of Sarah Rae and facilitate the sale of this artwork though an e-commerce website.
@@ -31,11 +31,11 @@ This site will present the Artwork of Sarah Rae and facilitate the sale of this 
 - Develop a community of people interested her work through the circulation of a Newsletter
 #### In Future versions, Sarah Rae will be able to:
 - Negotiate commissioned art work.
-- Analys and manage her stock levels .
+- Analyse and manage her stock levels .
 - Track Order progress from placement to delivery.
 - Keep Customers informed of the progress of their orders.
 ## Commissioned Artwork
-Commissions are not implemented in the MVP. A commissions buisness model will describe the services offered, the consultation process, the pricing structure and any terms and conditions.
+Commissions are not implemented in the MVP. A commissions business model will describe the services offered, the consultation process, the pricing structure and any terms and conditions.
 #### In Future versions, Customers will be able to:
 - Initiate dialogue with Sarah Rae regarding the commissioning of bespoke Artwork
 #### In Future versions, Sarah Rae will be able to:
@@ -45,7 +45,7 @@ Commissions are not implemented in the MVP. A commissions buisness model will de
 [Back to Top](#sarah-rae-illustrations)
 ## Strategy
 ### User Stories
-User Stories were generated through discussion with Sarah Rae, were used to inform the stratergy the UXD.
+User Stories were generated through discussion with Sarah Rae, were used to inform the strategy the UXD.
 User Stories summarising project objectives may be viewed here:
 - [User Stories 1](/readme_files/user_stories/user_stories_1.png)
 - [User Stories 2](/readme_files/user_stories/user_stories_2.png)
@@ -53,21 +53,77 @@ User Stories summarising project objectives may be viewed here:
 - [User Stories 4](/readme_files/user_stories/user_stories_4.png)
 
 ## Scope
-The scope of the Minimum Viable Product can be seen in the Sprints in the Github repository.
-- [View an example of a sprint](#):
-
-### Features: MVP
-- Security
+### Minimum Viable Product (MVP)
+[The following features were included in the MVP and can be viewed in the MVP Sprint here:](https://github.com/users/mikerae/projects/12/views/6?visibleFields=%5B%22Title%22%2C%22Labels%22%2C%22Milestone%22%2C%22Status%22%5D&filterQuery=milestone%3AMVP&sliceBy%5BcolumnId%5D=Status&sortedBy%5Bdirection%5D=asc&sortedBy%5BcolumnId%5D=Status&sliceBy%5Bvalue%5D=%E2%9C%85+Done)
+#### Admin and Store Management
+- Products and Digital Artworks can be added by the site owner
+- Products and Digital Art Works can be edited by the site owner
+- Products and Digital Art Works can be deleted by the site owner
+#### Digital Art Works
+- Digital Art Works selected by the Site Owner are displayed in a carousel on the landing page
+- Digital Art works are displayed in the Gallery area of the site
+#### Purchasing and Checkout
+- Shoppers may add products to be purchased to their basket
+- Shoppers may view basket items
+- Shoppers may view a summary of basket items
+- Shoppers may select and edit the quantity of products they wish to purchase
+- Shoppers may remove items from their basket before checkout
+- Shoppers will receive a confirmation email of purchases, summarising their order and also containing site contact details
+- Shoppers may securely submit payment details to Stripe for purchase processing
+- Shoppers are given feedback on the site for a successfully (or otherwise) processed purchase
+#### Registration and User Accounts
+The Django Security package 'Allauth' was used to manage account security and registration.
+- Users may register with the site
+- Users may log in and out of the the site
+- Users may recover lost passwords
+- Users are sent a confirmation of registration by email
+#### Security and Site Access
+- User role is authenticated using username, email and password.
+- Passwords are encrypted in all areas of the site and cannot be read directly
+- Passwords may be changes by the registered user and the super-user.
+- Access to areas and features of the site is restricted by role as follows:
+    - Anonymous users may view the Shop and Gallery and make purchases
+    - Registered Shoppers may have their shipping details saved and have them populate future purchases for convenience
+    - Registered Shoppers may save and view their order history
+    - Registered Shoppers may view their profile
+    - Registered Shoppers may sign up for and be sent a Newsletter
+    - The Site Owner may add, edit and delete products and digital art works
+    - The Site Owner, as super-user, my access and manage the Admin section of the site 
+#### Sorting and Searching of Products
+- The site user may view a list of products sorted by category
+- The site user may search products by category
+- The site user may search the shop using key words in the search bar
+- The site user is shown a summary of their search results
+- The site user may sort the list of products by name, price and category (Ascending and descending).
+#### Viewing and Navigation
+- A carousel of digital art works is displayed the site landing page
+- Digital artworks are viewable in the Gallery
+- Digital Artworks are stored securely on the site database
+- Details of a particular digital artwork can be viewed when that item is clicked
+- Products are viewed in the shop
+- Details regarding a particular product are viewed by clicking on the item
+- Different versions of a particular product are viewable for purchase
+- A digital artwork my be zoomed in for detailed inspection
+- Social media links for the site owner are available in the footer of each page and open in a new window
+- The site user may easily navigate the site using the nav-bar at the top of each page
+- The site user is given feedback for every interaction with the site.
 
 ### Features: Future Development
 [Back to Top](#sarah-rae-illustrations)
+- Commissions: A customer may enter into discussion with the site owner regarding the commissioning of art work
+- Order Processing and Delivery: Order status tracking and delivery tracking will be provided to the customer and the site owner.
+- Stock Management: Stock management will be provided to the site owner.
+- Customer Product Interest: Customers may express interest in products when they are out of stock
+
+
+
 
 ## Structure
 [Back to Top](#sarah-rae-illustrations)
 ## Skeleton
 [Back to Top](#sarah-rae-illustrations)
 
-Wire frames modeling the Skeleton phase of UXD were constructed in Balsamique
+Wire frames modelling the Skeleton phase of UXD were constructed in Balsamiq
 ### Mobile Wire Frames
 ![Index m](/readme_files/wire_frames/mobile/index-m.png)
 - [Index Hamburger m](/readme_files/wire_frames/mobile/index-hamburger-m.png)
@@ -83,7 +139,7 @@ Wire frames modeling the Skeleton phase of UXD were constructed in Balsamique
 - [Products Detail m](/readme_files/wire_frames/mobile/product-detail-m.png)
 - [Product or Art Work new Window .](/readme_files/wire_frames/mobile/product-or-art-work-image-new-window-m.png)
 - [Add to Bag Success! m](/readme_files/wire_frames/mobile/add-to-bag-success!-m.png)
-- [Shopping Bag Empy m](/readme_files/wire_frames/mobile/shopping-bag-empty-m.png)
+- [Shopping Bag Empty m](/readme_files/wire_frames/mobile/shopping-bag-empty-m.png)
 - [Shopping bar Items m](/readme_files/wire_frames/mobile/shopping-bag-items-m.png)
 - [Checkout 1 m](/readme_files/wire_frames/mobile/checkout-1-m.png)
 - [Checkout 2 m](/readme_files/wire_frames/mobile/checkout-2-m.png)
@@ -106,7 +162,7 @@ Wire frames modeling the Skeleton phase of UXD were constructed in Balsamique
 - [Category Selection t](/readme_files/wire_frames/tablet/category-selection-t.png)
 - [Sort t](/readme_files/wire_frames/tablet/shop-now-sort-t.png)
 - [Product Detail t](/readme_files/wire_frames/tablet/product-detail-t.png)
-- [Product or Atwork New Window t](/readme_files/wire_frames/tablet/product-or-artwork-image-new-window-t.png)
+- [Product or Artwork New Window t](/readme_files/wire_frames/tablet/product-or-artwork-image-new-window-t.png)
 - [Add to Bag Success t](/readme_files/wire_frames/tablet/add-to-bag-success!-t.png)
 - [Shopping Bag Empty t](/readme_files/wire_frames/tablet/shopping-bag-empty-t.png)
 - [Shopping Bag Items t](/readme_files/wire_frames/tablet/shopping-bag-items-t.png)
@@ -317,9 +373,9 @@ INSTALLED_APPS = [
 ]
 ```
 ### Database Migrations
-As models were created and changed, the changes were recorded in a set of sequential django records called 'migrations' and then applied to the database modelsm either localy or remotely.
+As models were created and changed, the changes were recorded in a set of sequential django records called 'migrations' and then applied to the database models either locally or remotely.
 #### Make Migrations
-The changes to the Django database were recorded by making migration records. First, a dry run was used to expose any errors in creating th records:
+The changes to the Django database were recorded by making migration records. First, a dry run was used to expose any errors in creating the records:
 
 ```$ python3 manage.py makemigrations -- dry-run ```
 
@@ -351,14 +407,14 @@ Python code
 The code was tested using PEP8CI online http:# and passed without issue.
 - [CI Python Linter](#)
 ## Pylint VSCODE linter
-The pylint linter was used throughout development to ensure that problematic code was corrected as it was writen.
+The pylint linter was used throughout development to ensure that problematic code was corrected as it was written.
 
 A number of the lines in the settings.py file were raising a linting error because they were too long for standard use in a terminal. Since these settings were not going to be visible in a terminal, the errors were suppressed by adding the following to the end of the long line:
 ```
   # noqa E501
 ```
 
-There were several instances where the VSCode Pylint identified that some objects had no members associated with them. These objects were, in fact, populated and accessable. This error message was disables by placing the following code at the the top of a file which generated this error.
+There were several instances where the VSCode Pylint identified that some objects had no members associated with them. These objects were, in fact, populated and accessible. This error message was disables by placing the following code at the the top of a file which generated this error.
 ```
 # pylint: disable=no-member
 ```
@@ -368,7 +424,7 @@ The state of the currently deployed python code shows minor issues:
 
 ## JavaScript
 JSHint was used to validate javascript code.
-- [JSHint results may be viewd here:](#)
+- [JSHint results may be viewed here:](#)
 ## HTML
 The W3C NU html validator was used. 1 information element originating in allauth code was exposed. Otherwise the code passed without issue.
 - [W3C HTML Validator 1](#)
@@ -395,7 +451,7 @@ The following resources were used:
 + Python Documentation: 
 + Django Documentation: https://docs.djangoproject.com/en/3.2/ref/
 + Stack Overflow: https://stackoverflow.com/
-+ Wikapedia: https://en.wikipedia.org/wiki/Main_Page
++ Wikipedia: https://en.wikipedia.org/wiki/Main_Page
 # Marketing
 [Back to Top](#sarah-rae-illustrations)
 ## Search Engine Optimisation
@@ -405,7 +461,7 @@ The site optimises its visibility to prospective customers through Search Engine
 - Descriptive meta tags
 - rel attributes on links to external resources
 ## Social Media
-Links to the following Sarah Rae Illustrations social media platforms are found in the footer of each page and may be viewd here:
+Links to the following Sarah Rae Illustrations social media platforms are found in the footer of each page and may be viewed here:
 - [Facebook Buisness page](#)
 - [Instagram Page](#)
 
@@ -424,7 +480,7 @@ ElephantSql was used for data storage
 #### Add Heroku Host Name in Settings.py
 - in ALLOWED_HOSTS add the heroku app name
 ```
-ALLOWED_HOSTS = ['string-rota.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['#sarah-rae-illustrations.herokuapp.com', 'localhost']
 ```
 #### Create 3 directories in the top level directory, next to manage.py
 - 'media'
@@ -438,29 +494,29 @@ web: gunicorn django_string_rota.wsgi
 ```
 #### Push to GitHub and connect repository to Heroku
 - Push to git hub
-- In Heroku, string-rota:
+- In Heroku, #sarah-rae-illustrations:
     - Click on 'Deploy"
     - Select GitHub Connect to Github
-    - Select the string-rota repository
-    - choose auomatic deployment
+    - Select the #sarah-rae-illustrations repository
+    - choose automatic deployment
 
 #### Create app on Heroku
-The app "string-rota" was created on Heroku by:
+The app "#sarah-rae-illustrations" was created on Heroku by:
 - Logging into Heroku
 - Clicking on New
     - Click "Create new app"
 - Giving the app a unique name.
-    - "string-rota" was accepted as unique
+    - "#sarah-rae-illustrations" was accepted as unique
 - The region was chosen as:
     - Europe
 - The app was created:
     - Click "Create app"
 
 #### Create database on ElephantSQL
-The database "string-rota" was created on ElephantSQL by:
+The database "#sarah-rae-illustrations" was created on ElephantSQL by:
 - Logging into ElephantSQL
 - Click on "Create New Instance"
-- The plan was named "string-rota"
+- The plan was named "#sarah-rae-illustrations"
 - The plan type was " Tiny Turtle (Free)
 - Click on "Select Region"
 - "EU-West-1 (Ireland)" was selected by default
@@ -478,7 +534,7 @@ The database "string-rota" was created on ElephantSQL by:
         import os
         os.environ["DATABASE_URL"] = "<copiedURL>"
         ```
-    where "copiedURL" is replaced by the copied elephantSQL "string-rota" URL
+    where "copiedURL" is replaced by the copied elephantSQL "#sarah-rae-illustrations" URL
 
     - Add a secret key to the environment
         ```
@@ -504,17 +560,17 @@ DATABASES = {
 ```
 #### Migrate changes to django database
 ```
-gitpod /workspace/string-rota (main) $ python3 manage.py migrate
+gitpod /workspace/#sarah-rae-illustrations (main) $ python3 manage.py migrate
 ```
 #### Test connection with remote ElephantSQL database
 - In the dashboard for ElephantSQL (logged in)
-    - select "string-rota" instance
+    - select "#sarah-rae-illustrations" instance
     - on the left menu
         - select BROWSER
         - select 'Table queries'
             - observe the dropdown is populated. This means that tables have been created by django in this database, and that the connection between django and the database is made.
 #### Add Environment Variables to Heroku
-- In 'string-rota'
+- In '#sarah-rae-illustrations'
     - Click on 'Reveal Config Vars'
     - Add the following KEYS and their corresponding VALUES (without "")from env.py:
         - DATABASE_URL
@@ -538,7 +594,7 @@ When the local  database needed to be reset:
 When the remote database needed to be reset:
 - The database dashboard was accessed from the ElephantSql site
 - The database was reset
-- DEVEPLOPMENT variable was commented out in  env.py 
+- DEVELOPMENT variable was commented out in  env.py 
 - Migrations were run
 - The db.json file was loaded using Loaddata
 #### Add AWS Environment Variable
@@ -639,7 +695,7 @@ The following resources were used:
 + Python Documentation: 
 + Django Documentation: https://docs.djangoproject.com/en/3.2/ref/
 + Stack Overflow: https://stackoverflow.com/
-+ Wikapedia: https://en.wikipedia.org/wiki/Main_Page
++ Wikipedia: https://en.wikipedia.org/wiki/Main_Page
 # Acknowledgments
 [Back to Top](#sarah-rae-illustrations)
 
