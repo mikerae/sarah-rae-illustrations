@@ -9,7 +9,7 @@ The site promotes the digital art work of Sarah Rae.
 This is fifth project contribution to the Code Institute Full Stack Diploma. It is inspired by and is closely modelled on the Code Institute E-Commerce Walkthrough project 'Boutique Ado'.
 Appropriate accreditation is hereby given for any similarities between this project and the Code Institute E-Commerce Walkthrough project 'Boutique Ado'.
 ## Buisness Model: Buisness to Customer
-This site will present the Artwork of Sarah Rae and facilitate the sale of this artwork though an e-commerce website.
+This site presents the Artwork of Sarah Rae and facilitate the sale of this artwork though an e-commerce website.
 ## Artwork Purchase
 ### In the MVP, Customers will be able to:
 - Purchase selected artwork products using Stripe as an industry standard purchasing method.
@@ -120,6 +120,11 @@ The Django Security package 'Allauth' was used to manage account security and re
 
 ## Structure
 [Back to Top](#sarah-rae-illustrations)
+The access to areas and features withing the site is dependant on the user role.
+The following Site Maps show the differences:
+- [Anonymous User](/readme_files/site-maps/site-map-anonymous-user.png)
+- [Registered Shopper](/readme_files/site-maps/site-map-registered-shopper.png)
+- [Site Owner](/readme_files/site-maps/site-map-site-owner.png)
 ## Skeleton
 [Back to Top](#sarah-rae-illustrations)
 
