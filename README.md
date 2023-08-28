@@ -200,7 +200,7 @@ Wire frames modelling the Skeleton phase of UXD were constructed in Balsamiq
 # Agile Development
 [Back to Top](#sarah-rae-illustrations)
 
-The Agile design process was used to some for this limited project.
+Agile development practices were used throughtout the development of this project.
 ## Platform
 [Back to Top](#sarah-rae-illustrations)
 
@@ -439,9 +439,19 @@ The W3C CSS Validator was used.
 
 # Bugs and Fixes
 [Back to Top](#sarah-rae-illustrations)
-
+Bugs are recored as Issues with a Bug template and Bug lable in the Github repo.
+Bugs which have been fixed can be viewed [here](https://github.com/mikerae/sarah-rae-illustrations/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
 ## Known Issues
 [Back to Top](#sarah-rae-illustrations)
+- [Search error does not show in messages #82](https://github.com/mikerae/sarah-rae-illustrations/issues/82)
+- [Search in Gallery #83](https://github.com/mikerae/sarah-rae-illustrations/issues/83)
+- [Update cart JS #84](https://github.com/mikerae/sarah-rae-illustrations/issues/84)
+- [Mobile Cart #86](https://github.com/mikerae/sarah-rae-illustrations/issues/86)
+- [Mobile Display: Quantity #87](https://github.com/mikerae/sarah-rae-illustrations/issues/87)
+- [Order Line Items: No subcategories #92](https://github.com/mikerae/sarah-rae-illustrations/issues/92)
+- [Admin LineItem Order: No category or subcategory #95](https://github.com/mikerae/sarah-rae-illustrations/issues/95)
+- [lumberjackie.jpeg or .png #99](https://github.com/mikerae/sarah-rae-illustrations/issues/99)
+- [Complete Purchase AnonymousUser #117](https://github.com/mikerae/sarah-rae-illustrations/issues/117)
 
 # Resources
 [Back to Top](#sarah-rae-illustrations)
