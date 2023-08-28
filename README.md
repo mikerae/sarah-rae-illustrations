@@ -213,7 +213,7 @@ The GitHub platform was used to facilitate Agile Development:
 ## User Stories - Github Issues
 [Back to Top](#sarah-rae-illustrations)
 
-- User stories were derived from discussions with Sarah Rae and notated as Github [issues](#) These user stories were refined from 'epic' to more specific user-stories.
+- User stories were derived from discussions with Sarah Rae and notated as Github [issues](https://github.com/search?q=repo%3Amikerae%2Fsarah-rae-illustrations+USER+STORY&type=issues&p=1) These user stories were refined from 'epic' to more specific user-stories.
 - For some user stories, Predicted Project Effort was defined, with story points being allocated to some user stories. 
 - Issues were prioritised according to Moscow principles. Github Labels were used mark user stories accordingly.
     - Must have: < 60% of total story points in iteration
@@ -221,29 +221,29 @@ The GitHub platform was used to facilitate Agile Development:
     - Could have: 20% of total story points in iteration
     - Won't have
 ### Bugs
-Bugs were recorded as issues, and the progress towards resolution of these issues was tracked.
+Bugs were recorded as [issues](https://github.com/mikerae/sarah-rae-illustrations/issues?q=+is%3Aissue+label%3Abug+), and the progress towards resolution of these issues was tracked.
 ### Tests
-Tests were recorded as issues, and their results were tracked.
+Some Tests were recorded as [issues](https://github.com/mikerae/sarah-rae-illustrations/issues?q=+is%3Aissue+label%3ATest+), and their results were tracked.
 ## Information Radiators
 [Back to Top](#sarah-rae-illustrations)
 
 Information Radiators were used to monitor the progress of the project development.
-- A Github [Project](#)  was used to hold all user stories for processing and allocation in a Kanban Board. User stories were allocated to the Project and their progress tracked through the following stages:
+- A Github [Project](https://github.com/users/mikerae/projects/12)  was used to hold all user stories for processing and allocation in a Kanban Board. User stories were allocated to the Project and their progress tracked through the following stages:
     - New Issue
     - Backlog
     - Ready
     - In Progress
     - In Review (Used when a branch pull-request was made)
     - Done
-- Github [Milestones](#) were used to define sprint content.
+- Github [Milestones](https://github.com/mikerae/sarah-rae-illustrations/milestones) were used to define sprint content.
 ## Backlog
 [Back to Top](#sarah-rae-illustrations)
 
-The GitHub [Project](#) was used to hold user stories and other issues which were not allocated to the current sprint.
+The GitHub [Project](https://github.com/users/mikerae/projects/12) was used to hold user stories and other issues which were not allocated to the current sprint.
 ## Sprints - Github Milestones
 [Back to Top](#sarah-rae-illustrations)
 
-- [Sprints](#) were defined to define development tasks needed to bring the project to Minimum Viable Product level. Other Github Milestones were used to hold user stories allocated to these sprints.
+- [Sprints](https://github.com/mikerae/sarah-rae-illustrations/issues?q=is%3Aopen+is%3Aissue+milestone%3AMVP) were defined to define development tasks needed to bring the project to Minimum Viable Product level. Other Github Milestones were used to hold user stories allocated to these sprints.
 # Database Design
 [Back to Top](#sarah-rae-illustrations)
 ## Mission Statement
@@ -289,12 +289,12 @@ Tables were amended to remove duplicate data, multi-data fields and calculated f
 [Back to Top](#sarah-rae-illustrations)
 
 The entities for this project have the following relationships and attributes:
-- [View Entity Relationship Diagram](#)
+- [View Entity Relationship Diagram](/readme_files/erd/erd.png)
 ## Model Schemas
 [Back to Top](#sarah-rae-illustrations)
 
 The Models Schemas for this project are:
-- [View Schema](#)
+- [View Schema](/readme_files/erd/schema.png)
 #### Model Creation
 The models were created from least dependant to most dependant.
 ## Data Input
