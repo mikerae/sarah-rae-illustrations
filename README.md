@@ -114,10 +114,6 @@ The Django Security package 'Allauth' was used to manage account security and re
 - Order Processing and Delivery: Order status tracking and delivery tracking will be provided to the customer and the site owner.
 - Stock Management: Stock management will be provided to the site owner.
 - Customer Product Interest: Customers may express interest in products when they are out of stock
-
-
-
-
 ## Structure
 [Back to Top](#sarah-rae-illustrations)
 The access to areas and features withing the site is dependant on the user role.
@@ -200,7 +196,7 @@ Wire frames modelling the Skeleton phase of UXD were constructed in Balsamiq
 - [Gallery Management d](/readme_files/wire_frames/desktop/gallery-management-d.png)
 ## Surface
 [Back to Top](#sarah-rae-illustrations)
-
+The colours, font style, logo and background image were derived from a mockup of the landing page for mobile made by Sarah Rae. The mockup can be viewed [here](/readme_files/surface-mockup.jpeg)
 
 # Agile Development
 [Back to Top](#sarah-rae-illustrations)
