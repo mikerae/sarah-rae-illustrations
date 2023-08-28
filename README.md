@@ -390,9 +390,11 @@ The changes to the Django database were recorded by making migration records. Fi
 As each feature was added, it was tested manually to ensure that it behaved as desired.
 #### Manual Testing
 The following manual tests were made:
-- [Test Log 1](#)
-- [Test Log 2](#)
-- [Test Log 3](#)
+- [Test Log 1](/readme_files/testing/test-log-1.png)
+- [Test Log 2](/readme_files/testing/test-log-2.png)
+- [Test Log 3](/readme_files/testing/test-log-3.png)
+- [Test Log 4](/readme_files/testing/test-log-4.png)
+- [Test Log 5](/readme_files/testing/test-log-5.png)
 ### Automatic Testing
 No automatic testing was used for the MVP.
 Future versions will have full django unit and integration testing.
@@ -400,7 +402,7 @@ Future versions will have full django unit and integration testing.
 No human testing was done for the MVP.
 Feedback from the site owner and customers will be used to develop future versions.
 
-# Validation
+# Code Validation
 [Back to Top](#sarah-rae-illustrations)
 Validators were used to ensure that all aspects of the code was 'clean' according to industry standards.
 ## Python PEP8CI 
