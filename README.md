@@ -469,16 +469,82 @@ The following resources were used:
 + Wikipedia: https://en.wikipedia.org/wiki/Main_Page
 # Marketing
 [Back to Top](#sarah-rae-illustrations)
+## Demographics
+Who is your ideal customer and why do they buy your product?
+
+⁃	A fantasy fairytale lover who enjoys a whimsigothic twist, they love the quirky characters of the Addams Family and the magical feeling of seeing Cinderella’s dress (Ever After) and Tinkerbell’s dress (Hook) and Sarah’s Ballgown (Labyrinth), they want to be sucked into an adventure they can imagine themselves loving.
+
+⁃	They would buy my art to feel that magical wonder, and explore the richly coloured painterly illustrations that feel like a movie scene, to connect to that inner child that loves fairytales and whimsical people
+## Branding
+### Mission
+What does the brand aim to achieve & how will it be achieved?
+
+- Illustrations that explores and expands on whimsical magical worlds full of adventure so evocative the audience can imagine themselves there and what they’d want to do while there. Our brand will achieve this by creating narrative illustrations that show rich and wonderous experiences/ places/ people but with illustrations of everyday activities to ground it into reality, as if taking a snapshot of a character going about their day
+- Explore these whimsical worlds by telling stories within the painting and grounding it with everyday experiences the viewer can see themselves in
+### Purpose
+- To create storybook illustrations that makes the viewer feel like someone from the story painted what happened and the paintings were found and put with the literature centuries later
+- To bring a sense of “wow that’s a really cool creature!”, “I would love to fly over those lakes”, “that’s the dress I want for my wedding”, “I want them to be my friend”, “that would be my pet”
+### Objective
+- To bring people a whimsical magical world and adventures to imagine themselves in when they look at the artwork
+### Serving its audience
+- Through illustrated books or just solo paintings, to evoke that otherworldly magic and interest to know more about the story there eg. “That character likes soup and is looking at a photo, did the person in that photo like soup too?”
+### Vision
+- The illustrations take you into worlds so enchanting and real, it feels like coming home   
+### Differenciators
+- fantastical content in a realistic painterly style using film techniques such as shot framing, lighting and costume design to tell the story
+- The priority is to evoke a specific emotion within the context of the narrative, so the viewer will receive more than a nicely painted image or an interesting character design
+- Whimsical, enchanting elements with dark mystifying twists yet grounded with familiarity and comfort
+- Communicate a story in such detail the characters or places feel real
+### Tone
+- whimsically inspiring and soulful 
+### Brand Descriptors
+- Accepting
+- Exciting
+- Imaginative
+- Personal
+- Thoughtful
+- Wholesome
+
+```
+Fairytale              Whimsi-gothic          Quirky -characters.              Magical feeling.                       
+       
+                adventure.                 Wonder.                      Rich colour.            Painterly
+
+ Movie scene.                Connect to inner child.           Grounded in reality.            Enchanting
+
+        coming home.           Evoking emotion.          Inspiring.            Soulful             Mystifying Twists
+```
+
 ## Search Engine Optimisation
 The site optimises its visibility to prospective customers through Search Engines with the use of the following:
 - A robots.txt file
 - A sitemap.xml file
 - Descriptive meta tags
 - rel attributes on links to external resources
+### Meta Data Tags
+Meta Data tags showing semitics and keywords were used in headers and on elements.
+#### Semiotics
+```
+Fairy.  Storybooks.    Curly branches.   Witches.    90s.      Burgundy.     Purples.         Orange.          Navy blue.     Velvet.    Wholesomely weird creatures.     Sparkles.        Clouds.     Treasure chest.      Pirate ship.      Stars.     Autumn/ gold + blue sky.        Dynamic framing/lighting.       Child reading
+Child sleeping with dreams above.      Treehouses.      Kites.         Splashing in muddy puddles
+Rope swing.      Playing dress up/pretend.           Reading under a tree.            Eating at home
+Making something.      Soup.        Bread & butter.        Iridescent.        Shiny.       Glass.     Glowing white
+Shimmering blue       Hobbit hole.       Gathered round Fireplace.     Blankets.     Tea.     Pet curled up.   
+Mailbox.          Welcome mat.           Facial expression close-up.           Happy tears.           Wide-eyed.  Fireworks.    Flying.     Colourful lights.      Golden light.            Theatrical villains.        Wispy fabric
+Dark forest
+```
+#### Keywords
+```
+sarah rae illustrations
+sraeillustrations
+sarah rae art
+sarah rae artist
+sarah rae art prints
+```
 ## Social Media
 Links to the following Sarah Rae Illustrations social media platforms are found in the footer of each page and may be viewed here:
-- [Facebook Buisness page](#)
-- [Instagram Page](#)
+- [Facebook Buisness page](https://www.facebook.com/profile.php?id=100094754029581)
+- [Instagram Page](https://www.instagram.com/sarahrae.illustrations/?igshid=OGQ5ZDc2ODk2ZA%3D%3D)
 
 # Deployment
 [Back to Top](#sarah-rae-illustrations)
