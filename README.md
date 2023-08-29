@@ -11,7 +11,7 @@ Appropriate accreditation is hereby given for any similarities between this proj
 ## Buisness Model: Buisness to Customer
 This site presents the Artwork of Sarah Rae and facilitate the sale of this artwork though an e-commerce website.
 ## Artwork Purchase
-### In the MVP, Customers will be able to:
+### In the Minimum Viable Product (MVP), Customers will be able to:
 - Purchase selected artwork products using Stripe as an industry standard purchasing method.
 - Create a customer account to facilitate purchases and view order history
 - View different categories of available artwork products
@@ -45,7 +45,7 @@ Commissions are not implemented in the MVP. A commissions business model will de
 [Back to Top](#sarah-rae-illustrations)
 ## Strategy
 ### User Stories
-User Stories were generated through discussion with Sarah Rae, were used to inform the strategy the UXD.
+User Stories were generated through discussion with Sarah Rae, and were used to inform the strategy the UXD.
 User Stories summarising project objectives may be viewed here:
 - [User Stories 1](/readme_files/user_stories/user_stories_1.png)
 - [User Stories 2](/readme_files/user_stories/user_stories_2.png)
@@ -235,24 +235,21 @@ Information Radiators were used to monitor the progress of the project developme
 ## Backlog
 [Back to Top](#sarah-rae-illustrations)
 
-The GitHub [Project](https://github.com/users/mikerae/projects/12) was used to hold user stories and other issues which were not allocated to the current sprint.
+The GitHub [Project Backlog](https://github.com/users/mikerae/projects/12) was used to hold user stories and other issues which were not allocated to the current sprint.
 ## Sprints - Github Milestones
 [Back to Top](#sarah-rae-illustrations)
 
-- [Sprints](https://github.com/mikerae/sarah-rae-illustrations/issues?q=is%3Aopen+is%3Aissue+milestone%3AMVP) were defined to define development tasks needed to bring the project to Minimum Viable Product level. Other Github Milestones were used to hold user stories allocated to these sprints.
+- [Sprints](https://github.com/mikerae/sarah-rae-illustrations/issues?q=is%3Aopen+is%3Aissue+milestone%3AMVP) were defined using Github milestones to define development tasks needed to bring the project to Minimum Viable Product level. Other Github Milestones were used to hold user stories allocated to these sprints.
+
+Initialy Milestones were used to group related issues for develoment. Later the following 2 sprints were used:
+- MVP (Issues for the project submission)
+- Resubmission (Issues arising from the projects assesment and initial failure)
 # Database Design
 [Back to Top](#sarah-rae-illustrations)
 ## Mission Statement
-The purpose of the Sarah-Rae-Illustrations database is to facilitate the creation, management and sale of of Orchestral String Section Rotas and related data.
-## Mission Objectives
-## Requirements
-[Back to Top](#sarah-rae-illustrations)
-
-### User Requirements
-### Site-Manager Requirements
-### System Requirements
-
+The purpose of the Sarah-Rae-Illustrations database is to hold data relating to the the sale of Products and display of Digital Art Works, by Sarah Rae.
 ## Models
+[Back to Top](#sarah-rae-illustrations)
 ### The following models were used in the MVP:
 - Product
 - Category
@@ -263,32 +260,10 @@ The purpose of the Sarah-Rae-Illustrations database is to facilitate the creatio
 #### Models planned for future versions include:
 - Stock
 - ProcessingStatus
-## Field Lists
-[Back to Top](#sarah-rae-illustrations)
-
-### Preliminary Field List
-- [View the Preliminary Field List](#)
-### Resolution of Field and Table anomalies
-In order to resolve field and table anomalies, and in order to preserve data integrity the following process was followed:
-- The tables were flattened, and populated with data.
-    - Any problematic fields were resolved
-- The resulting fields and tables were compared with the characteristics of a sound field or table.
-
-Very Academy produced a helpful checklist to evaluate fields and tables (https://www.youtube.com/watch?v=ycw8ZsT1ofw&t=1901s):
-- [View a Field and Table Checklist](#)
-
-Tables were amended to remove duplicate data, multi-data fields and calculated fields. 
-
-- [View Rationalisation of project table](#)
-
 ## Model Entity Relationship Diagram (EDR)
-[Back to Top](#sarah-rae-illustrations)
-
 The entities for this project have the following relationships and attributes:
 - [View Entity Relationship Diagram](/readme_files/erd/erd.png)
 ## Model Schemas
-[Back to Top](#sarah-rae-illustrations)
-
 The Models Schemas for this project are:
 - [View Schema](/readme_files/erd/schema.png)
 #### Model Creation
@@ -296,66 +271,109 @@ The models were created from least dependant to most dependant.
 ## Data Input
 [Back to Top](#sarah-rae-illustrations)
 ### Initial data input
+Example products and digital art works, with associated data were created for the purpose of development.
 ### Subsequent data input
-
+For Production, the Site Owner, Sarah Rae will load her own product images, and digital artworks with associated data.
 # Technologies Used
 [Back to Top](#sarah-rae-illustrations)
-
-### Languages
+## Languages
 - Python
 - HTML5
 - CSS
 - Javascript
+## Libraries
+- Bootstrap 4
+- JQuery
+## Framework
+- Django
 # Development
 [Back to Top](#sarah-rae-illustrations)
-## Development Environment: GitPod
-### Virtual Environment
-- A virtual environment was used to ensure compatibility in deployment. A template containing all standard project requirements was prepared by the Code Institute.
-- The environment was updated with additional requirements by downloading them into the environment via the terminal, and the requirements.txt file was updated using the following code:
-```
-pip3 freeze > requirements.txt
-```
-## Version Control
-[Back to Top](#sarah-rae-illustrations)
+## Remote Repository: GitHub
+The project code was stored remotely in a Github repository.
+### Code Institute template
+- A gitHub repository was created using a Code Institute template. This would ensure that all initial code eg Pythn3 was made available in the GitPod workspace.
+### Issue Templates
+Issue templates were created to facititate the creation of project issues.
+Templates for the following types of project issues to facititate their creation:
+- User Stories
+- Bugs
+- Tests
+#### Issue Lables
+Issues were allocated lables. These were useful to easily identify:
+- The priority of an issues within a sprint (MOSCOW)
+- The cateogory of user story and is sequence in the development process.
+- The type of user to which the issue related
+### Milestones (Sprints)
+Milestones were created to mark stages in development. The main ones which were eventually used were:
+- MVP (initial project submission)
+- Resubmission (of project after intial failure)
+### Project (Kanban board)
+A github project was created as an Information Radiator and project management tool.
+The sections of the project were:
+- New
+- Backlog
+- Ready
+- In Progress
+- In Review
+- Done
+As issues were creeated, they were added to the New section.
+They were then moved to the Backlog section for storage and processing.
+Epic issues were broken down into as many smaller issues as was appropriate.
 
-### Git
-Git was used for version control
-### GitHub
-GitHub was used for external project code storage and display
-## GitHub Repository
-### Github template
-- A gitHub repository was created using a required Code Institute template.
-- Issue Templates
-- Milestones
-- Project Kanban board
-## GitPod Workspace
-[Back to Top](#sarah-rae-illustrations)
+For each issue the following were defined:
+- Acceptance Criteria: Identifiable outcomes upon which the Site owner and develpoer could agree were evident
+- Tasks needs to make effective the resolution of the issue.
 
+Once an issue was prepared it was moved the the 'Ready' section of the Project board.
+
+One or two issues were moved to the 'In Progress' section of the board whilst they were developed.
+
+Once an issue was completed, it was closed and moved to the 'Done' section of the board.
+The process of closing and moving issues was automated when a branch addressing these issues was merged with the main branch.
+
+## Local Development: GitPod Workspace
+[Back to Top](#sarah-rae-illustrations)
+Code was developed locally in a browser using a GitPod Workspace.
+The template used to create the GitHu repository ensured that all the necessary software was preloaded in the GitPod workspace to facility the start of development.
+A browser based version of VS Code was used with this workspace to write the code.
 ## Git Version Control
-### Commits
-### Issue Tracking
-### Branches
-### Pull Requests
-### Branch Merges
-
-## Setting Up Local Development Environment
 [Back to Top](#sarah-rae-illustrations)
-### Libraries
-The following libraries were installed in the GitPod workspace:
 
-The details of the currently installed libraries were stored in the file requirements.txt so that the deployment platform can load them when the project is deployed in production:
+Version control was effected using Git.
+### Commits
+Incremental snapshots were taken as git commits to recored the stages of project develpment.
+### Code Pushes
+Once a commit was made locally, the commited code and the commit description was 'pushed' to the github repository. In this way, an exact copy of each of the commits (code snapshots) existed both on the local computor (via the browser to the  Gitpod workspace) and in the github repositiory.
+### Issue Tracking
+Issues created in GitHub were linked to commits to facilitate the tracking of the progress of a particular user story, bug-fix or other issue. This traking proved a powerful tool in managing and moitoring the development of the porject.
+### Branches
+Laterly, new branches were created away from the main branch. A particlar branch was used to address a unquie issue or collection of related issues. Code developed in these branches was seperate from code in the main branch.
+### Pull Requests
+Once code in a branch had been sufficiently developed to resolve th eissues asigned to it, a pull-request was made. This began the process of merging the branch being developed into the main (deployed) branch.
+### Branch Merges
+For the purpose of this project the creation and merging of branches was unecesary. Branch creation and merging was used later on in the project for practice puposes.
+Once a pull-request was made, and tests, discussions and reviews had been conducted, and the pull-request aproved, the branch was then merged with the main branch. All descrete commits were retained so that a record for the the deveopment progress could be shown.
+Upon sucessfull
+## Setting Up Local Gitpod Workspace Development Environment
+[Back to Top](#sarah-rae-illustrations)
 
-```pip3 freeze --local > requirements.txt```
-The current requirements used are:
-
-```xxx```
-### Creating a Django Project
+The gitpod environment was updated with additional requirements as and when they were needed in development. They were  downloaded them into the environment via the terminal, and the requirements.txt file was updated to recored their addition to the using the following code:
+```
+pip3 freeze  --local > requirements.txt
+```
+The requirements.txt file was used by Heruko to build each sucessive deployment of the project with the correct code dependancies.
+## Libraries
+The current requirements used can be viewed [here](https://github.com/mikerae/sarah-rae-illustrations/blob/main/requirements.txt)
+## Creating a Django Project
 A Django project was created:
 
 ``` $ python3 django-admin startproject <project-name> ```
 
 A Local sql database was automatically created
 ### Creating a project superuser
+A superuser was created to access the django admin section of the site.
+```$ python3 manage.py createsuperuser```
+A username , email and password were provided, and this username was added to the django user model insode the project.
 ### Creating Apps
 Apps were created as required using:
 
@@ -379,6 +397,7 @@ As models were created and changed, the changes were recorded in a set of sequen
 The changes to the Django database were recorded by making migration records. First, a dry run was used to expose any errors in creating the records:
 
 ```$ python3 manage.py makemigrations -- dry-run ```
+Once all issues were 
 
 ```$ python3 manage.py makemigrations```
 #### Migrate
