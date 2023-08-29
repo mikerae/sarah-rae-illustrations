@@ -116,7 +116,7 @@ The Django Security package 'Allauth' was used to manage account security and re
 - Customer Product Interest: Customers may express interest in products when they are out of stock
 ## Structure
 [Back to Top](#sarah-rae-illustrations)
-The access to areas and features withing the site is dependant on the user role.
+The access to areas and features within the site is dependant on the user role.
 The following Site Maps show the differences:
 - [Anonymous User](/readme_files/site-maps/site-map-anonymous-user.png)
 - [Registered Shopper](/readme_files/site-maps/site-map-registered-shopper.png)
@@ -241,9 +241,9 @@ The GitHub [Project Backlog](https://github.com/users/mikerae/projects/12) was u
 
 - [Sprints](https://github.com/mikerae/sarah-rae-illustrations/issues?q=is%3Aopen+is%3Aissue+milestone%3AMVP) were defined using Github milestones to define development tasks needed to bring the project to Minimum Viable Product level. Other Github Milestones were used to hold user stories allocated to these sprints.
 
-Initialy Milestones were used to group related issues for develoment. Later the following 2 sprints were used:
+Initially Milestones were used to group related issues for development. Later the following 2 sprints were used:
 - MVP (Issues for the project submission)
-- Resubmission (Issues arising from the projects assesment and initial failure)
+- Resubmission (Issues arising from the projects assessment and initial failure)
 # Database Design
 [Back to Top](#sarah-rae-illustrations)
 ## Mission Statement
@@ -283,7 +283,7 @@ For Production, the Site Owner, Sarah Rae will load her own product images, and 
 - Javascript
 ## Libraries
 - Bootstrap 4
-- JQuery
+- JQuerry
 ## Framework
 - Django
 # Development
@@ -291,22 +291,24 @@ For Production, the Site Owner, Sarah Rae will load her own product images, and 
 ## Remote Repository: GitHub
 The project code was stored remotely in a Github repository.
 ### Code Institute template
-- A gitHub repository was created using a Code Institute template. This would ensure that all initial code eg Pythn3 was made available in the GitPod workspace.
-### Issue Templates
-Issue templates were created to facititate the creation of project issues.
-Templates for the following types of project issues to facititate their creation:
+- A gitHub repository was created using a Code Institute template. This would ensure that all initial code eg Python3 was made available in the GitPod workspace.
+### Issues
+Issues were used to identify and track the development and implementation of discrete elements of the project.
+#### Issue Templates
+Issue templates were created to facilitate the creation of project issues.
+Templates for the following types of project issue were used:
 - User Stories
 - Bugs
 - Tests
-#### Issue Lables
-Issues were allocated lables. These were useful to easily identify:
+#### Issue Labels
+Issues were allocated labels. These were useful to easily identify:
 - The priority of an issues within a sprint (MOSCOW)
-- The cateogory of user story and is sequence in the development process.
+- The category of user story and is sequence in the development process.
 - The type of user to which the issue related
 ### Milestones (Sprints)
 Milestones were created to mark stages in development. The main ones which were eventually used were:
 - MVP (initial project submission)
-- Resubmission (of project after intial failure)
+- Resubmission (of project after initial failure)
 ### Project (Kanban board)
 A github project was created as an Information Radiator and project management tool.
 The sections of the project were:
@@ -316,12 +318,12 @@ The sections of the project were:
 - In Progress
 - In Review
 - Done
-As issues were creeated, they were added to the New section.
+As issues were created, they were added to the New section.
 They were then moved to the Backlog section for storage and processing.
 Epic issues were broken down into as many smaller issues as was appropriate.
 
 For each issue the following were defined:
-- Acceptance Criteria: Identifiable outcomes upon which the Site owner and develpoer could agree were evident
+- Acceptance Criteria: Identifiable outcomes upon which the Site owner and developer could agree were evident
 - Tasks needs to make effective the resolution of the issue.
 
 Once an issue was prepared it was moved the the 'Ready' section of the Project board.
@@ -341,40 +343,45 @@ A browser based version of VS Code was used with this workspace to write the cod
 
 Version control was effected using Git.
 ### Commits
-Incremental snapshots were taken as git commits to recored the stages of project develpment.
+Incremental snapshots were taken as git commits to recored the stages of project development.
 ### Code Pushes
-Once a commit was made locally, the commited code and the commit description was 'pushed' to the github repository. In this way, an exact copy of each of the commits (code snapshots) existed both on the local computor (via the browser to the  Gitpod workspace) and in the github repositiory.
+Once a commit was made locally, the committed code and the commit description was 'pushed' to the github repository. In this way, an exact copy of each of the commits (code snapshots) existed both on the local computer (via the browser to the  Gitpod workspace) and in the github repository.
 ### Issue Tracking
-Issues created in GitHub were linked to commits to facilitate the tracking of the progress of a particular user story, bug-fix or other issue. This traking proved a powerful tool in managing and moitoring the development of the porject.
+Issues created in GitHub were linked to commits to facilitate the tracking of the progress of a particular user story, bug-fix or other issue. This tracking proved a powerful tool in managing and monitoring the development of the project.
 ### Branches
-Laterly, new branches were created away from the main branch. A particlar branch was used to address a unquie issue or collection of related issues. Code developed in these branches was seperate from code in the main branch.
+Latterly, new branches were created away from the main branch. A particular branch was used to address a unique issue or collection of related issues. Code developed in these branches was separate from code in the main branch.
 ### Pull Requests
-Once code in a branch had been sufficiently developed to resolve th eissues asigned to it, a pull-request was made. This began the process of merging the branch being developed into the main (deployed) branch.
+Once code in a branch had been sufficiently developed to resolve the issues assigned to it, a pull-request was made. This began the process of merging the branch being developed into the main (deployed) branch.
 ### Branch Merges
-For the purpose of this project the creation and merging of branches was unecesary. Branch creation and merging was used later on in the project for practice puposes.
-Once a pull-request was made, and tests, discussions and reviews had been conducted, and the pull-request aproved, the branch was then merged with the main branch. All descrete commits were retained so that a record for the the deveopment progress could be shown.
-Upon sucessfull
-## Setting Up Local Gitpod Workspace Development Environment
+For the purpose of this project the creation and merging of branches was unnecessary. Branch creation and merging was used later on in the project for practice purposes.
+Once a pull-request was made, and tests, discussions and reviews had been conducted, and the pull-request approved, the branch was then merged with the main branch. All discrete commits were retained so that a record for the the development progress could be shown.
+Upon successful
+## Stages of Development of MVP
+Development closely matched the Code Institute walkthrough eCommerce project 'Boutique Ado' with appropriate adjustments and changes being made to match the requirements of this project.
+The following stages of development were used as initial Github Milestones, matching the Boutique Ado Walkthrough chapter headings:
+### Set Up
+Issues associated with set up can be viewed [here](https://github.com/mikerae/sarah-rae-illustrations/issues?q=is%3Aissue+is%3Aclosed+label%3APrep)
+#### Setting Up Local Gitpod Workspace Development Environment
 [Back to Top](#sarah-rae-illustrations)
 
 The gitpod environment was updated with additional requirements as and when they were needed in development. They were  downloaded them into the environment via the terminal, and the requirements.txt file was updated to recored their addition to the using the following code:
 ```
 pip3 freeze  --local > requirements.txt
 ```
-The requirements.txt file was used by Heruko to build each sucessive deployment of the project with the correct code dependancies.
-## Libraries
+The requirements.txt file was used by Heruko to build each successive deployment of the project with the correct code dependancies.
+#### Libraries
 The current requirements used can be viewed [here](https://github.com/mikerae/sarah-rae-illustrations/blob/main/requirements.txt)
-## Creating a Django Project
+#### Creating a Django Project
 A Django project was created:
 
-``` $ python3 django-admin startproject <project-name> ```
+```$ python3 django-admin startproject <project-name>```
 
 A Local sql database was automatically created
-### Creating a project superuser
+#### Creating a project superuser
 A superuser was created to access the django admin section of the site.
 ```$ python3 manage.py createsuperuser```
-A username , email and password were provided, and this username was added to the django user model insode the project.
-### Creating Apps
+A username , email and password were provided, and this username was added to the django user model inside the project.
+#### Creating Apps
 Apps were created as required using:
 
 ``` $ python3 manage.py startapp <app name>```
@@ -391,18 +398,154 @@ INSTALLED_APPS = [
     'app-name',
 ]
 ```
-### Database Migrations
+#### Database Migrations
 As models were created and changed, the changes were recorded in a set of sequential django records called 'migrations' and then applied to the database models either locally or remotely.
-#### Make Migrations
+##### Make Migrations
 The changes to the Django database were recorded by making migration records. First, a dry run was used to expose any errors in creating the records:
 
 ```$ python3 manage.py makemigrations -- dry-run ```
-Once all issues were 
+Once all issues were resolved, migrations were actually made using:
 
 ```$ python3 manage.py makemigrations```
-#### Migrate
-``` $ python3 manage.py migrate --plan ```
+##### Migrate
+Changes to the database were made by applying the migrations.
+The following command was used to simulate the application of migrations without actually making any changes. This identified any errors which might arise.
+```$ python3 manage.py migrate --plan```
+Once any issues were resolved, migrations were applied to the database using:
+```$ python3 manage.py migrate```
+### Registration & User Accounts
+The Allauth library and django.contrib.auth api were used to register user accounts in the django User model.
+When a user registers with the site, allauth requests a username, email and password. A request for verification is sent to the user's email, and upon confirmation , the user is registered. The password is accessible for a user is encrypted and not accessible anywhere in the font or back end. A passwords may be changed by the user or the superuser.
 
+Roles may be defined in the administration section of the site, accessible by the superuser, and control access to certain parts of the site.
+
+The login screen may be viewed [here](/readme_files/login.png).
+
+Issues relating to Registration & User Accounts may be viewed [here](https://github.com/users/mikerae/projects/12/views/4?filterQuery=milestone%3AMVP+label%3A%22Registration+and+User+Accounts%22)
+
+### The Base Template
+A [base template](/templates/base.html) was used to provide consistent content throughout the site.
+The base template contains the header, navigation, content blocks and footer.
+[Includes](/templates/includes/) were used where an area of the site needed variations to the base template eg.
+- Navigation for the [Shop](/readme_files/includes-shop.png) and [Gallery](/readme_files/includes-gallery.png).
+- The responsive display for mobile devices was handled by a dedicated [mobile include](/readme_files/include-mobile.png) whilst the display for larger screens was handled by a different [include](/readme_files/include-main.png).
+
+All pages of the site were built upon this base template by adding the following code at the top of their html files:
+
+```{% extends "base.html" %}```
+### The Home Page
+The [landing page](/readme_files/home-page.png) for the site was design to invite the user into the site using a door background image.
+A carousel of selected digital artworks gives an immediate impression of the artwork to be found within.
+The Sarah Rae Illustrations brand logo is present on [mobile](/readme_files/mobile-logo.png) and [larger](/readme_files/large-logo.png) screens.
+
+### Viewing and Navigation
+Issues relating to viewing and navigation may be viewed [here](https://github.com/users/mikerae/projects/12/views/4?filterQuery=milestone%3AMVP+label%3A%22Viewing+and+Navigation%22).
+
+#### Navigation
+The all areas of the site are accessible via the nav-bar, with the two main areas (Shop and Gallery) easily available in the [mobile](/readme_files/mobile-nav-main.png) and [larger screen](/readme_files/large-main-nav.png) size.
+The utility areas (Search, My Account, Shopping Bag) area accessed from the top line of the nav bar in both [mobile](/readme_files/mobile-nav-main.png) and [larger](/readme_files/main-full-nav.png) screens.
+The logo, when clicked, will redirect the user to the home page.
+
+In the Shop and Gallery areas of the site, where products and digital art works are listed, the user may easily navigate to the top of the page by clicking on the ['back to top arrow'](/readme_files/back-to-top.png).
+
+The [footer](/readme_files/footer.png) has links to Sarah Rae's [Facebook Buisness page](https://www.facebook.com/profile.php?id=100094754029581) and her [Instagram](https://www.instagram.com/sarahrae.illustrations/?igshid=OGQ5ZDc2ODk2ZA%3D%3D) page.
+
+##### Responsive Navigation
+When the user hovers over a navigation feature of the page, it responsively changes colour indicating that an action is about to take place.
+Examples are:
+- [A drop-down menu item](/readme_files/responsive-1.png)
+- A [button](/readme_files/responsive-3.png) when [hovered over](/readme_files/responsive-2.png).
+- The [logo](/readme_files/responsive-4.png) when [hovered over](/readme_files/responsive-5.png).
+#### Viewing Products
+A list of [products](/readme_files/product.png) may be viewed on entry to the shop area of the site, and a [detailed description of a particular product](/readme_files/product-detail.png) is obtained by clicking on it.
+#### Viewing Digital Art Works
+A list of [Digital Art Works](/readme_files/gallery.png) may be viewed on entry to the Gallery area of the site, and a [detailed description of a particular art work](/readme_files/gallery-detail.png) is obtained by clicking on it.
+
+### Products Filtering Sorting and Searching
+Issues relating to product filtering, sorting and searching may be viewed [here](https://github.com/users/mikerae/projects/12/views/4?filterQuery=milestone%3AMVP+label%3A%22Sorting+and+Searching%22&sortedBy%5Bdirection%5D=desc&sortedBy%5BcolumnId%5D=Labels).
+
+#### Keyword Search
+At the top of every page is a [search bar](/readme_files/search-bar.png). The user can enter any word or combination of words, and any products whose associated data (title, description, category, price etc) which match these keywords will be shown on the Shop main page.
+#### Sorting Products
+The list of products in the shop may be sorted from the [nav bar](/readme_files//sort-1.png) or in a more detailed way, from the [shop page body](/readme_files/sort-2.png). A variety of [sort options](/readme_files/sort-3.png) are provided.
+#### Filtering by Category
+Products may be [filtered by category](/readme_files/filter-category.png).
+### The Shopping Cart
+Issues relating to Purchasing and Checkout can be viewed [here](https://github.com/users/mikerae/projects/12/views/4?filterQuery=milestone%3AMVP+label%3A%22Purchasing+and+Checkout%22&sortedBy%5Bdirection%5D=desc&sortedBy%5BcolumnId%5D=Labels)
+
+Products are added to the shopping cart by clicking on a product, selecting the quantity of a product, then clicking '[Add to Cart'](/readme_files/add-to-cart.png).
+
+An icon of the shopping cart is shown on every page. An empty cart shows ['0 Items'](/readme_files/empty-cart-icon.png).
+When the user has items in their shopping cart, the [cart icon changes colour and shows the number of items in the cart](/readme_files/cart-with-items.png).
+
+The [Shopping cart](/readme_files/shopping-cart.png) shows a list of products to be purchased, with product image, description, unit price, quantity and subtotal for each product. The quantity of a product can be updated, and a product can be removed from the cart.
+### Checkout
+When the user is reaches the [checkout area](/readme_files/checkout.png), a number of features are presented:
+- The user may return to the shopping cart to make changes before committing to a purchase.
+- A summary of the items to be purchased is presented, with the sub-total and total price clearly shown.
+- If the user is not logged in, the options to [create and account, or log-in](/readme_files/anonymous-checkout.png) are offered .
+- If the user is logged in, the user is invited to [save shipping details](/readme_files/registered-checkout.png) in their profile to facilitate quicker future purchases.
+#### Stripe Payments
+Payment is securely handled using [Stripe](https://stripe.com/gb?utm_campaign=UK_en_Search_Brand_Stripe_EXA-2032860449&utm_medium=cpc&utm_source=google&ad_content=355351450259&utm_term=stripe&utm_matchtype=e&utm_adposition=&utm_device=c&gclid=CjwKCAjwrranBhAEEiwAzbhNtcaozezcnkb4l0L0va3I_rzsTmkjyqlUF8ASjdiG8QGPiYYTtf3aphoCA0UQAvD_BwE).
+
+In this app, the stripe ['Payment Element'](https://stripe.com/docs/payments/payment-element) was used in contrast to the more outdated ['Card element'](https://stripe.com/docs/payments/payment-card-element-comparison) used in the Boutique Ado walkthrough.
+Since the integration of these elements into the app is significantly different, the fundamental payment , shipping details and order management architecture had to be reworked for this project compared to the Boutique Ado Walkthrough project.
+This was not entirely successful in this version of the app, and there remain a number of outstanding issues which render the app less than satisfactory.
+Purchases are able to be made successfully in this version, but an efficient integration was not achieved.
+##### Outstanding Stripe Integration Issues 
+- Webhook are active but not used
+- Shipping data is added to the Payment Element on checkout, and not via the User Profile.
+- The Payment element does not pre-populate with user profile shipping data
+- A Session Variable is used to indicate that the user would like to store their shipping details for future use, rather than this being included in the Stripe Payment Element data.
+
+Future versions will properly integrate with Stripe by including the following:
+- A stripe product will be defined for each product on the site
+- A stripe price will be allocated to each product
+- Stripe analytics will thus be made available to the Site Owner.
+#### Order Completion
+When Stripe returns a response confirming that payment was successful, the [Order Success page](/readme_files/success.png) is shown.
+This contains a summary of the order, including the user shipping details, and user email, the order id. and the order details.
+The user is advised that a confirmation email is will be sent to the user's email address.
+### Toasts
+Feedback is given to the user throughout the site when actions or events take place.
+These are made using the django messaging framework, and including these within Bootstrap toasts.
+#### Django Messaging
+Django makes it easy to send messages with a variety of status levels, from the backend to the front end for the application. The messages can by handled in different ways according to their status. eg. A warning status massage could be displayed in red, and a success message displayed in green etc.
+#### Toasts
+Toasts were used to provided a positive user experience when receiving site feedback with django messages.
+Bootstrap toasts are 'pop-up' boxes which display information for particular events and whose behaviour and appearance can be customised.
+An example of a toast may be viewed [here](/readme_files/toast.png):
+### Profile App
+Registered Users have a User Profile.
+This is accessed via the main [nav-bar](/readme_files/my-profile-nav.png).
+
+The ['My Profile'](/readme_files/profile.png) page shows the stored shipping details for the user, which may be edited by the User, and a summary of their order history.
+
+If the user clicks on a particular order number, [the details for that order](/readme_files/order-hitory-item.png) are displayed. A toast with a message status of 'information' (blue) is displayed to the user in this case.
+### Admin and Store Management
+Issues relating to Admin and store management may be viewed [here](https://github.com/users/mikerae/projects/12/views/4?filterQuery=milestone%3AMVP+label%3A%22Admin+and+Store+Management%22&sortedBy%5Bdirection%5D=desc&sortedBy%5BcolumnId%5D=Labels)
+
+The Site Owner may administer the site in various ways.
+The ['My Account' Nav-bar menu](/readme_files/admin-nav.png) allows the manager to add new products and digital art works, and provides access to the [django admin area.](/readme_files/django-admin.png).
+
+#### CRUD Functionality
+Full CRUD functionality is made available to the site owner. They may Create, Read, Update and Destroy products and digital art works.
+#####  Adding Products and Digital Art Works
+- New products can be added by the site owner using an [empty product form](/readme_files/add-product.png)
+- New digital art works can be added by the site owner using an [empty digital art work form](/readme_files/add-art-work.png).
+
+##### Product and Digital Art Work Modification
+When the site owner clicks on a particular [product](/readme_files/edit-product.png) or [digital art work](/readme_files//edit-art.png), the option to edit or delete that product or digital art work is offered. When the option to edit is clicked, the form for that [product](/readme_files/edit-product-form.png) or [digital art work](/readme_files/edit-art-form.png) is presented for editing.
+
+### Emails
+The django email engine is used for the following tasks:
+- Email authentication on registering
+- [Order confirmation](/readme_files/email.png)
+The Mailchimp email provider will be used to send out a Newsletter.
+
+## Issues arising from Project assessment and initial failure
+The project was submitted in an incomplete state, resulting in it failing to meet some pass level criteria.
+Issues identified in the assessment can be viewed [here](https://github.com/users/mikerae/projects/12/views/4?filterQuery=milestone%3A%22P5+Resubmission%22)
 # Testing
 [Back to Top](#sarah-rae-illustrations)
 ### Incremental Feature Testing
@@ -489,14 +632,14 @@ The following resources were used:
 ## Demographics
 Who is your ideal customer and why do they buy your product?
 
-⁃	A fantasy fairytale lover who enjoys a whimsigothic twist, they love the quirky characters of the Addams Family and the magical feeling of seeing Cinderella’s dress (Ever After) and Tinkerbell’s dress (Hook) and Sarah’s Ballgown (Labyrinth), they want to be sucked into an adventure they can imagine themselves loving.
+⁃   A fantasy fairytale lover who enjoys a whimsigothic twist, they love the quirky characters of the Addams Family and the magical feeling of seeing Cinderella’s dress (Ever After) and Tinkerbell’s dress (Hook) and Sarah’s Ballgown (Labyrinth), they want to be sucked into an adventure they can imagine themselves loving.
 
-⁃	They would buy my art to feel that magical wonder, and explore the richly coloured painterly illustrations that feel like a movie scene, to connect to that inner child that loves fairytales and whimsical people
+⁃   They would buy my art to feel that magical wonder, and explore the richly coloured painterly illustrations that feel like a movie scene, to connect to that inner child that loves fairytales and whimsical people
 ## Branding
 ### Mission
 What does the brand aim to achieve & how will it be achieved?
 
-- Illustrations that explores and expands on whimsical magical worlds full of adventure so evocative the audience can imagine themselves there and what they’d want to do while there. Our brand will achieve this by creating narrative illustrations that show rich and wonderous experiences/ places/ people but with illustrations of everyday activities to ground it into reality, as if taking a snapshot of a character going about their day
+- Illustrations that explores and expands on whimsical magical worlds full of adventure so evocative the audience can imagine themselves there and what they’d want to do while there. Our brand will achieve this by creating narrative illustrations that show rich and wondrous experiences/ places/ people but with illustrations of everyday activities to ground it into reality, as if taking a snapshot of a character going about their day
 - Explore these whimsical worlds by telling stories within the painting and grounding it with everyday experiences the viewer can see themselves in
 ### Purpose
 - To create storybook illustrations that makes the viewer feel like someone from the story painted what happened and the paintings were found and put with the literature centuries later
@@ -507,7 +650,7 @@ What does the brand aim to achieve & how will it be achieved?
 - Through illustrated books or just solo paintings, to evoke that otherworldly magic and interest to know more about the story there eg. “That character likes soup and is looking at a photo, did the person in that photo like soup too?”
 ### Vision
 - The illustrations take you into worlds so enchanting and real, it feels like coming home   
-### Differenciators
+### Differentiators
 - fantastical content in a realistic painterly style using film techniques such as shot framing, lighting and costume design to tell the story
 - The priority is to evoke a specific emotion within the context of the narrative, so the viewer will receive more than a nicely painted image or an interesting character design
 - Whimsical, enchanting elements with dark mystifying twists yet grounded with familiarity and comfort
@@ -677,7 +820,7 @@ gitpod /workspace/#sarah-rae-illustrations (main) $ python3 manage.py migrate
 
 ####  data to Django db.sql and ElephantSql
 ##### Initial Data Loading
-Initial data was imported into the project using set_up.py and associated utilities. This data was available from a spreadsheet stored in googledocs. set_up.py securely logged into the sreadsheet and retrieved the required data, then loaded the data into the models in the correct order.
+Initial data was imported into the project using set_up.py and associated utilities. This data was available from a spreadsheet stored in googledocs. set_up.py securely logged into the spreadsheet and retrieved the required data, then loaded the data into the models in the correct order.
 #### Subsequent Data Loading
 Once a credible starting data set was established, this data set was dumped into a db.json file in the fixtures dir using the following command.
 
@@ -804,3 +947,5 @@ Grateful acknowledgment is given to the following:
 - Code Institute: for training materials, training environment and specific code
 - Stack Overflow https://stackoverflow.com/
 - Django Documentation https://docs.djangoproject.com/en/3.2/ref/models/fields/
+
+ 
