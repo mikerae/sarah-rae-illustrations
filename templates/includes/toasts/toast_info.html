@@ -1,9 +1,10 @@
+{% load static %}
 <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false" role="alert" aria-live="assertive"
     aria-atomic="true">
     <div class="arrow-up arrow-info"></div>
     <div class="w-100 toast-capper bg-info"></div>
     <div class="toast-header bg-sri">
-        <img src="" class="rounded img.thumbnail w-25 mr-2" alt="Sarah avitar">
+        <img src="{% static 'images/lumberjackie.png' %}" class="rounded img thumbnail w-25 mr-2" alt="Sarah avitar">
         <strong class="mr-auto lead text-sri ">Alert!</strong>
         <button type="button" class="ml-2 mb-1 btn-sri close" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
