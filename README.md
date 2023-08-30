@@ -201,7 +201,7 @@ The colours, font style, logo and background image were derived from a mockup of
 # Agile Development
 [Back to Top](#sarah-rae-illustrations)
 
-Agile development practices were used throughtout the development of this project.
+Agile development practices were used throughout the development of this project.
 ## Platform
 [Back to Top](#sarah-rae-illustrations)
 
@@ -282,10 +282,18 @@ For Production, the Site Owner, Sarah Rae will load her own product images, and 
 - CSS
 - Javascript
 ## Libraries
-- Bootstrap 4
-- JQuerry
+- Bootstrap 
+For this project the older Bootstrap 4 version was used. Documentation for v4 is found [here](getbootstrap.com/docs/4.6/getting-started/introduction/)
+- JQuery
+The minified version of JQuery was used for this project.
+```
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+```
+- Allauth v 0.41.0 which is compatible with the project version of Django.
+```pip3 install django-allauth==0.41.0 ```
+- django-crispy-forms used to format forms
 ## Framework
-- Django
+- Django 3.2 LTS (Long Term Support version)
 # Development
 [Back to Top](#sarah-rae-illustrations)
 ## Remote Repository: GitHub
@@ -368,7 +376,7 @@ The gitpod environment was updated with additional requirements as and when they
 ```
 pip3 freeze  --local > requirements.txt
 ```
-The requirements.txt file was used by Heruko to build each successive deployment of the project with the correct code dependancies.
+The requirements.txt file was used by Heroku to build each successive deployment of the project with the correct code dependancies.
 #### Libraries
 The current requirements used can be viewed [here](https://github.com/mikerae/sarah-rae-illustrations/blob/main/requirements.txt)
 #### Creating a Django Project
@@ -377,6 +385,17 @@ A Django project was created:
 ```$ python3 django-admin startproject <project-name>```
 
 A Local sql database was automatically created
+##### Django Secret Key
+- Add the following to settings.py under 'installed apps'
+```
+if os.path.isfile('env.py'):
+    import env
+```
+- Generate a secure Django secret key [here](https://djecrety.ir/).
+- Store this secret key in env.py
+- Ensure that env.py is added to .gitignore to prevent environment variables being pushed to github and exposed to the public.
+- Replace the insecure Django SECRET_KEY with the env.py SECRET_KEY
+```SECRET_KEY = os.environ.get('SECRET_KEY')```
 #### Creating a project superuser
 A superuser was created to access the django admin section of the site.
 ```$ python3 manage.py createsuperuser```
@@ -422,17 +441,56 @@ Roles may be defined in the administration section of the site, accessible by th
 The login screen may be viewed [here](/readme_files/login.png).
 
 Issues relating to Registration & User Accounts may be viewed [here](https://github.com/users/mikerae/projects/12/views/4?filterQuery=milestone%3AMVP+label%3A%22Registration+and+User+Accounts%22)
-
+### Emails during development
+During development, the sending of emails was not possible. Sending emails was simulated by sending an email to the terminal using the following setting in settings.py
+```EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"```
 ### The Base Template
 A [base template](/templates/base.html) was used to provide consistent content throughout the site.
 The base template contains the header, navigation, content blocks and footer.
+
+Boilerplate HTML was added to the base template.
+
+An additional meta tag was added to the header for extensibility:
+```<meta http-equiv="X-UA-Compatible" content="ie=edge">```
+
+#### Blocks and other tags and includes
+- ```{% load static %}``` was added to the top to ensure that static files were accessible throughout the project
+Blocks were added to contain various types of code. All blocks were closed with the ```{% endblock %}``` tag.
+##### Head Blocks
+- ```{% block meta %}``` contained meta data
+- ``` {% block extra_css%}``` provided space for additional css on subsequent pages
+- ```{% block corejs %}``` contains javascript for the project
+- ```{% block extra_js %}``` provided space for additional js on subsequent pages
+- ```{% block extra_title %}{% block extra_title %}{% endblock %}``` was included in the title tag
+##### Body Blocks
+- ```{% block page_header %}``` provided space for additional header information on subsequent pages
+- ```{% block content %}``` provided space for dedicated content on subsequent pages
+- ```{% block postloadjs %}``` provided space for additional js on subsequent pages
+##### Toast Postload JS
+To enable toasts (see later) to function on all pages, the toast js was loaded at the end of the base template.
+```
+{% block postloadjs %}
+<script>
+$('.toast').toast('show');
+</script>
+{% endblock %}
+```
+This ensured that the Toast JS was always loaded when other js was also needed to be loaded.
+#### Subsequent pages
+All pages of the site were built upon this base template by adding the following code at the top of their html files:
+```{% extends "base.html" %}```
+##### JS
+At the foot of all subsequent pages which needed additional js, was the following tags were added:
+```
+{% block postloadjs %}
+{{ block.super }}
+.... additional js ....
+{% endblock %}
+```
+#### Includes
 [Includes](/templates/includes/) were used where an area of the site needed variations to the base template eg.
 - Navigation for the [Shop](/readme_files/includes-shop.png) and [Gallery](/readme_files/includes-gallery.png).
 - The responsive display for mobile devices was handled by a dedicated [mobile include](/readme_files/include-mobile.png) whilst the display for larger screens was handled by a different [include](/readme_files/include-main.png).
-
-All pages of the site were built upon this base template by adding the following code at the top of their html files:
-
-```{% extends "base.html" %}```
 ### The Home Page
 The [landing page](/readme_files/home-page.png) for the site was design to invite the user into the site using a door background image.
 A carousel of selected digital artworks gives an immediate impression of the artwork to be found within.
@@ -466,6 +524,8 @@ Issues relating to product filtering, sorting and searching may be viewed [here]
 
 #### Keyword Search
 At the top of every page is a [search bar](/readme_files/search-bar.png). The user can enter any word or combination of words, and any products whose associated data (title, description, category, price etc) which match these keywords will be shown on the Shop main page.
+##### Q
+Filtering can be a complex and difficult area. Django has a module "Q" to facilitate this. View the documentation [here](https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects)
 #### Sorting Products
 The list of products in the shop may be sorted from the [nav bar](/readme_files//sort-1.png) or in a more detailed way, from the [shop page body](/readme_files/sort-2.png). A variety of [sort options](/readme_files/sort-3.png) are provided.
 #### Filtering by Category
@@ -478,6 +538,10 @@ Products are added to the shopping cart by clicking on a product, selecting the 
 An icon of the shopping cart is shown on every page. An empty cart shows ['0 Items'](/readme_files/empty-cart-icon.png).
 When the user has items in their shopping cart, the [cart icon changes colour and shows the number of items in the cart](/readme_files/cart-with-items.png).
 
+#### Shopping Cart Info -  Context
+Shopping cart info was made available throughout the site using a [context](/cart/contexts.py).
+```'cart.contexts.cart_contents',``` was added to settings.py in the Templates - Context processors list.
+
 The [Shopping cart](/readme_files/shopping-cart.png) shows a list of products to be purchased, with product image, description, unit price, quantity and subtotal for each product. The quantity of a product can be updated, and a product can be removed from the cart.
 ### Checkout
 When the user is reaches the [checkout area](/readme_files/checkout.png), a number of features are presented:
@@ -487,6 +551,10 @@ When the user is reaches the [checkout area](/readme_files/checkout.png), a numb
 - If the user is logged in, the user is invited to [save shipping details](/readme_files/registered-checkout.png) in their profile to facilitate quicker future purchases.
 #### Stripe Payments
 Payment is securely handled using [Stripe](https://stripe.com/gb?utm_campaign=UK_en_Search_Brand_Stripe_EXA-2032860449&utm_medium=cpc&utm_source=google&ad_content=355351450259&utm_term=stripe&utm_matchtype=e&utm_adposition=&utm_device=c&gclid=CjwKCAjwrranBhAEEiwAzbhNtcaozezcnkb4l0L0va3I_rzsTmkjyqlUF8ASjdiG8QGPiYYTtf3aphoCA0UQAvD_BwE).
+
+To access the Stripe API an account needs to be set up, and the Public and Secret keys obtained.
+Whilst in development, the Stripe API can be used in Test Mode. The public and secret keys set this mode. In test mode, all workflows (purchases) are simulated but not actually made.
+In production, Stripe is set for production and the public and secret keys are generated accordingly.
 
 In this app, the stripe ['Payment Element'](https://stripe.com/docs/payments/payment-element) was used in contrast to the more outdated ['Card element'](https://stripe.com/docs/payments/payment-card-element-comparison) used in the Boutique Ado walkthrough.
 Since the integration of these elements into the app is significantly different, the fundamental payment , shipping details and order management architecture had to be reworked for this project compared to the Boutique Ado Walkthrough project.
@@ -511,10 +579,18 @@ Feedback is given to the user throughout the site when actions or events take pl
 These are made using the django messaging framework, and including these within Bootstrap toasts.
 #### Django Messaging
 Django makes it easy to send messages with a variety of status levels, from the backend to the front end for the application. The messages can by handled in different ways according to their status. eg. A warning status massage could be displayed in red, and a success message displayed in green etc.
+To access the messaging framework add this to views.py:
+```from django.contrib import messages```
+##### Settings.py
+The following was added to settings.py to store messages:
+- ```MESSAGES_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'```
 #### Toasts
 Toasts were used to provided a positive user experience when receiving site feedback with django messages.
 Bootstrap toasts are 'pop-up' boxes which display information for particular events and whose behaviour and appearance can be customised.
-An example of a toast may be viewed [here](/readme_files/toast.png):
+An example of a toast may be viewed [here](/readme_files/toast.png).
+JS for a toast is found at the foot of the base.html template:
+```<script>$('.toast').toast('show');</script>```
+The html for the success toast may be viewed [here](/templates/includes/toasts/toast_success.html).
 ### Profile App
 Registered Users have a User Profile.
 This is accessed via the main [nav-bar](/readme_files/my-profile-nav.png).
@@ -527,7 +603,21 @@ Issues relating to Admin and store management may be viewed [here](https://githu
 
 The Site Owner may administer the site in various ways.
 The ['My Account' Nav-bar menu](/readme_files/admin-nav.png) allows the manager to add new products and digital art works, and provides access to the [django admin area.](/readme_files/django-admin.png).
-
+#### Signals
+Signals were used to ensure that each time  save or delete operation occurred, other administration tasks could also be carried out.
+The signals.py file may be viewed [here](/checkout/signals.py).
+This was used in the profiles.models.create_or_update_user_profile
+```
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Create or update the user profile
+    """
+    if created:
+        UserProfile.objects.create(user=instance)
+    # Existing users: just save the profile
+    instance.userprofile.save()
+```
 #### CRUD Functionality
 Full CRUD functionality is made available to the site owner. They may Create, Read, Update and Destroy products and digital art works.
 #####  Adding Products and Digital Art Works
@@ -541,9 +631,240 @@ When the site owner clicks on a particular [product](/readme_files/edit-product.
 The django email engine is used for the following tasks:
 - Email authentication on registering
 - [Order confirmation](/readme_files/email.png)
-The Mailchimp email provider will be used to send out a Newsletter.
+The following settings were used in settings.py to facilitate the sending of emails:
+```
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'sarah_rae_illustrations@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+```
 
-## Issues arising from Project assessment and initial failure
+The Mailchimp email provider will be used to send out a Newsletter.
+### Site Security
+#### CSRF Token
+In order to prevent a Cross Site attack, every POST request sent by a Form needs to have a CSRF Token allocated to it.
+Without this, Django will reject the POST request.
+```{% csrf_token %}```
+An example may be viewed on line 73 [here](/checkout/templates/checkout/checkout.html).
+#### Login-Required
+On order to prevent a non-logged in user from accessing restricted areas, the login-required decorator was used.
+eg. In [shop.views.py](/shop/views.py):
+```from django.contrib.auth.decorators import login_required```
+and 
+```
+@login_required
+def add_product(request):
+    """ Add a product to the shop """
+```
+# Deployment
+[Back to Top](#sarah-rae-illustrations)
+
+The project was deployed to Heroku in the initial stages of development in order to resolve early and fundamental deployment issues.
+## Deployed App Cloud Server: Heroku
+[Heroku](https://id.heroku.com/login) was used to deploy the django project backend.
+### Add Heroku Host Name in Settings.py
+- in ALLOWED_HOSTS add the heroku app name
+```ALLOWED_HOSTS = ['#sarah-rae-illustrations.herokuapp.com', 'localhost']```
+### Create a Procfile
+This tells Heroku that thew app will be displayed using the gunicorn webserver
+- Create 'Procfile' at the top level, next to manage.py
+```web: gunicorn django_string_rota.wsgi```
+### Create app on Heroku
+The app "#sarah-rae-illustrations" was created on Heroku by:
+- Logging into Heroku
+- Clicking on New
+    - Click "Create new app"
+- Giving the app a unique name.
+    - "#sarah-rae-illustrations" was accepted as unique
+- The region was chosen as:
+    - Europe
+- The app was created:
+    - Click "Create app"
+### Add Environment Variables to Heroku
+- In '#sarah-rae-illustrations'
+    - Click on 'Reveal Config Vars'
+    - Add all necessary KEYS and their corresponding VALUES (without "") from env.py
+#### Add Temporary  DISABLE_COLLECTSTATICK Config Var to Heroku
+For initial deployment of a new , undeveloped django project with no Static files the build will fail on Heroku unless the DISABLE_COLLECTSTATICK config var is set:
+```DISABLE_COLLECTSTATICK:1```
+Once static files are introduced into the project, this variable can be removed.
+#### Do NOT Deploy in DEBUG mode
+When in development, Django can be set to DEBUG mode. If a server error is encountered, detailed information is provided to help debug the error. In production, this detailed internal information is a major security risk and must not be exposed. In deployment, Django must NOT be in DEBUG mode.
+- Ensure that the DEBUG or DEVELOPMENT  KEYS are NOT present in the Heroku CONFIG VARS.
+### Push to GitHub and connect repository to Heroku
+- Push to git hub
+- In Heroku, #sarah-rae-illustrations:
+    - Click on 'Deploy"
+    - Select GitHub Connect to Github
+    - Select the #sarah-rae-illustrations repository
+    - choose automatic deployment from 'Main' branch
+## Cloud Database: ElephantSql
+[ElephantSql](https://www.elephantsql.com/) was used for data storage.
+
+### Create database on ElephantSQL
+The database "#sarah-rae-illustrations" was created on ElephantSQL by:
+- Logging into ElephantSQL
+- Click on "Create New Instance"
+- The plan was named "#sarah-rae-illustrations"
+- The plan type was " Tiny Turtle (Free)
+- Click on "Select Region"
+- "EU-West-1 (Ireland)" was selected by default
+- Click on "Review"
+- Click on "Create Instance"
+
+### Store database environment variables in env.py
+- create or locate the "env.py" file at the top directory in the workspace, at the same level as requirements.txt
+- ensure that "env.py" is added to .gitignore so that it's sensitive contents are not pushed to github.
+- In env.py
+    - Import the os library
+    - Add the DATABASE URL to the environment
+        ``` 
+        import os
+        os.environ["DATABASE_URL"] = "<copiedURL>"
+        ```
+    where "copiedURL" is replaced by the copied elephantSQL "#sarah-rae-illustrations" URL
+
+    - Add the ElephantSql secret key to the environment
+        ```
+        os.environ["SECRET_KEY"] = "my_super^secret@key"
+        ```
+### Modify settings.py
+- The following code was added to the settings.py file below PATH import:
+```
+import os
+import dj_database_url
+
+```
+- The default database url variable (which would have connected Django to the internal db.sqlite3 database) can be used locally in development. If the remote ElephantSQL database url DATABASE_URL is present in the env.py file, the remote database is used. In this case, since DATABASE_URL is always present in the env.py file, ElephantSQL was always used.
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+```
+### Migrate changes to django database
+```$ python3 manage.py migrate```
+NB: If a different local and remote database are used, migrations need to be applied to both.
+- To apply migrations to the local db.sqlite3 comment out ```DATABASE_URL``` in env.py
+- To apply migrations to the remote db, ensure that ```DATABASE_URL``` is available in env.py.
+### Test connection with remote ElephantSQL database
+- In the dashboard for ElephantSQL (logged in)
+    - select "#sarah-rae-illustrations" instance
+    - on the left menu
+        - select BROWSER
+        - select 'Table queries'
+            - observe the dropdown is populated. This means that tables have been created by django in this database, and that the connection between django and the database is made.
+####  data to Django db.sql and ElephantSql
+##### Initial Data Loading
+Initial sudo data was generated in the admin section.
+#### Production Data Loading
+The Site Owner, Sarah Rae will load proper product data before going into production.
+
+Once an initial product data set is established, this data set may be dumped into a db.json file in the fixtures dir using the following command.
+```$ python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes --indent 4 > db.json```
+When the local  database needed to be reset:
+- The db.sql file was deleted
+- Migrations were run
+- The db.json file was loaded using ```$ python3 manage.py loaddata fixtures.db.json```
+
+When the remote database needed to be reset:
+- The database dashboard was accessed from the ElephantSql site
+- The database was reset
+- DEVELOPMENT variable was commented out in  env.py 
+- Migrations were run
+- The db.json file was loaded using ```$ python3 manage.py loaddata fixtures.db.json```
+## Cloud Static and Media Server: AWS3
+The deployment sever, Heroku is ephemeral. This means that it only exists when needed, and 'spins down' when inactive. It cannot permanently store files which are needed to be permanently accessed. For this purpose, a cloud based storage solution is used.
+For this project the [Amazon S3 storage solution](https://aws.amazon.com/s3/).
+### Project Storage
+2 directories in the top level project directory, next to manage.py, were created 
+- 'media' : holding product images and digital art works
+- 'static'
+    - 'css' : holding project css
+    - 'images' : holding template images
+### Update media/ static files in settings.py
+The deployment platform, Heroku, is ephemeral i.e. when it is not being used, it stops running actively and any state data is lost. It is necessary, therefore, to store static files in a permanent state location. For this project, Amazon AWS3 was used as the permanent storage location for the static and media files.
+
+The following settings were applied in settings.py
+
+```
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'sarah-rae-illustrations'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+### Set up AWS Account
+The linked [guide](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf) was used to set up 
+#### Add AWS Environment Variable
+- In created AWS Account
+    - Copy 
+- In env.py
+    - add environment variable:
+    ```
+    os.environ["CLOUDINARY_URL"] = "copied_url"
+    ```
+#### AWS and Django
+The following packages were installed:
+- boto3
+- django-storages
+#### custom_storages.py
+A [custom_storages.py](/custom_storages.py) was created at project base directory level, and referenced in settings.py:
+``` # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+```
+#### AWS_S3_OBJECT_PARAMETERS
+A custom setting was added to settings.py to ensure that the AWS bucket was kept live for a meaningful length of time.
+```
+if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+```
+# Issues arising from Project assessment and initial failure
 The project was submitted in an incomplete state, resulting in it failing to meet some pass level criteria.
 Issues identified in the assessment can be viewed [here](https://github.com/users/mikerae/projects/12/views/4?filterQuery=milestone%3A%22P5+Resubmission%22)
 # Testing
@@ -604,7 +925,7 @@ The W3C CSS Validator was used.
 
 # Bugs and Fixes
 [Back to Top](#sarah-rae-illustrations)
-Bugs are recored as Issues with a Bug template and Bug lable in the Github repo.
+Bugs are recored as Issues with a Bug template and Bug label in the Github repo.
 Bugs which have been fixed can be viewed [here](https://github.com/mikerae/sarah-rae-illustrations/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
 ## Known Issues
 [Back to Top](#sarah-rae-illustrations)
@@ -615,9 +936,7 @@ Bugs which have been fixed can be viewed [here](https://github.com/mikerae/sarah
 - [Mobile Display: Quantity #87](https://github.com/mikerae/sarah-rae-illustrations/issues/87)
 - [Order Line Items: No subcategories #92](https://github.com/mikerae/sarah-rae-illustrations/issues/92)
 - [Admin LineItem Order: No category or subcategory #95](https://github.com/mikerae/sarah-rae-illustrations/issues/95)
-- [lumberjackie.jpeg or .png #99](https://github.com/mikerae/sarah-rae-illustrations/issues/99)
 - [Complete Purchase AnonymousUser #117](https://github.com/mikerae/sarah-rae-illustrations/issues/117)
-
 # Resources
 [Back to Top](#sarah-rae-illustrations)
 
@@ -675,15 +994,15 @@ Fairytale              Whimsi-gothic          Quirky -characters.              M
         coming home.           Evoking emotion.          Inspiring.            Soulful             Mystifying Twists
 ```
 
-## Search Engine Optimisation
+# Search Engine Optimisation
 The site optimises its visibility to prospective customers through Search Engines with the use of the following:
 - A robots.txt file
 - A sitemap.xml file
 - Descriptive meta tags
 - rel attributes on links to external resources
-### Meta Data Tags
+## Meta Data Tags
 Meta Data tags showing semitics and keywords were used in headers and on elements.
-#### Semiotics
+### Semiotics
 ```
 Fairy.  Storybooks.    Curly branches.   Witches.    90s.      Burgundy.     Purples.         Orange.          Navy blue.     Velvet.    Wholesomely weird creatures.     Sparkles.        Clouds.     Treasure chest.      Pirate ship.      Stars.     Autumn/ gold + blue sky.        Dynamic framing/lighting.       Child reading
 Child sleeping with dreams above.      Treehouses.      Kites.         Splashing in muddy puddles
@@ -693,7 +1012,7 @@ Shimmering blue       Hobbit hole.       Gathered round Fireplace.     Blankets.
 Mailbox.          Welcome mat.           Facial expression close-up.           Happy tears.           Wide-eyed.  Fireworks.    Flying.     Colourful lights.      Golden light.            Theatrical villains.        Wispy fabric
 Dark forest
 ```
-#### Keywords
+### Keywords
 ```
 sarah rae illustrations
 sraeillustrations
@@ -705,229 +1024,6 @@ sarah rae art prints
 Links to the following Sarah Rae Illustrations social media platforms are found in the footer of each page and may be viewed here:
 - [Facebook Buisness page](https://www.facebook.com/profile.php?id=100094754029581)
 - [Instagram Page](https://www.instagram.com/sarahrae.illustrations/?igshid=OGQ5ZDc2ODk2ZA%3D%3D)
-
-# Deployment
-[Back to Top](#sarah-rae-illustrations)
-
-The project was deployed to Heroku in the initial stages of development in order to resolve early and fundamental deployment issues.
-### Deployed App Cloud Server: Heruko
-Heroku was used to deploy the django project backend
-
-### Cloud Database: ElephantSql
-ElephantSql was used for data storage
-
-### Cloud Static and Media Server: AWS3
-
-#### Add Heroku Host Name in Settings.py
-- in ALLOWED_HOSTS add the heroku app name
-```
-ALLOWED_HOSTS = ['#sarah-rae-illustrations.herokuapp.com', 'localhost']
-```
-#### Create 3 directories in the top level directory, next to manage.py
-- 'media'
-- 'static'
-- 'templates'
-#### Create a Procfile
-This tells Heroku that thew app will be displayed using the gunicorn webserver
-- Create 'Procfile' at the top level, next to manage.py
-```
-web: gunicorn django_string_rota.wsgi
-```
-#### Push to GitHub and connect repository to Heroku
-- Push to git hub
-- In Heroku, #sarah-rae-illustrations:
-    - Click on 'Deploy"
-    - Select GitHub Connect to Github
-    - Select the #sarah-rae-illustrations repository
-    - choose automatic deployment
-
-#### Create app on Heroku
-The app "#sarah-rae-illustrations" was created on Heroku by:
-- Logging into Heroku
-- Clicking on New
-    - Click "Create new app"
-- Giving the app a unique name.
-    - "#sarah-rae-illustrations" was accepted as unique
-- The region was chosen as:
-    - Europe
-- The app was created:
-    - Click "Create app"
-
-#### Create database on ElephantSQL
-The database "#sarah-rae-illustrations" was created on ElephantSQL by:
-- Logging into ElephantSQL
-- Click on "Create New Instance"
-- The plan was named "#sarah-rae-illustrations"
-- The plan type was " Tiny Turtle (Free)
-- Click on "Select Region"
-- "EU-West-1 (Ireland)" was selected by default
-- Click on "Review"
-- Click on "Create Instance"
-
-#### Store database environment variables in env.py
-- create a file "env.py" at the top directory in the workspace, at the same level as requirements.txt
-- ensure that "env.py" is added to .gitignore so that it's sensitive contents are not pushed to github.
-- In env.py
-    - Import the os library
-    - Add the DATABASE URL to the environment
-
-        ``` 
-        import os
-        os.environ["DATABASE_URL"] = "<copiedURL>"
-        ```
-    where "copiedURL" is replaced by the copied elephantSQL "#sarah-rae-illustrations" URL
-
-    - Add a secret key to the environment
-        ```
-        os.environ["SECRET_KEY"] = "my_super^secret@key"
-        ```
-#### Modify settings.py
-- The following code was added to the settings.py file below PATH import:
-```
-import os
-import dj_database_url
-if os.path.isfile('env.py'):
-    import env
-```
-- Replace the insecure Django SECRET_KEY with the env.py SECRET_KEY
-```
-SECRET_KEY = os.environ.get('SECRET_KEY')
-```
-- Comment out the default database url variable (which would have connected Django to the internal db.sqlite3 database) and add a link to the env.py database url (the ElephantSQL remote database)
-```
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
-```
-#### Migrate changes to django database
-```
-gitpod /workspace/#sarah-rae-illustrations (main) $ python3 manage.py migrate
-```
-#### Test connection with remote ElephantSQL database
-- In the dashboard for ElephantSQL (logged in)
-    - select "#sarah-rae-illustrations" instance
-    - on the left menu
-        - select BROWSER
-        - select 'Table queries'
-            - observe the dropdown is populated. This means that tables have been created by django in this database, and that the connection between django and the database is made.
-#### Add Environment Variables to Heroku
-- In '#sarah-rae-illustrations'
-    - Click on 'Reveal Config Vars'
-    - Add the following KEYS and their corresponding VALUES (without "")from env.py:
-        - DATABASE_URL
-        - SECRET_KEY
-        - PORT 8000
-
-####  data to Django db.sql and ElephantSql
-##### Initial Data Loading
-Initial data was imported into the project using set_up.py and associated utilities. This data was available from a spreadsheet stored in googledocs. set_up.py securely logged into the spreadsheet and retrieved the required data, then loaded the data into the models in the correct order.
-#### Subsequent Data Loading
-Once a credible starting data set was established, this data set was dumped into a db.json file in the fixtures dir using the following command.
-
-```
-python manage.py dumpdata --exclude auth.permission --exclude contenttypes --indent 4 > db.json
-```
-When the local  database needed to be reset:
-- The db.sql file was deleted
-- Migrations were run
-- The db.json file was loaded using Loaddata
-
-When the remote database needed to be reset:
-- The database dashboard was accessed from the ElephantSql site
-- The database was reset
-- DEVELOPMENT variable was commented out in  env.py 
-- Migrations were run
-- The db.json file was loaded using Loaddata
-#### Add AWS Environment Variable
-- In created AWS Account
-    - Copy 
-- In env.py
-    - add environment variable:
-    ```
-    os.environ["CLOUDINARY_URL"] = "copied_url"
-    ```
-- In Heroku Config Vars
-    - Add CLOUDINARY_URL: copied_url
-#### Add Temporary Config Var to Heroku
-There are no static files yet, and without the following variable set, the build will fail on Heroku.
-Once static files are introduced into the project, this variable can be removed.
-- DISABLE_COLLECTSATICK:1
-#### Update Installed Apps and media/ static files in settings.py
-The deployment platform, Heroku, is ephemeral i.e. when it is not being used, it stops running actively and any state data is lost. It is necessary, therefore, to store static files in a permanent state location. For this project, Amazon AWS3 was used as the permanent storage location for the static and media files.
-
-```
-INSTALLED_APPS = [
-   
-]
-```
-- below STATIC_URL = '/static/'  add the following:
-```
-
-```
-#### Add a Templates Directory in settings.py
-- under BASE_DIR = Path(__file__).resolve().parent.parent add the following:
-```
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-```
-- in TEMPLATES give 'DIRS' the value 'TEMPLATES'
-```
-TEMPLATES = [
-   
-]
-```
-#### Build, deploy and open app on Heroku
-After some trouble-shooting (see bugs and fixes) the default Django landing page was shown on the Heroku deployed site.
-
-#### Deployment Process
-The project was deployed to the Heroku platform using the following steps:
-- Delete unused resources/libraries
-- Add \n to input line
-- pip3 freeze > requirements.txt
-- commit & push to gitHub
-- make Heroku account
-- create new app (in Heroku)
-- in dashboard : open settings
-- in settings : open config vars
-    - add config vars
-- in deploy
-    - choose deployment method
-        - GitHub
-        - connect to GitHub
-        - Authorise Heroic to access your gitHub
-        - search for and connect to repository name
-        - choose a deployment method (Enable Automatic Deploys)
-        - main branch
-        - click view to open a web page with the deployment in a browser
-
-#### Freeze requirements
-Before deployment, the imported libraries were frozen into the requirement.txt file so that they could be available in the deployed virtual environment. The following code was used:
-```
-pip3 freeze > requirements.txt
-```
-### Final Deployment
-The following additional steps were taken before final deployment
-- The GitHub Repository was made public
-- Django debug mode was set to FALSE
-The project was deployed to the Heroku platform using the following steps:
-- Delete unused resources/libraries
-- Add \n to input line
-- pip3 freeze > requirements.txt
-- commit & push to gitHub
-- make Heroku account
-- create new app (in Heroku)
-- in dashboard : open settings
-- in settings : open config vars
-    - add config vars
-- in deploy
-    - choose deployment method
-        - GitHub
-        - connect to GitHub
-        - Authorise Heroic to access your gitHub
-        - search for and connect to repository name
-        - choose a deployment method (Enable Automatic Deploys)
-        - master/main branch
-        - click view to open a web page with the deployment in a browser
-
 # Resources
 [Back to Top](#sarah-rae-illustrations)
 
@@ -944,8 +1040,6 @@ Grateful acknowledgment is given to the following:
 - Mentor: Dario Carrasquel for encouraging and focused support
 - Particular thanks are offered to the Code Institute Tutors who patiently and most helpfully enabled me to make progress on the many occasions when I got stuck on an issue.
 
-- Code Institute: for training materials, training environment and specific code
+- Code Institute: for training materials, training environment and specific 'Boutique Ado Walkthrough' code
 - Stack Overflow https://stackoverflow.com/
 - Django Documentation https://docs.djangoproject.com/en/3.2/ref/models/fields/
-
- 
