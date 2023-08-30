@@ -56,7 +56,7 @@ def checkout(request):
     if not cart:
         messages.error(
             request, "There's nothing in your bag at the moment")
-        return redirect(reverse('products'))
+        return redirect(reverse('shop'))
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe Public Key is missing. \
