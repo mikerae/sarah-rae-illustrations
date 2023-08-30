@@ -174,7 +174,7 @@
 <!-- Allows user to scroll to top of shop window e-->
 <script>
     $('.btt-link').click(function (e) {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     });
 </script>
 
@@ -183,14 +183,16 @@
     $('#sort-selector').change(function () {
         let selector = $(this);
         let currentUrl = new URL(window.location);
+        let sort = undefined;
+        let direction = undefined;
 
         console.log(selector);
         console.log(currentUrl);
 
         let selectedVal = selector.val();
         if (selectedVal != "reset") {
-            var sort = selectedVal.split('_')[0];
-            var direction = selectedVal.split('_')[1];
+            sort = selectedVal.split('_')[0];
+            direction = selectedVal.split('_')[1];
 
             currentUrl.searchParams.set("sort", sort);
             currentUrl.searchParams.set("direction", direction);
@@ -202,7 +204,7 @@
 
             window.location.replace(currentUrl);
         }
-    })
+    });
 </script>
 <!-- End copy -->
 
