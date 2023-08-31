@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content="Sarah Rae Illustrations inspired products to buy.
+Prints. Jewelry. Sculpture. Books. Tarrot Cards">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -144,7 +149,7 @@
                                                     <a href="{% url 'edit_product' product.id %}"
                                                         class="text-info">Edit</a>
                                                     <a href="{% url 'delete_product' product.id %}"
-                                                        class="text-danger">Delete</a>
+                                                        class="text-danger ml-3">Delete</a>
                                                 </small>
                                                 {% endif %}
                                     </div>
