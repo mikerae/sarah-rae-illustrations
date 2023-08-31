@@ -6,11 +6,11 @@
 """
 
 from django.shortcuts import get_object_or_404
-
 from shop.models import Product
 
 
 def cart_contents(request):
+    """ returns  cart_items, total & product_count as context """
 
     cart_items = []
     total = 0

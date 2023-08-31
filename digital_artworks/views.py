@@ -1,4 +1,5 @@
-""" Views for the Gallery """
+""" Views for the digital_artworks app """
+# pylint: disable=no-member
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required

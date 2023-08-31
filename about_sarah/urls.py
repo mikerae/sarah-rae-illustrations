@@ -1,3 +1,4 @@
+""" Paths fo about_sarah app """
 from django.urls import path
 from . import views
 

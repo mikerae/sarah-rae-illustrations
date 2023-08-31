@@ -1,3 +1,4 @@
+""" Urls for cart app """
 from django.urls import path
 from . import views
 

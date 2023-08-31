@@ -1,4 +1,5 @@
 """ Form for Product admin """
+# pylint: disable=no-member
 from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Product, Category, SubCategory

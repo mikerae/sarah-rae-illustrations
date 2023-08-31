@@ -1,4 +1,5 @@
 """ Module to handle Checkout calls """
+# pylint: disable=no-member
 import json
 
 import stripe
@@ -44,9 +45,9 @@ def save_userdata_checked(request):
         django_save_info = request.session['save-info']
         print(f'save-info stored in current session is: {django_save_info}')
         return HttpResponse(status=200)
-    except Exception as e:
-        print(f'save-info was not in the current session. {e}')
-        return HttpResponse(content=e, status=400)
+    except KeyError as err:
+        print(f'save-info was not in the current session. {err}')
+        return HttpResponse(content=err, status=400)
 
 
 def checkout(request):
@@ -123,7 +124,7 @@ def checkout_success(request):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach th eusers's profile to the order
+        # Attach the users's profile to the order
         order.user_profile = profile
         order.save()
 
@@ -142,7 +143,7 @@ def checkout_success(request):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    # Send confirmation email to customer placeholder
+    # Send confirmation email to customer
     send_confirmation_email(payment_intent, order)
 
     messages.success(request, f'Order successfully processed! \
@@ -199,6 +200,6 @@ def create_payment_intent(request):
         return JsonResponse({
             'clientSecret': intent['client_secret']
         })
-    except Exception as e:
-        messages.warning(request, f'Oh dear! There was an error: ${e}')
-        return JsonResponse(error=str(e), data=403)
+    except Exception as err:
+        messages.warning(request, f'Oh dear! There was an error: ${err}')
+        return JsonResponse(error=str(err), data=403)

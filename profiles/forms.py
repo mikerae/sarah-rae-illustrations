@@ -1,10 +1,10 @@
-""" UserProfile Form """
+""" Forms for profile app """
 from django import forms
 from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
-    """ Checkout Order Form """
+    """ Checkout Order Form holding User Profile shipping data """
     class Meta:
         """ Meta Data for UserProfile form"""
         model = UserProfile
