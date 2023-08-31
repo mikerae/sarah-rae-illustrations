@@ -2,7 +2,15 @@
 {% load static %}
 {% load cart_tools %}
 
-
+{% block extra_meta %}
+<meta name="description" content="Artist, Designer: Sarah Rae,
+Shopping Cart,
+Total: {{ total }},
+Product: {{ product.name }},
+Price: {{ product.price }},
+Description: {{ product.description }}
+">
+{% endblock %}
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -29,8 +37,8 @@
                 <table class="table table-sm table-borderless text-sri-logo">
                     <thead>
                         <tr>
-                            <th scope="col">Product Info</th>
-                            <th scope="col"></th>
+                            <th scope="col">Product Imange</th>
+                            <th scope="col">Product Details</th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
@@ -66,7 +74,8 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm btn-sri rounded-0"
-                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}"
+                                                aria-label="decrease quantity">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
@@ -74,10 +83,12 @@
                                         </div>
                                         <input class="form-control form-control-sm qty_input" type="number"
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                            data-item-id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                            data-item-id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"
+                                            area-label="quantity">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm btn-sri rounded-0"
-                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}"
+                                                aria-label="increase quantity">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
@@ -98,7 +109,7 @@
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-sri-logo text-right">
-                            <h4 class="mt-4"><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h4>
+                            <h3 class="mt-4"><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h4>
 
                         </td>
                     </tr>
