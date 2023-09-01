@@ -149,7 +149,7 @@ a:hover {
 .badge-sri {
     color: rgb(218, 145, 12) !important;
     border: 1px solid rgb(248, 139, 104) !important;
-    border-radius: 20;
+    border-radius: 20px;
 }
 
 a.cat-badge>span.badge:hover {
@@ -370,8 +370,8 @@ input[name='q']:focus {
     position: absolute;
     top: 0;
     right: 0;
-    min-width: 100;
-    min-height: 100;
+    min-width: 100px;
+    min-height: 100px;
     opacity: 0;
     cursor: pointer;
 }
@@ -383,7 +383,6 @@ input[name='q']:focus {
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #dc3545;
-    border-color: #dc3545;
     border-radius: 0;
 
 }

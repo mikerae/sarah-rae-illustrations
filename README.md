@@ -888,12 +888,90 @@ Feedback from the site owner and customers will be used to develop future versio
 # Code Validation
 [Back to Top](#sarah-rae-illustrations)
 Validators were used to ensure that all aspects of the code was 'clean' according to industry standards.
-## Python PEP8CI 
-Python code
-The code was tested using PEP8CI online http:# and passed without issue.
-- [CI Python Linter](#)
-## Pylint VSCODE linter
-The pylint linter was used throughout development to ensure that problematic code was corrected as it was written.
+
+All aspects of the code were shown to be free of errors.
+## Python
+The Python code showed no validation errors.
+
+Two methods of python validation were used.
+- The Code Insitute Online PEP8 Validator
+- The VS Code Pylint Extenssion
+### Python PEP8CI 
+The Python code was validtated using the online [Code Institue PEP8CI Python Linter](https://pep8ci.herokuapp.com/) and passed without issue.
+#### Screenshots - PEP8CI
+Screenshots confirming PEP8CI python validation can be viewd here:
+- about_sarah app
+    - [admin](/readme_files/validators/python/pylint/pep8ci/about_sarah/admin.png)
+    - [apps](/readme_files/validators/python/pylint/pep8ci/about_sarah/apps.png)
+    - [models](/readme_files/validators/python/pylint/pep8ci/about_sarah/models.png)
+    - [tests](/readme_files/validators/python/pylint/pep8ci/about_sarah/tests.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/about_sarah/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/about_sarah/views.png)
+- cart app
+    - [admin](/readme_files/validators/python/pylint/pep8ci/cart/admin.png)
+    - [apps](/readme_files/validators/python/pylint/pep8ci/cart/apps.png)
+    - [cart-tools](/readme_files/validators/python/pylint/pep8ci/cart/cart-tools.png)
+    - [contexts](/readme_files/validators/python/pylint/pep8ci/cart/contexts.png)
+    - [models](/readme_files/validators/python/pylint/pep8ci/cart/models.png)
+    - [tests](/readme_files/validators/python/pylint/pep8ci/cart/tests.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/cart/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/cart/views.png)
+- checkout app
+    - [__init__](/readme_files/validators/python/pylint/pep8ci/checkout/__init__.png)
+    - [admin](/readme_files/validators/python/pylint/pep8ci/checkout/admin.png)
+    - [apps](/readme_files/validators/python/pylint/pep8ci/checkout/apps.png)
+    - [emails](/readme_files/validators/python/pylint/pep8ci/checkout/emails.png)
+    - [forms](/readme_files/validators/python/pylint/pep8ci/checkout/forms.png)
+    - [models](/readme_files/validators/python/pylint/pep8ci/checkout/models.png)
+    - [signals](/readme_files/validators/python/pylint/pep8ci/checkout/signals.png)
+    - [tests](/readme_files/validators/python/pylint/pep8ci/checkout/tests.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/checkout/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/checkout/views.png)
+    - [webhook_handler](/readme_files/validators/python/pylint/pep8ci/checkout/webhook_handler.png)
+    - [webhook_handler](/readme_files/validators/python/pylint/pep8ci/checkout/webhook_handler.png)
+- digital-artworks app
+    - [admin](/readme_files/validators/python/pylint/pep8ci/digital-artworks/admin.png)
+    - [apps](/readme_files/validators/python/pylint/pep8ci/digital-artworks/apps.png)
+    - [forms](/readme_files/validators/python/pylint/pep8ci/digital-artworks/forms.png)
+    - [models](/readme_files/validators/python/pylint/pep8ci/digital-artworks/models.png)
+    - [tests](/readme_files/validators/python/pylint/pep8ci/digital-artworks/tests.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/digital-artworks/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/digital-artworks/views.png)
+    - [widgets](/readme_files/validators/python/pylint/pep8ci/digital-artworks/widgets.png)
+- home app
+    - [admin](/readme_files/validators/python/pylint/pep8ci/home/admin.png)
+    - [apps](/readme_files/validators/python/pylint/pep8ci/home/apps.png)
+    - [models](/readme_files/validators/python/pylint/pep8ci/home/models.png)
+    - [tests](/readme_files/validators/python/pylint/pep8ci/home/tests.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/home/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/home/views.png)
+- profiles app
+    - [admin](/readme_files/validators/python/pylint/pep8ci/profiles/admin.png)
+    - [apps](/readme_files/validators/python/pylint/pep8ci/profiles/apps.png)
+    - [forms](/readme_files/validators/python/pylint/pep8ci/profiles/forms.png)
+    - [models](/readme_files/validators/python/pylint/pep8ci/profiles/models.png)
+    - [tests](/readme_files/validators/python/pylint/pep8ci/profiles/tests.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/profiles/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/profiles/views.png)
+- sarah_rae_illustrations app
+    - [asgi](/readme_files/validators/python/pylint/pep8ci/sarah_rae_illustrations/asgi.png)
+    - [settings](/readme_files/validators/python/pylint/pep8ci/sarah_rae_illustrations/settings.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/sarah_rae_illustrations/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/sarah_rae_illustrations/views.png)
+    - [wsgi](/readme_files/validators/python/pylint/pep8ci/sarah_rae_illustrations/wsgi.png)
+- shop app
+    - [admin](/readme_files/validators/python/pylint/pep8ci/shop/admin.png)
+    - [apps](/readme_files/validators/python/pylint/pep8ci/shop/apps.png)
+    - [forms](/readme_files/validators/python/pylint/pep8ci/shop/forms.png)
+    - [models](/readme_files/validators/python/pylint/pep8ci/shop/models.png)
+    - [tests](/readme_files/validators/python/pylint/pep8ci/shop/tests.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/shop/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/shop/views.png)
+    - [widgets](/readme_files/validators/python/pylint/pep8ci/shop/widgets.png)
+- [custom_storage](/readme_files/validators/python/pylint/pep8ci/custom_storage.png)
+- [manage](/readme_files/validators/python/pylint/pep8ci/manage.png)
+### Pylint VSCODE linter
+The VS Code pylint linter extension was used throughout development to ensure that problematic code was corrected as it was written.
 
 A number of the lines in the settings.py file were raising a linting error because they were too long for standard use in a terminal. Since these settings were not going to be visible in a terminal, the errors were suppressed by adding the following to the end of the long line:
 ```
@@ -904,24 +982,95 @@ There were several instances where the VSCode Pylint identified that some object
 ```
 # pylint: disable=no-member
 ```
-
-The state of the currently deployed python code shows minor issues:
-- [Pylint Output]()
+#### Screenshots for Pylint VSCODE linter
+The state of the currently deployed python code showed no errors.
+Some warnings and some items for informationwere shown.
+Screenshots confirming Pylint python validation can be viewd here:
+- [Pylint-1 Output](/readme_files/validators/python/pylint/pylint-1.png)
+- [Pylint-2 Output](/readme_files/validators/python/pylint/pylint-2.png)
 
 ## JavaScript
-JSHint was used to validate javascript code.
-- [JSHint results may be viewed here:](#)
+[JSHint](https://jshint.com/) was used to validate javascript code and showed no errors.
+### Screenshots - JSHint
+Screenshots confirming JSHint javascript validation can be viewd here:
+- [add-digitalartwork](/readme_files/validators/jshint/add-digitalartwork.png)
+- [add-product](/readme_files/validators/jshint/add-product.png)
+- [base](/readme_files/validators/jshint/base.png)
+- [checkout](/readme_files/validators/jshint/checkout.png)
+- [countryfield](/readme_files/validators/jshint/countryfield.png)
+- [digital-artworks](/readme_files/validators/jshint/digital-artworks.png)
+- [edit-product](/readme_files/validators/jshint/edit-product.png)
+- [quantity_input_script](/readme_files/validators/jshint/quantity_input_script.png)
+- [shop](/readme_files/validators/jshint/shop.png)
 ## HTML
-The W3C NU html validator was used. 1 information element originating in allauth code was exposed. Otherwise the code passed without issue.
-- [W3C HTML Validator 1](#)
-- [W3C HTML Validator 2](#)
-- [W3C HTML Validator 3](#)
-- [W3C HTML Validator 4](#)
-- [W3C HTML Validator 5](#)
-
+The [W3C NU html](https://validator.w3.org/nu/) validator was used to validate the html code which passed without errors. 
+### Screenshots - HTML Validation
+Screenshots confirming HTML validation can be viewd here:
+- [add-digital-artwork](/readme_files/validators/html/add-digital-artwork.png)
+- [add-product](/readme_files/validators/html/add-product.png)
+- [cart](/readme_files/validators/html/cart.png)
+- [checkout-success](/readme_files/validators/html/checkout-success.png)
+- [checkout](/readme_files/validators/html/checkout.png)
+- [digital-artwork-detail](/readme_files/validators/html/digital-artwork-detail.png)
+- [gallery](/readme_files/validators/html/gallery.png)
+- [index](/readme_files/validators/html/index.png)
+- [login](/readme_files/validators/html/login.png)
+- [product-detail](/readme_files/validators/html/product-detail.png)
+- [profile](/readme_files/validators/html/profile.png)
+- [shop](/readme_files/validators/html/shop.png)
+- [signup](/readme_files/validators/html/signup.png)
 ## CSS
-The W3C CSS Validator was used.
-- [W3C CSS Validator results may be viewed here:](#)
+The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to  validate the css code.
+Most of the css passed validation.
+### CSS Validation Failure
+The bug #117 caused a server error 500 which prevented the CSS validatior to complete under the following conditions:
+- For anonymous user: Arriving at the checkout.html page
+-  For logged-in user: Arriving at the checkout-success.html page.
+
+CSS validation of these pages will be documented when bug #117 is fixed.
+### Screenshots - CSS Validation
+Screenshots confirming CSS validation can be viewd here:
+- [add-digital-artwork](/readme_files/validators/css/add-digital-artwork.png)
+- [add-product](/readme_files/validators/css/add-product.png)
+- [cart](/readme_files/validators/css/cart.png)
+- [checkout](/readme_files/validators/css/checkout.png)
+- [digital-artwork-detail](/readme_files/validators/css/index.png)
+- [gallery](/readme_files/validators/css/gallery.png)
+- [index](/readme_files/validators/css/index.png)
+- [product-detail](/readme_files/validators/css/product-detail.png)
+- [profile](/readme_files/validators/css/profile.png.png)
+- [shop](/readme_files/validators/css/shop.png)
+
+## Lightouse Validation
+The Lighthouse Validation Tool found in Developer Tools in the Chrome Browser was used to  validate the the following aspects of the site:
+- Accesability
+- Best Proactices
+- SEO
+### Accessibility
+All areas of the site scored 90 or higher for accessibility
+### SEO
+All areas of the site scored 90 or higher for Search Engine Optomisation
+### Best Practices
+Most areas of the site scored 90 or higher for Best Practices.
+#### Lower Best Practice Scores
+The following pages scored 83 for Best Practices:
+- Shop
+- Product-Detail
+This was caused by image resolution not matching the size of the container for different screen sizes. Best Practice recomends that several image sets are used for different container sizes. This will be addressed in future versions.
+### Screenshots - Lighthouse Validation
+Screenshots confirming Lighthouse validation can be viewd here:
+- [add-digital-artwork](/readme_files/validators/Lighthouse/add-digitalartwork.png)
+- [add-product](/readme_files/validators/Lighthouse/add-product.png)
+- [cart](/readme_files/validators/Lighthouse/cart.png)
+- [checkout-success](/readme_files/validators/Lighthouse/checkout-success.png)
+- [checkout](/readme_files/validators/Lighthouse/checkout.png)
+- [edit-digital-artwork](/readme_files/validators/Lighthouse/edit-digital-artwork.png)
+- [edit-product](/readme_files/validators/Lighthouse/edit-product.png)
+- [home](/readme_files/validators/Lighthouse/home.png)
+- [product-detail.png](/readme_files/validators/Lighthouse/product-detail.png)
+- [profile](/readme_files/validators/Lighthouse/profile.png)
+- [shop](/readme_files/validators/Lighthouse/shop.png)
+- [signout](/readme_files/validators/Lighthouse/signout.png)
 
 # Bugs and Fixes
 [Back to Top](#sarah-rae-illustrations)
@@ -937,6 +1086,7 @@ Bugs which have been fixed can be viewed [here](https://github.com/mikerae/sarah
 - [Order Line Items: No subcategories #92](https://github.com/mikerae/sarah-rae-illustrations/issues/92)
 - [Admin LineItem Order: No category or subcategory #95](https://github.com/mikerae/sarah-rae-illustrations/issues/95)
 - [Complete Purchase AnonymousUser #117](https://github.com/mikerae/sarah-rae-illustrations/issues/117)
+- [Assessment Review: Advanced UX: Sub-Optimal Design#109](https://github.com/mikerae/sarah-rae-illustrations/issues/109)
 # Resources
 [Back to Top](#sarah-rae-illustrations)
 

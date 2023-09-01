@@ -1,3 +1,4 @@
+""" Views for commsiions app """
 from django.shortcuts import render
 
 

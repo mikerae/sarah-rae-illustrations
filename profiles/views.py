@@ -12,10 +12,10 @@ from .forms import UserProfileForm
 @login_required
 def profile(request):
     """ Display the user's profile. """
-    profile = get_object_or_404(UserProfile, user=request.user)
+    u_profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == "POST":
-        form = UserProfileForm(request.POST, instance=profile)
+        form = UserProfileForm(request.POST, instance=u_profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Your profile has been updated.')
@@ -23,8 +23,8 @@ def profile(request):
             messages.error(request, 'Update failed. Please ensure your \
                  form is valid.')
     else:
-        form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
+        form = UserProfileForm(instance=u_profile)
+    orders = u_profile.orders.all()
     print(f'orders : {orders}')
 
     template = 'profiles/profile.html'

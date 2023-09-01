@@ -1,5 +1,4 @@
-
-""" Urls for Gallery """
+""" Urls for digital_artworks app """
 from django.urls import path
 from . import views
 

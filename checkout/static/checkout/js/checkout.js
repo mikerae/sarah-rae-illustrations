@@ -8,7 +8,6 @@ let elements;
 const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 const stripe = Stripe(stripePublicKey);
 const successUrl = $('#id_checkout_success_url').text().slice(1, -1);
-let form = document.getElementById("payment-form");
 const saveInfoElement = document.getElementById('id-save-info');
 
 let emailAddress = '';

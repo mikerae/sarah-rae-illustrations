@@ -3,6 +3,11 @@
 {% load i18n %}
 {% load account socialaccount %}
 
+{% block extra_meta %}
+<meta name="description" content="
+Login">
+{% endblock %}
+
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block inner_content %}
@@ -40,7 +45,7 @@
     {% csrf_token %}
     {{ form|crispy }}
   {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
     {% endif %}
     <a href="{% url 'home' %}" class="btn btn-sri rounded-0">
       <span class="icon"><i class="fas fa-chevron-left"></i></span>

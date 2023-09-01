@@ -1,8 +1,7 @@
 """ Views for the Index Page """
+# pylint: disable=no-member
 from django.shortcuts import render
 from digital_artworks.models import DigitalArtWork
-
-# Create your views here.
 
 
 def index(request):

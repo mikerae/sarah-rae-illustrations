@@ -1,3 +1,4 @@
+""" Veiws for about_sarah app """
 from django.shortcuts import render
 
 

@@ -2,6 +2,13 @@
 {% load static %}
 {% load cart_tools %}
 
+{% block extra_meta %}
+<meta name="description" content="Artist, Designer: Sarah Rae,
+Checkout,
+Total: £{{ total | floatformat:2 }},
+">
+{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/stripe_elements.css' %}">
 {% endblock %}

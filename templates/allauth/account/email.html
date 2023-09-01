@@ -2,6 +2,11 @@
 
 {% load i18n %}
 
+{% block extra_meta %}
+<meta name="description" content="
+Email">
+{% endblock %}
+
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
 {% block inner_content %}
@@ -25,7 +30,7 @@
 
         <input id="email_radio_{{forloop.counter}}" type="radio" name="email"
           {% if emailaddress.primary or user.emailaddress_set.count == 1 %}checked="checked" {%endif %}
-          value="{{emailaddress.email}}" />
+          value="{{emailaddress.email}}">
 
         {{ emailaddress.email }}
     {% if emailaddress.verified %}

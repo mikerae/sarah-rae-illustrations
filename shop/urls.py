@@ -1,4 +1,4 @@
-""" Urls for Shop """
+""" Urls for Shop app """
 from django.urls import path
 from . import views
 

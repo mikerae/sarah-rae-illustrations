@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content="Artist, Designer: Sarah Rae,
+Add a product">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -16,7 +21,7 @@
         <div class="col-12 col-md-6 text-center mt-3">
             <hr class="w-25">
             <h2 class="logo-font text-sri-logo mb-4">Product Management</h2>
-            <h5 class="text-sri-logo mb-4">Add a Product</h5>
+            <h3 class="text-sri-logo mb-4">Add a Product</h3>
             <hr class="w-25">
         </div>
     </div>
@@ -48,11 +53,11 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('#new-image').change(function () {
         let file = $('new-image')[0].files[0];
         $('#filename').text(`Image will be set to: ${file.name}`);
-    })
+    });
 </script>
 
 {% endblock %}
