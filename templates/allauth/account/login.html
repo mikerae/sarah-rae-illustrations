@@ -3,6 +3,11 @@
 {% load i18n %}
 {% load account socialaccount %}
 
+{% block extra_meta %}
+<meta name="description" content="
+Login">
+{% endblock %}
+
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block inner_content %}
