@@ -894,12 +894,12 @@ All aspects of the code were shown to be free of errors.
 The Python code showed no validation errors.
 
 Two methods of python validation were used.
-- The Code Insitute Online PEP8 Validator
-- The VS Code Pylint Extenssion
+- The Code Institute Online PEP8 Validator
+- The VS Code Pylint Extension
 ### Python PEP8CI 
-The Python code was validtated using the online [Code Institue PEP8CI Python Linter](https://pep8ci.herokuapp.com/) and passed without issue.
+The Python code was validated using the online [Code Institute PEP8CI Python Linter](https://pep8ci.herokuapp.com/) and passed without issue.
 #### Screenshots - PEP8CI
-Screenshots confirming PEP8CI python validation can be viewd here:
+Screenshots confirming PEP8CI python validation can be viewed here:
 - about_sarah app
     - [admin](/readme_files/validators/python/pylint/pep8ci/about_sarah/admin.png)
     - [apps](/readme_files/validators/python/pylint/pep8ci/about_sarah/apps.png)
@@ -984,15 +984,15 @@ There were several instances where the VSCode Pylint identified that some object
 ```
 #### Screenshots for Pylint VSCODE linter
 The state of the currently deployed python code showed no errors.
-Some warnings and some items for informationwere shown.
-Screenshots confirming Pylint python validation can be viewd here:
+Some warnings and some items for information were shown.
+Screenshots confirming Pylint python validation can be viewed here:
 - [Pylint-1 Output](/readme_files/validators/python/pylint/pylint-1.png)
 - [Pylint-2 Output](/readme_files/validators/python/pylint/pylint-2.png)
 
 ## JavaScript
 [JSHint](https://jshint.com/) was used to validate javascript code and showed no errors.
 ### Screenshots - JSHint
-Screenshots confirming JSHint javascript validation can be viewd here:
+Screenshots confirming JSHint javascript validation can be viewed here:
 - [add-digitalartwork](/readme_files/validators/jshint/add-digitalartwork.png)
 - [add-product](/readme_files/validators/jshint/add-product.png)
 - [base](/readme_files/validators/jshint/base.png)
@@ -1023,13 +1023,13 @@ Screenshots confirming HTML validation can be viewd here:
 The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to  validate the css code.
 Most of the css passed validation.
 ### CSS Validation Failure
-The bug #117 caused a server error 500 which prevented the CSS validatior to complete under the following conditions:
+The bug #117 caused a server error 500 which prevented the CSS validator to complete under the following conditions:
 - For anonymous user: Arriving at the checkout.html page
 -  For logged-in user: Arriving at the checkout-success.html page.
 
 CSS validation of these pages will be documented when bug #117 is fixed.
 ### Screenshots - CSS Validation
-Screenshots confirming CSS validation can be viewd here:
+Screenshots confirming CSS validation can be viewed here:
 - [add-digital-artwork](/readme_files/validators/css/add-digital-artwork.png)
 - [add-product](/readme_files/validators/css/add-product.png)
 - [cart](/readme_files/validators/css/cart.png)
@@ -1041,22 +1041,22 @@ Screenshots confirming CSS validation can be viewd here:
 - [profile](/readme_files/validators/css/profile.png.png)
 - [shop](/readme_files/validators/css/shop.png)
 
-## Lightouse Validation
+## Lighthouse Validation
 The Lighthouse Validation Tool found in Developer Tools in the Chrome Browser was used to  validate the the following aspects of the site:
-- Accesability
-- Best Proactices
+- Accessibility
+- Best Practices
 - SEO
 ### Accessibility
 All areas of the site scored 90 or higher for accessibility
 ### SEO
-All areas of the site scored 90 or higher for Search Engine Optomisation
+All areas of the site scored 90 or higher for Search Engine Optimisation
 ### Best Practices
 Most areas of the site scored 90 or higher for Best Practices.
 #### Lower Best Practice Scores
 The following pages scored 83 for Best Practices:
 - Shop
 - Product-Detail
-This was caused by image resolution not matching the size of the container for different screen sizes. Best Practice recomends that several image sets are used for different container sizes. This will be addressed in future versions.
+This was caused by image resolution not matching the size of the container for different screen sizes. Best Practice recommends that several image sets are used for different container sizes. This will be addressed in future versions.
 ### Screenshots - Lighthouse Validation
 Screenshots confirming Lighthouse validation can be viewd here:
 - [add-digital-artwork](/readme_files/validators/Lighthouse/add-digitalartwork.png)
