@@ -18,7 +18,7 @@ This site presents the Artwork of Sarah Rae and facilitate the sale of this artw
 - View artwork product detail, with descriptions of the product.
 - View digital art work in a gallery
 - View details of a particular digital artwork
-- Sign up to a Newsletter
+- Sign up to a Newsletter using MailChimp
 - Access Sarah Rae’s  Social Media sites 
 #### In Future versions, Customers will be able to:
 - Be updated on the progress of their order, from placement to delivery.
@@ -645,8 +645,17 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 ```
+### Newsletter
+A newsletter app was created in Django to manage the Newsletter signup process.
+A [signup-page](/readme_files/newsletter.png) was created , with associated views and urls.
+The [Mailchimp](https://mailchimp.com/) service provider was to send out a Newsletter.
+Custom signup forms were created at the Mailchimp website.
+Embedded signup code was generated.
+[Navigation](/readme_files/newsletter-nav.png) to the newsletter signup area was added.
 
-The Mailchimp email provider will be used to send out a Newsletter.
+A user may sign up to the MailChimp newsletter.
+The site owner can then send newsletters to these users.
+The site owner can use the extensive analytic tools to examine customer data.
 ### Site Security
 #### CSRF Token
 In order to prevent a Cross Site attack, every POST request sent by a Form needs to have a CSRF Token allocated to it.
@@ -878,6 +887,8 @@ The following manual tests were made:
 - [Test Log 3](/readme_files/testing/test-log-3.png)
 - [Test Log 4](/readme_files/testing/test-log-4.png)
 - [Test Log 5](/readme_files/testing/test-log-5.png)
+- [Test Log 6](/readme_files/testing/test-log-6.png)
+
 ### Automatic Testing
 No automatic testing was used for the MVP.
 Future versions will have full django unit and integration testing.
@@ -945,6 +956,13 @@ Screenshots confirming PEP8CI python validation can be viewed here:
     - [tests](/readme_files/validators/python/pylint/pep8ci/home/tests.png)
     - [urls](/readme_files/validators/python/pylint/pep8ci/home/urls.png)
     - [views](/readme_files/validators/python/pylint/pep8ci/home/views.png)
+- newsletter
+    - [admin](/readme_files/validators/python/pylint/pep8ci/newsletter/admin.png)
+    - [apps](/readme_files/validators/python/pylint/pep8ci/newsletter/apps.png)
+    - [models](/readme_files/validators/python/pylint/pep8ci/newsletter/models.png)
+    - [tests](/readme_files/validators/python/pylint/pep8ci/newsletter/tests.png)
+    - [urls](/readme_files/validators/python/pylint/pep8ci/newsletter/urls.png)
+    - [views](/readme_files/validators/python/pylint/pep8ci/newsletter/views.png)
 - profiles app
     - [admin](/readme_files/validators/python/pylint/pep8ci/profiles/admin.png)
     - [apps](/readme_files/validators/python/pylint/pep8ci/profiles/apps.png)
@@ -1015,6 +1033,7 @@ Screenshots confirming HTML validation can be viewd here:
 - [gallery](/readme_files/validators/html/gallery.png)
 - [index](/readme_files/validators/html/index.png)
 - [login](/readme_files/validators/html/login.png)
+- [newsletter](/readme_files/validators/html/newsletter.png)
 - [product-detail](/readme_files/validators/html/product-detail.png)
 - [profile](/readme_files/validators/html/profile.png)
 - [shop](/readme_files/validators/html/shop.png)
@@ -1037,6 +1056,7 @@ Screenshots confirming CSS validation can be viewed here:
 - [digital-artwork-detail](/readme_files/validators/css/index.png)
 - [gallery](/readme_files/validators/css/gallery.png)
 - [index](/readme_files/validators/css/index.png)
+- [newsletter](/readme_files/validators/css/newsletter.png)
 - [product-detail](/readme_files/validators/css/product-detail.png)
 - [profile](/readme_files/validators/css/profile.png.png)
 - [shop](/readme_files/validators/css/shop.png)
@@ -1071,6 +1091,7 @@ Screenshots confirming Lighthouse validation can be viewd here:
 - [edit-digital-artwork](/readme_files/validators/Lighthouse/edit-digital-artwork.png)
 - [edit-product](/readme_files/validators/Lighthouse/edit-product.png)
 - [home](/readme_files/validators/Lighthouse/home.png)
+- [newsletter](/readme_files/validators/Lighthouse/newsletter.png)
 - [product-detail.png](/readme_files/validators/Lighthouse/product-detail.png)
 - [profile](/readme_files/validators/Lighthouse/profile.png)
 - [shop](/readme_files/validators/Lighthouse/shop.png)

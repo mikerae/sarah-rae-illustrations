@@ -1,4 +1,4 @@
-""" Paths fo newsletter app """
+""" Paths for newsletter app """
 from django.urls import path
 from . import views
 
