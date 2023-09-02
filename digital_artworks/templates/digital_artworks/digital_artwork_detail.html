@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content="Artist, Designer: Sarah Rae,
+Add a digital art work">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -46,7 +51,7 @@
                         <small class="ml-3">
                             <a href="{% url 'edit_digital_artwork' digital_artwork.id %}" class="text-info">Edit</a>
                             <a href="{% url 'delete_digital_artwork' digital_artwork.id %}"
-                                class="text-danger">Delete</a>
+                                class="text-danger ml-3">Delete</a>
                         </small>
                         {% if digital_artwork.carousel %}
                         <p><small><i class="fa-solid fa-display mr-3"></i>This
