@@ -1056,6 +1056,8 @@ Most areas of the site scored 90 or higher for Best Practices.
 The following pages scored 83 for Best Practices:
 - Shop
 - Product-Detail
+- Gallery
+- Gallery Detail
 This was caused by image resolution not matching the size of the container for different screen sizes. Best Practice recommends that several image sets are used for different container sizes. This will be addressed in future versions.
 ### Screenshots - Lighthouse Validation
 Screenshots confirming Lighthouse validation can be viewd here:
@@ -1064,6 +1066,8 @@ Screenshots confirming Lighthouse validation can be viewd here:
 - [cart](/readme_files/validators/Lighthouse/cart.png)
 - [checkout-success](/readme_files/validators/Lighthouse/checkout-success.png)
 - [checkout](/readme_files/validators/Lighthouse/checkout.png)
+- [gallery](/readme_files/validators/Lighthouse/gallery.png)
+- [gallery-detail](/readme_files/validators/Lighthouse/gallery-detail.png)
 - [edit-digital-artwork](/readme_files/validators/Lighthouse/edit-digital-artwork.png)
 - [edit-product](/readme_files/validators/Lighthouse/edit-product.png)
 - [home](/readme_files/validators/Lighthouse/home.png)
