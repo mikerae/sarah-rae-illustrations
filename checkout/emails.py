@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 
 def send_confirmation_email(intent, order):
     """ Send the user a confimation email """
+    print(f'Send Confirmation Email called: with intent: {intent} order: {order}')  # noqa E501
     cust_email = intent["receipt_email"]
     subject = render_to_string(
         'checkout/email_templates/confirmation_email_subject.txt',

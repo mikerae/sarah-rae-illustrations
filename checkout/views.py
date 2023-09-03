@@ -144,6 +144,8 @@ def checkout_success(request):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
+            save_info = False
+            print(f'save_info is now set to: {save_info}')
 
     # Send confirmation email to customer
     send_confirmation_email(payment_intent, order)
