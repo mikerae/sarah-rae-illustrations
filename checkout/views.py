@@ -37,13 +37,10 @@ def save_userdata_checked(request):
     stripe data). If so , 'True' is returned for storage and
     futher processing.
     """
-    print('save_userdata_checked is called')
     try:
         save_info = request.POST.get('save-info')
-        print(f'save-info recieved from front end  is: {save_info}')
         request.session['save-info'] = save_info
         django_save_info = request.session['save-info']
-        print(f'save-info stored in current session is: {django_save_info}')
         return HttpResponse(status=200)
     except KeyError as err:
         print(f'save-info was not in the current session. {err}')
@@ -88,9 +85,6 @@ def checkout_success(request):
     cart = request.session.get('cart', {})
     if request.user.is_authenticated:
         save_info = request.session['save-info']
-        print(f'checkout-success retrieved \
-            save-info from the curent \
-                session as: {save_info}')
 
     form_data = {
         'full_name': payment_intent['shipping']['name'],
@@ -107,7 +101,6 @@ def checkout_success(request):
     order_form = OrderForm(form_data)
 
     if order_form.is_valid():
-        print('Order is valid')
         order = order_form.save(commit=False)
         order.stripe_pid = stripe_pid
         order.original_cart = json.dumps(cart)
@@ -145,7 +138,6 @@ def checkout_success(request):
             if user_profile_form.is_valid():
                 user_profile_form.save()
             save_info = False
-            print(f'save_info is now set to: {save_info}')
 
     # Send confirmation email to customer
     send_confirmation_email(payment_intent, order)
