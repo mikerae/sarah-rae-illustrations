@@ -888,8 +888,9 @@ The following manual tests were made:
 - [Test Log 3](/readme_files/testing/test-log-3.png)
 - [Test Log 4](/readme_files/testing/test-log-4.png)
 - [Test Log 5](/readme_files/testing/test-log-5.png)
-- [Test Log 6](/readme_files/testing/test-log-6.png)
-
+- [Test Log for MailChimp Implementation](/readme_files/testing/test-log-6.png)
+- [Test Log for bug-fix Issue #117](/readme_files/testing/test-log-bug-117.png)
+- [Test Log for bug-fix Issue #118](/readme_files/testing/test-log-bug-118.png)
 ### Automatic Testing
 No automatic testing was used for the MVP.
 Future versions will have full django unit and integration testing.
@@ -1111,8 +1112,6 @@ Bugs which have been fixed can be viewed [here](https://github.com/mikerae/sarah
 - [Mobile Display: Quantity #87](https://github.com/mikerae/sarah-rae-illustrations/issues/87)
 - [Order Line Items: No subcategories #92](https://github.com/mikerae/sarah-rae-illustrations/issues/92)
 - [Admin LineItem Order: No category or subcategory #95](https://github.com/mikerae/sarah-rae-illustrations/issues/95)
-- [Complete Purchase AnonymousUser #117](https://github.com/mikerae/sarah-rae-illustrations/issues/117)
-- [Assessment Review: Advanced UX: Sub-Optimal Design#109](https://github.com/mikerae/sarah-rae-illustrations/issues/109)
 # Resources
 [Back to Top](#sarah-rae-illustrations)
 
