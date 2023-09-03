@@ -264,6 +264,17 @@ input[name='q']:focus {
     overflow-y: auto;
 }
 
+/* Mobile Nav Bar */
+#mobile-search,
+#mob-user-options,
+#mob-cart-nav {
+    font-size: 13px;
+    margin-top: 5px;
+    padding: 0;
+}
+
+
+
 /* -------------------------------- Media Queries */
 
 /* Larger Medium devices (tablets, more than 992px) */
@@ -394,8 +405,6 @@ input[name='q']:focus {
         z-index: 9999992399;
     }
 }
-
-/* End copy */
 
 #loading-overlay {
     display: none;
