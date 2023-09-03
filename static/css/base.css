@@ -72,14 +72,6 @@ hr {
     color: rgb(218, 145, 12) !important;
 }
 
-#homeCarousel {
-    width: 75%;
-}
-
-.carousel-image {
-    width: 100%;
-}
-
 .footer-wrapper {
     background-color: rgb(77, 0, 82);
     width: 100vw;
@@ -274,14 +266,10 @@ input[name='q']:focus {
 
 /* -------------------------------- Media Queries */
 
-/* Vertically Center Carousel on  larger Medium devices (tablets, more than 992px) */
+/* Larger Medium devices (tablets, more than 992px) */
 @media (min-width: 770px) {
-    #center-column-index {
-        display: flex;
-        align-items: center;
-        height: 100vh;
-    }
 
+    /* Hide Logo */
     #home-logo {
         display: none;
     }

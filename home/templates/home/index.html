@@ -20,12 +20,13 @@ Buy and view art works.">
 <div class="container h-100 body-footer-adjust">
     <div class="row h-100">
         <div class="col"></div>
-        <div class="col-9 col-md-6">
-            <div id="home-logo" class="mt-4">
+        <div class="col-9 col-md-6 align-self-center">
+            <div id="home-logo" class="mt-5">
                 <img id="home-logo-img" src="{% static 'images/logo.png' %}" class="img-fluid"
                     alt="Sarah Rae Illustrations Logo">
             </div>
-            <div id="homeCarousel" class="carousel slide mt-5 mx-auto" data-ride="carousel">
+
+            <div id="homeCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     {% for ca in carousel_artworks %}
                     <li data-target="#homeCarousel" data-slide-to="ca.counter0" {% if forloop.first %}class="active"
@@ -35,7 +36,7 @@ Buy and view art works.">
                 <div class="carousel-inner">
                     {% for ca in carousel_artworks %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img class="d-block w-100 carousel-image my-4" src="{{ ca.image.url }}" alt="{{ ca.image_alt}}">
+                        <img class="d-flex w-100 carousel-image my-5 " src="{{ ca.image.url }}" alt="{{ ca.image_alt}}">
                     </div>
                     {% endfor %}
                 </div>
@@ -47,6 +48,7 @@ Buy and view art works.">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
+
             </div>
         </div>
         <div class="col"></div>
