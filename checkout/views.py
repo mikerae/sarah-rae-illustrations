@@ -79,16 +79,18 @@ def checkout_success(request):
     """
     Create Order after sucessful payment.
     """
+    save_info = False
     stripe_pid = request.GET['payment_intent']
 
     stripe.api_key = stripe_secret_key
     payment_intent = stripe.PaymentIntent.retrieve(stripe_pid)
 
     cart = request.session.get('cart', {})
-    save_info = request.session['save-info']
-    print(f'checkout-success retrieved \
-        save-info from the curent \
-            session as: {save_info}')
+    if request.user.is_authenticated:
+        save_info = request.session['save-info']
+        print(f'checkout-success retrieved \
+            save-info from the curent \
+                session as: {save_info}')
 
     form_data = {
         'full_name': payment_intent['shipping']['name'],
