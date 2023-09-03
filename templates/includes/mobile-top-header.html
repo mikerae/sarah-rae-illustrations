@@ -1,4 +1,4 @@
-<ul>
+<ul class="p-0 m-0">
     <li class="list-inline-item">
         <a class="d-block d-lg-none nav-link px-2" href="{% url 'shop' %}" id="mobile-search" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -51,7 +51,7 @@
     </li>
     <li class="list-inline-item">
         <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-sri{% endif %} nav-link px-2 d-block d-lg-none"
-            href="{% url 'cart' %}">
+            href="{% url 'cart' %}" id="mob-cart-nav">
             <div class="text-center">
                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                 <p class="my-0">
