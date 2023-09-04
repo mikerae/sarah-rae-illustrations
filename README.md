@@ -1041,12 +1041,8 @@ Screenshots confirming HTML validation can be viewd here:
 - [shop](/readme_files/validators/html/shop.png)
 - [signup](/readme_files/validators/html/signup.png)
 ## CSS
-The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to  validate the css code.
-Most of the css passed validation.
-### CSS Validation Failure
-The bug #117 caused a server error 500 which prevented the CSS validator to complete under the following conditions:
-- For anonymous user: Arriving at the checkout.html page
--  For logged-in user: Arriving at the checkout-success.html page.
+The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to  validate the css code
+which passed without errors.
 
 CSS validation of these pages will be documented when bug #117 is fixed.
 ### Screenshots - CSS Validation
@@ -1055,6 +1051,7 @@ Screenshots confirming CSS validation can be viewed here:
 - [add-product](/readme_files/validators/css/add-product.png)
 - [cart](/readme_files/validators/css/cart.png)
 - [checkout](/readme_files/validators/css/checkout.png)
+- [checkout-success](/readme_files/validators/css/checkout-success.png)
 - [digital-artwork-detail](/readme_files/validators/css/index.png)
 - [gallery](/readme_files/validators/css/gallery.png)
 - [index](/readme_files/validators/css/index.png)
