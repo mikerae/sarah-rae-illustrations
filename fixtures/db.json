@@ -1,0 +1,832 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 127,
+        "fields": {
+            "action_time": "2023-07-21T18:10:52.287Z",
+            "user": 5,
+            "content_type": 4,
+            "object_id": "5",
+            "object_repr": "admin",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 128,
+        "fields": {
+            "action_time": "2023-07-21T18:12:55.900Z",
+            "user": 5,
+            "content_type": 4,
+            "object_id": "3",
+            "object_repr": "mr_super",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 129,
+        "fields": {
+            "action_time": "2023-07-21T18:13:15.111Z",
+            "user": 5,
+            "content_type": 4,
+            "object_id": "4",
+            "object_repr": "test-shopper",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 130,
+        "fields": {
+            "action_time": "2023-07-22T19:41:28.590Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "13",
+            "object_repr": "new product",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 131,
+        "fields": {
+            "action_time": "2023-07-22T19:41:28.600Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "12",
+            "object_repr": "test",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 132,
+        "fields": {
+            "action_time": "2023-07-22T20:03:44.475Z",
+            "user": 5,
+            "content_type": 13,
+            "object_id": "7",
+            "object_repr": "Morticia and Gomez",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 133,
+        "fields": {
+            "action_time": "2023-07-22T20:05:24.815Z",
+            "user": 5,
+            "content_type": 13,
+            "object_id": "8",
+            "object_repr": "Wanda Red Costume",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 134,
+        "fields": {
+            "action_time": "2023-07-22T20:06:14.673Z",
+            "user": 5,
+            "content_type": 13,
+            "object_id": "6",
+            "object_repr": "Logging-In Game: Lose Screen",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 135,
+        "fields": {
+            "action_time": "2023-07-22T20:07:07.091Z",
+            "user": 5,
+            "content_type": 13,
+            "object_id": "5",
+            "object_repr": "Logging-In game: Background",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 136,
+        "fields": {
+            "action_time": "2023-07-22T20:10:02.648Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "2",
+            "object_repr": "Earrings: Green-pink",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 137,
+        "fields": {
+            "action_time": "2023-07-22T20:11:00.890Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "3",
+            "object_repr": "Sticker: Green Pixie",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 138,
+        "fields": {
+            "action_time": "2023-07-22T20:11:48.121Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "4",
+            "object_repr": "Print: Witches and Cauldron A5",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 139,
+        "fields": {
+            "action_time": "2023-07-22T20:12:31.482Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "5",
+            "object_repr": "Sticker: Isicle Farie: Single",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 140,
+        "fields": {
+            "action_time": "2023-07-22T20:13:01.421Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "6",
+            "object_repr": "Print: Morticia and Gomez A4",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 141,
+        "fields": {
+            "action_time": "2023-07-22T20:14:07.443Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "7",
+            "object_repr": "Earrings: Pink",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 142,
+        "fields": {
+            "action_time": "2023-07-22T20:14:29.249Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "8",
+            "object_repr": "Earrings: Vivid Pink",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 143,
+        "fields": {
+            "action_time": "2023-07-22T20:15:16.129Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "9",
+            "object_repr": "Print: Wanda Red Costume: A4 Gloss",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 144,
+        "fields": {
+            "action_time": "2023-07-22T20:15:42.211Z",
+            "user": 5,
+            "content_type": 16,
+            "object_id": "10",
+            "object_repr": "Earrings: White",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 145,
+        "fields": {
+            "action_time": "2023-07-23T18:29:46.364Z",
+            "user": 5,
+            "content_type": 4,
+            "object_id": "5",
+            "object_repr": "admin",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 146,
+        "fields": {
+            "action_time": "2023-07-23T18:30:03.381Z",
+            "user": 5,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "mikerae@me.com",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$jkFnB7ROi31T1KUiciGx83$bldR2t31oSUecks/Swo5WZQ2UJcDXqj591hTqGx9GaQ=",
+            "last_login": "2023-08-30T16:42:02.061Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "mikerae@me.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-07-21T18:09:33.687Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$QE4sMN1Wzc0MC2K8iPl1tg$2IE17UodFDgTbp+OuW2lQClbVpKcQcmFvWgHE7mUFlM=",
+            "last_login": "2023-09-04T10:29:53.136Z",
+            "is_superuser": false,
+            "username": "test-shopper",
+            "first_name": "",
+            "last_name": "",
+            "email": "raem66562@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-07-21T18:33:49.034Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$Hs6CU3QRG8TCl6MTksEThu$Q9dFkaEUtGK1G5XJ2/IStNTWqOYGt6NpeY4HKCYXpPQ=",
+            "last_login": "2023-07-22T11:11:54.001Z",
+            "is_superuser": false,
+            "username": "test-shopper-2",
+            "first_name": "",
+            "last_name": "",
+            "email": "testshopper2@dsds.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-07-22T06:29:23.963Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "6vw8gkc24xvb9o600bvhvflcvuag2rxv",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAQRf-FtSHUDq8u3fsNBIbBogZMaRON8d9tky50e865982cX-bRLY0mlyMbmGSHXxY83qhsIl59uVSOtcxTDnxL-G4bP9dI99Pe_h2Mvo3rukPUaGJIBLbTvrdCSCUtJqHxCBCSVSoK6q1G6RGgA6VpRRiVMKDMdtqotVyLo-cjTy82iM8XiWA-yw:1qNhEu:8-XZpdDHVQUMh2OFJM_0er_gVoJcBuLCPDcJy0vh61A",
+            "expire_date": "2023-08-06T22:07:44.299Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "cgglae4pjvxqbx59os7z1msjql1952ab",
+        "fields": {
+            "session_data": ".eJxVjDsOg0AMRO_iGq32B162TJ8zIGM7gSQCiU-FuHtAoqGceW9mA6ZpgbyBc5BdAc5C9gVUR9gLaGhdumaddWp6gQwebl1L_NXhBPKh4T0aHodl6ltzKuais3mOor_H5d4OOpq7Y12hBgw-WNQYUaR0EeMrVUGCd2wDJkmaUp0QazxQ8i1TYKsUibFU2P-RLT1_:1qMDr1:ItuZAIIibbqW4fa9tcocr2J-18qqLHduy8G-ETEif6M",
+            "expire_date": "2023-08-02T20:32:59.096Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "ejyr0080wrg85eczohyxumtl4fqgrb9u",
+        "fields": {
+            "session_data": ".eJxVjEEOgyAQRe_CuiXKoIMuu-8ZzAhjtW0gAezGePdi4qLdvvf_28RAa56HNXEcFid6ocTll41kX-wP4Z7kH0Ha4HNcRnlM5GmTvAfH79u5_QvMlObybpEBQUGFrDU619Qa9WRacKBqWwEaZ9iYziB2WJRRoyWwFZMmiw2XaKIPXxc_hZLLcT2QpZhFvwkt-nrfv6gaQTk:1qMpCs:uwV40GbTkDL_JILC2dmib4Fc-Z8cakEWs-BmCBKH7fI",
+            "expire_date": "2023-08-04T12:26:02.819Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "msmle3p3pmnxrh2wa5kowqek4wjchscc",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7IjEiOjF9fQ:1qMGYL:9HntgHGGiMxQ2BMTRwqeFsb8CBPGUpoeUU1gNQK8o-U",
+            "expire_date": "2023-08-02T23:25:53.040Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "x2rc5suzkk4xd2rqh50oysazkr5gt9o6",
+        "fields": {
+            "session_data": ".eJxVjc0OwiAQhN9lz5W0_LTi0bvPQFhYLGrAQGs0xne3TXrQyxxmvpl5g7HzNJq5UjHRwwF6aH49tO5KaQ38xaZzZi6nqURkK8K2tLJT9nQ7buzfwGjruLQ5lygkR9oLjtI5bblHLwcVPElHgxZWhRZ7FbQMqJEwtMOiQpDvuqDW0Uq1xpwMPe-xvODQNlDtg3YxhbxcTGUm-HwBxW5GlA:1qd6qe:HDu-A104oFTzF965B2ZecJdDbCpYgJtPkoKOQ9gBBTU",
+            "expire_date": "2023-09-18T10:30:24.642Z"
+        }
+    },
+    {
+        "model": "sites.site",
+        "pk": 1,
+        "fields": {
+            "domain": "example.com",
+            "name": "example.com"
+        }
+    },
+    {
+        "model": "account.emailaddress",
+        "pk": 3,
+        "fields": {
+            "user": 5,
+            "email": "mikerae@me.com",
+            "verified": true,
+            "primary": true
+        }
+    },
+    {
+        "model": "account.emailaddress",
+        "pk": 4,
+        "fields": {
+            "user": 6,
+            "email": "raem66562@gmail.com",
+            "verified": true,
+            "primary": true
+        }
+    },
+    {
+        "model": "account.emailaddress",
+        "pk": 5,
+        "fields": {
+            "user": 7,
+            "email": "testshopper2@dsds.com",
+            "verified": true,
+            "primary": true
+        }
+    },
+    {
+        "model": "digital_artworks.digitalartwork",
+        "pk": 1,
+        "fields": {
+            "name": "Broownie",
+            "image": "Brownie.jpeg",
+            "image_alt": "Grandma Brownie and Candy",
+            "description": "Grandma Brownie and Candy",
+            "carousel": true
+        }
+    },
+    {
+        "model": "digital_artworks.digitalartwork",
+        "pk": 2,
+        "fields": {
+            "name": "Green Pixie",
+            "image": "green-pixie.jpeg",
+            "image_alt": "Green Pixie",
+            "description": "Green Pixie",
+            "carousel": false
+        }
+    },
+    {
+        "model": "digital_artworks.digitalartwork",
+        "pk": 3,
+        "fields": {
+            "name": "Witches Hocus Pocus",
+            "image": "witches-hocus-pocus.jpeg",
+            "image_alt": "Witches around a caldron",
+            "description": "Witches around a caldron. Inspired by Hocus Pocus",
+            "carousel": false
+        }
+    },
+    {
+        "model": "digital_artworks.digitalartwork",
+        "pk": 4,
+        "fields": {
+            "name": "Isicle Fairie",
+            "image": "Icicle_Fairie.jpeg",
+            "image_alt": "An Icicle Fairie",
+            "description": "An Icicle Fairie",
+            "carousel": false
+        }
+    },
+    {
+        "model": "digital_artworks.digitalartwork",
+        "pk": 5,
+        "fields": {
+            "name": "Logging-In game: Background",
+            "image": "logging-in.jpg",
+            "image_alt": "Logging-In game: Background",
+            "description": "Logging-In game: Background",
+            "carousel": true
+        }
+    },
+    {
+        "model": "digital_artworks.digitalartwork",
+        "pk": 6,
+        "fields": {
+            "name": "Logging-In Game: Lose Screen",
+            "image": "loose-screen.jpg",
+            "image_alt": "Logging-In Game: Lose Screen",
+            "description": "Logging-In Game: Lose Screen",
+            "carousel": true
+        }
+    },
+    {
+        "model": "digital_artworks.digitalartwork",
+        "pk": 7,
+        "fields": {
+            "name": "Morticia and Gomez",
+            "image": "Morticia_and_Gomez_square_painting.jpeg",
+            "image_alt": "Morticia and Gomez on horse",
+            "description": "Morticia and Gomez on horse",
+            "carousel": false
+        }
+    },
+    {
+        "model": "digital_artworks.digitalartwork",
+        "pk": 8,
+        "fields": {
+            "name": "Wanda Red Costume",
+            "image": "Wanda_Costume.jpeg",
+            "image_alt": "Wanda Red Costume",
+            "description": "Wanda Red Costume",
+            "carousel": false
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 1,
+        "fields": {
+            "name": "jewellery",
+            "friendly_name": "Jewellery"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 2,
+        "fields": {
+            "name": "sculpture",
+            "friendly_name": "Sculpture"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 3,
+        "fields": {
+            "name": "stationary",
+            "friendly_name": "Stationary"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 4,
+        "fields": {
+            "name": "art-prints",
+            "friendly_name": "Art Prints"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 5,
+        "fields": {
+            "name": "books-and-tarot-decks",
+            "friendly_name": "Books and Tarot Decks"
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 1,
+        "fields": {
+            "name": "beaded-dangle-earrings",
+            "friendly_name": "Beaded Dangle Earrings",
+            "category": 1
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 2,
+        "fields": {
+            "name": "beaded-necklace",
+            "friendly_name": "Beaded Necklace",
+            "category": 1
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 3,
+        "fields": {
+            "name": "clay-scupture",
+            "friendly_name": "Clay Sculpture",
+            "category": 2
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 4,
+        "fields": {
+            "name": "fabric-sculpture",
+            "friendly_name": "Fabric Sculpture",
+            "category": 2
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 5,
+        "fields": {
+            "name": "sticker-sheet-3-large",
+            "friendly_name": "Sticker Sheet: 3 Large",
+            "category": 3
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 6,
+        "fields": {
+            "name": "sticker-sheet-6-small",
+            "friendly_name": "Sticker sheet: 6 Small",
+            "category": 3
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 7,
+        "fields": {
+            "name": "stickers-single",
+            "friendly_name": "Stickers: Single",
+            "category": 3
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 8,
+        "fields": {
+            "name": "postcard",
+            "friendly_name": "Postcard",
+            "category": 3
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 9,
+        "fields": {
+            "name": "greeting-card",
+            "friendly_name": "Greeting Card",
+            "category": 3
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 10,
+        "fields": {
+            "name": "a4-poster-gloss",
+            "friendly_name": "A4 Poster Gloss",
+            "category": 4
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 11,
+        "fields": {
+            "name": "a4_natural_recycled",
+            "friendly_name": "A4 Natural Recycled",
+            "category": 4
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 12,
+        "fields": {
+            "name": "a5_gloss_poster",
+            "friendly_name": "A5 Gloss Poster",
+            "category": 3
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 13,
+        "fields": {
+            "name": "a5_natural_recyceld",
+            "friendly_name": "A5 Natural Recycled",
+            "category": 4
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 14,
+        "fields": {
+            "name": "tarot_cards",
+            "friendly_name": "Tarot Cards",
+            "category": 5
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 15,
+        "fields": {
+            "name": "oracle_books",
+            "friendly_name": "Oracle Books",
+            "category": 5
+        }
+    },
+    {
+        "model": "shop.subcategory",
+        "pk": 16,
+        "fields": {
+            "name": "illustrated_books",
+            "friendly_name": "Illustrated Books",
+            "category": 5
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 1,
+        "fields": {
+            "name": "Earrings: Blue-Pearl",
+            "sku": "235235235232",
+            "price": "15.38",
+            "description": "Earrings: Blue-Pearl",
+            "image": "earings-blue-pearl.jpeg",
+            "likes": 3,
+            "category": 1,
+            "subcategory": 1,
+            "digital_artwork": null
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 2,
+        "fields": {
+            "name": "Earrings: Green-pink",
+            "sku": "324525235",
+            "price": "12.00",
+            "description": "Earrings: Green-pink",
+            "image": "earings-green-pink.jpeg",
+            "likes": 34,
+            "category": 1,
+            "subcategory": 1,
+            "digital_artwork": null
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 3,
+        "fields": {
+            "name": "Sticker: Green Pixie",
+            "sku": "23562462",
+            "price": "23.00",
+            "description": "Sticker: Green Pixie",
+            "image": "sticker-green-pixie.jpeg",
+            "likes": 24,
+            "category": 3,
+            "subcategory": 7,
+            "digital_artwork": 2
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 4,
+        "fields": {
+            "name": "Print: Witches and Cauldron A5",
+            "sku": "2343626",
+            "price": "21.00",
+            "description": "Print: Witches and Cauldron A5",
+            "image": "print-witches-and-cauldren-a5.jpeg",
+            "likes": 65,
+            "category": 4,
+            "subcategory": 12,
+            "digital_artwork": 3
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 5,
+        "fields": {
+            "name": "Sticker: Isicle Farie: Single",
+            "sku": "2325235",
+            "price": "23.00",
+            "description": "Sticker: Isicle Farie: Single",
+            "image": "sticker-isicle-fairie-single.jpeg",
+            "likes": 36,
+            "category": 3,
+            "subcategory": 7,
+            "digital_artwork": 4
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 6,
+        "fields": {
+            "name": "Print: Morticia and Gomez A4",
+            "sku": "3247257216",
+            "price": "65.00",
+            "description": "Print: Morticia and Gomez A4",
+            "image": "print-morticia-and-gomez-a4.jpeg",
+            "likes": 13,
+            "category": 4,
+            "subcategory": 11,
+            "digital_artwork": 7
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 7,
+        "fields": {
+            "name": "Earrings: Pink",
+            "sku": "23925923",
+            "price": "25.00",
+            "description": "Earrings: Pink",
+            "image": "earins-pink.jpeg",
+            "likes": 14,
+            "category": 1,
+            "subcategory": 1,
+            "digital_artwork": null
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 8,
+        "fields": {
+            "name": "Earrings: Vivid Pink",
+            "sku": "10831581305",
+            "price": "53.00",
+            "description": "Earrings: Vivid Pink",
+            "image": "earings-vivd-pink.jpeg",
+            "likes": 1,
+            "category": 1,
+            "subcategory": 1,
+            "digital_artwork": null
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 9,
+        "fields": {
+            "name": "Print: Wanda Red Costume: A4 Gloss",
+            "sku": "1028128471",
+            "price": "27.65",
+            "description": "Print: Wanda Red Costume: A4 Gloss",
+            "image": "print-wanda-red-costume-a4-gloss.jpeg",
+            "likes": 87,
+            "category": 4,
+            "subcategory": 10,
+            "digital_artwork": 8
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 10,
+        "fields": {
+            "name": "Earrings: White",
+            "sku": "0252375",
+            "price": "1.54",
+            "description": "Earrings: White",
+            "image": "earings-white.jpeg",
+            "likes": 23,
+            "category": 1,
+            "subcategory": 1,
+            "digital_artwork": null
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 11,
+        "fields": {
+            "name": "Sculpture 1",
+            "sku": "6346367246",
+            "price": "400.00",
+            "description": "A wonderful invisible sculptue",
+            "image": "",
+            "likes": 64,
+            "category": 2,
+            "subcategory": 3,
+            "digital_artwork": null
+        }
+    }
+    ]
+    
